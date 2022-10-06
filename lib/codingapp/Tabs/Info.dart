@@ -3574,7 +3574,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => Positioned(
           top: useTabletLayout ? 200 : 50,
-          right: useTabletLayout ? 0 : 10,
+          right: 0,
           child: Card(
             elevation: 0,
             child: Container(
