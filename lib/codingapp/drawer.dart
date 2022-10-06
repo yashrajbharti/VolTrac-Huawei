@@ -73,12 +73,13 @@ class _DrawersState extends State<Drawers> {
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                               elevation: 0.0,
+                                              backgroundColor:
+                                                  themeNotifier.isDark
+                                                      ? Color.fromARGB(
+                                                          255, 16, 16, 16)
+                                                      : Color.fromARGB(
+                                                          255, 204, 204, 204),
                                               shadowColor: Colors.transparent,
-                                              primary: themeNotifier.isDark
-                                                  ? Color.fromARGB(
-                                                      255, 16, 16, 16)
-                                                  : Color.fromARGB(
-                                                      255, 204, 204, 204),
                                               padding: EdgeInsets.all(15)),
                                           child: Icon(
                                             Icons.clear_rounded,
@@ -126,12 +127,13 @@ class _DrawersState extends State<Drawers> {
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                               elevation: 0.0,
+                                              backgroundColor:
+                                                  themeNotifier.isDark
+                                                      ? Color.fromARGB(
+                                                          255, 16, 16, 16)
+                                                      : Color.fromARGB(
+                                                          255, 204, 204, 204),
                                               shadowColor: Colors.transparent,
-                                              primary: themeNotifier.isDark
-                                                  ? Color.fromARGB(
-                                                      255, 16, 16, 16)
-                                                  : Color.fromARGB(
-                                                      255, 204, 204, 204),
                                               padding: EdgeInsets.all(15)),
                                           child: Icon(
                                             Icons.clear_rounded,
@@ -430,10 +432,10 @@ class _DrawersState extends State<Drawers> {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 2,
+                        backgroundColor: Color.fromARGB(255, 125, 164, 243),
                         shadowColor: themeNotifier.isDark
                             ? Colors.black
                             : Colors.grey.withOpacity(0.5),
-                        primary: Color.fromARGB(255, 125, 164, 243),
                         padding: EdgeInsets.all(15),
                         shape: StadiumBorder(),
                       ),

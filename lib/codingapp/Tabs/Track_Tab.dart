@@ -132,9 +132,9 @@ class _SendtoLGState extends State<SendtoLG> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
-                                  shadowColor: Colors.black,
-                                  primary:
+                                  backgroundColor:
                                       ui.Color.fromARGB(255, 220, 220, 220),
+                                  shadowColor: Colors.black,
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
@@ -637,12 +637,12 @@ class _SendtoLGState extends State<SendtoLG> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0),
                                 ),
@@ -699,12 +699,12 @@ class _SendtoLGState extends State<SendtoLG> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0),
                                 ),
@@ -766,12 +766,12 @@ class _SendtoLGState extends State<SendtoLG> {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0)),
                               onPressed: () async {
@@ -828,12 +828,12 @@ class _SendtoLGState extends State<SendtoLG> {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0)),
                               onPressed: () async {
@@ -894,12 +894,12 @@ class _SendtoLGState extends State<SendtoLG> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0),
                                 ),
@@ -956,12 +956,12 @@ class _SendtoLGState extends State<SendtoLG> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0),
                                 ),
@@ -1023,12 +1023,12 @@ class _SendtoLGState extends State<SendtoLG> {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0)),
                               onPressed: () async {
@@ -1083,12 +1083,12 @@ class _SendtoLGState extends State<SendtoLG> {
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
-                                  primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 43, 43, 43)
-                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0)),
                               onPressed: () async {
@@ -1202,12 +1202,12 @@ class _SendtoLGState extends State<SendtoLG> {
                                 : ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
+                                      backgroundColor: themeNotifier.isDark
+                                          ? ui.Color.fromARGB(255, 30, 30, 30)
+                                          : Colors.white,
                                       shadowColor: themeNotifier.isDark
                                           ? Colors.black
                                           : Colors.grey.withOpacity(0.3),
-                                      primary: themeNotifier.isDark
-                                          ? ui.Color.fromARGB(255, 30, 30, 30)
-                                          : Colors.white,
                                       padding: EdgeInsets.all(
                                           useTabletLayout ? 15 : 0),
                                       shape: StadiumBorder(),

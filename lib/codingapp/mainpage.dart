@@ -110,7 +110,7 @@ class _MainpageState extends State<Mainpage> {
   @override
   void initState() {
     // ...
-    SchedulerBinding.instance?.addPostFrameCallback((Duration duration) {
+    SchedulerBinding.instance.addPostFrameCallback((Duration duration) {
       FeatureDiscovery.discoverFeatures(
         context,
         const <String>{

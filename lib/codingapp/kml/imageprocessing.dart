@@ -1,8 +1,9 @@
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/services.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:huawei_map/components/bitmapDescriptor.dart';
+import 'package:huawei_map/components/components.dart';
+import 'package:huawei_map/map.dart';
 
 Future<Uint8List> getBytesFromAsset(String path, int width) async {
   ByteData data = await rootBundle.load(path);

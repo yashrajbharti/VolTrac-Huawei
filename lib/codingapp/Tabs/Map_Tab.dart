@@ -3,14 +3,14 @@ import 'dart:collection';
 
 // import 'dart:io';
 import 'dart:math';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+// import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:huawei_map/map.dart';
 import 'package:ssh2/ssh2.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 // import 'package:path_provider/path_provider.dart';
@@ -49,8 +49,8 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
     //     .asUint8List();
   }
 
-  GoogleMapController? mapController;
-  MapType _currentMapType = MapType.satellite;
+  HuaweiMapController? mapController;
+  MapType _currentMapType = MapType.terrain;
   // bool isOrbiting = false;
   // bool isDemoActive = false;
   bool isShowing = false;
@@ -13909,9 +13909,8 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
 
   void _onMapTypeButtonPressed() {
     setState(() {
-      _currentMapType = _currentMapType == MapType.satellite
-          ? MapType.normal
-          : MapType.satellite;
+      _currentMapType =
+          _currentMapType == MapType.terrain ? MapType.normal : MapType.terrain;
     });
   }
 
@@ -14079,8 +14078,9 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: Colors.black,
-                                  primary: Color.fromARGB(255, 220, 220, 220),
                                   padding: EdgeInsets.all(15),
                                   shape: StadiumBorder(),
                                 ),
@@ -14154,8 +14154,8 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
 
   void _onCameraMove(CameraPosition position) {
     bearingvalue = position.bearing; // 2D angle
-    longvalue = position.target.longitude; // lat lng
-    latvalue = position.target.latitude;
+    longvalue = position.target.lng; // lat lng
+    latvalue = position.target.lat;
     tiltvalue = position.tilt; // 3D angle
     zoomvalue = 591657550.500000 / pow(2, position.zoom);
   }
@@ -14173,7 +14173,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
     final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return Stack(
       children: <Widget>[
-        GoogleMap(
+        HuaweiMap(
           gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>[
             new Factory<OneSequenceGestureRecognizer>(
               () => new EagerGestureRecognizer(),

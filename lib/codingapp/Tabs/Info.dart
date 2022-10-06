@@ -182,8 +182,9 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 220, 220, 220),
                                   shadowColor: Colors.black,
-                                  primary: Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),

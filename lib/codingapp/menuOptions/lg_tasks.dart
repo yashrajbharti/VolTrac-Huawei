@@ -101,9 +101,9 @@ class _LGtasksState extends State<LGtasks> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
-                                  shadowColor: Colors.black,
-                                  primary:
+                                  backgroundColor:
                                       ui.Color.fromARGB(255, 220, 220, 220),
+                                  shadowColor: Colors.black,
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
@@ -189,9 +189,9 @@ class _LGtasksState extends State<LGtasks> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
-                                  shadowColor: Colors.black,
-                                  primary:
+                                  backgroundColor:
                                       ui.Color.fromARGB(255, 220, 220, 220),
+                                  shadowColor: Colors.black,
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
@@ -278,13 +278,13 @@ class _LGtasksState extends State<LGtasks> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: Colors.transparent,
                                   shadowColor: Colors.black,
                                   side: BorderSide(
                                     width: 3,
                                     color:
                                         ui.Color.fromARGB(255, 125, 164, 243),
                                   ),
-                                  primary: Colors.transparent,
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
@@ -375,11 +375,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
+                                      backgroundColor:
+                                          Color.fromARGB(255, 223, 161, 160),
                                       shadowColor: themeNotifier.isDark
                                           ? Colors.black
                                           : Colors.grey.withOpacity(0.5),
-                                      primary:
-                                          Color.fromARGB(255, 223, 161, 160),
                                       padding: EdgeInsets.all(
                                           useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
@@ -425,11 +425,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
+                                        backgroundColor:
+                                            Color.fromARGB(255, 230, 154, 224),
                                         shadowColor: themeNotifier.isDark
                                             ? Colors.black
                                             : Colors.grey.withOpacity(0.5),
-                                        primary:
-                                            Color.fromARGB(255, 230, 154, 224),
                                         padding: EdgeInsets.all(
                                             useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),
@@ -474,11 +474,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
+                                      backgroundColor:
+                                          Color.fromARGB(255, 125, 164, 243),
                                       shadowColor: themeNotifier.isDark
                                           ? Colors.black
                                           : Colors.grey.withOpacity(0.5),
-                                      primary:
-                                          Color.fromARGB(255, 125, 164, 243),
                                       padding: EdgeInsets.all(
                                           useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
@@ -565,10 +565,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
+                                      backgroundColor:
+                                          Color.fromARGB(255, 3, 200, 196),
                                       shadowColor: themeNotifier.isDark
                                           ? Colors.black
                                           : Colors.grey.withOpacity(0.5),
-                                      primary: Color.fromARGB(255, 3, 200, 196),
                                       padding: EdgeInsets.all(
                                           useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
@@ -601,11 +602,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
+                                        backgroundColor:
+                                            Color.fromARGB(255, 238, 163, 123),
                                         shadowColor: themeNotifier.isDark
                                             ? Colors.black
                                             : Colors.grey.withOpacity(0.5),
-                                        primary:
-                                            Color.fromARGB(255, 238, 163, 123),
                                         padding: EdgeInsets.all(
                                             useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),
@@ -645,11 +646,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
+                                      backgroundColor:
+                                          Color.fromARGB(255, 115, 184, 117),
                                       shadowColor: themeNotifier.isDark
                                           ? Colors.black
                                           : Colors.grey.withOpacity(0.5),
-                                      primary:
-                                          Color.fromARGB(255, 115, 184, 117),
                                       padding: EdgeInsets.all(
                                           useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
@@ -686,11 +687,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
+                                        backgroundColor:
+                                            Color.fromARGB(255, 240, 226, 103),
                                         shadowColor: themeNotifier.isDark
                                             ? Colors.black
                                             : Colors.grey.withOpacity(0.5),
-                                        primary:
-                                            Color.fromARGB(255, 240, 226, 103),
                                         padding: EdgeInsets.all(
                                             useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),
@@ -724,11 +725,11 @@ class _LGtasksState extends State<LGtasks> {
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
+                                        backgroundColor:
+                                            Color.fromARGB(255, 232, 108, 99),
                                         shadowColor: themeNotifier.isDark
                                             ? Colors.black
                                             : Colors.grey.withOpacity(0.5),
-                                        primary:
-                                            Color.fromARGB(255, 232, 108, 99),
                                         padding: EdgeInsets.all(
                                             useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),

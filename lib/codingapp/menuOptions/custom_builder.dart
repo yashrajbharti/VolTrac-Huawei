@@ -219,9 +219,9 @@ class _CustomBuilderState extends State<CustomBuilder>
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
-                                  shadowColor: Colors.black,
-                                  primary:
+                                  backgroundColor:
                                       ui.Color.fromARGB(255, 220, 220, 220),
+                                  shadowColor: Colors.black,
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
@@ -414,10 +414,11 @@ class _CustomBuilderState extends State<CustomBuilder>
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     elevation: 2,
+                                    backgroundColor:
+                                        Color.fromARGB(255, 232, 108, 99),
                                     shadowColor: themeNotifier.isDark
                                         ? Colors.black
                                         : Colors.grey.withOpacity(0.5),
-                                    primary: Color.fromARGB(255, 232, 108, 99),
                                     padding: EdgeInsets.all(
                                         useTabletLayout ? 10 : 3),
                                     shape: StadiumBorder(),
@@ -1076,12 +1077,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                             child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
+                                  backgroundColor: themeNotifier.isDark
+                                      ? Color.fromARGB(255, 30, 30, 30)
+                                      : Colors.white,
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.5),
-                                  primary: themeNotifier.isDark
-                                      ? Color.fromARGB(255, 30, 30, 30)
-                                      : Colors.white,
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 10),
                                   shape: StadiumBorder(),

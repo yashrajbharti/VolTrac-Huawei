@@ -154,9 +154,9 @@ class SettingsState extends State<Settings> {
                                       child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
                                           elevation: 2,
-                                          shadowColor: Colors.black,
-                                          primary: ui.Color.fromARGB(
+                                          backgroundColor: ui.Color.fromARGB(
                                               255, 220, 220, 220),
+                                          shadowColor: Colors.black,
                                           padding: EdgeInsets.all(
                                               useTabletLayout ? 15 : 5),
                                           shape: StadiumBorder(),
@@ -399,12 +399,12 @@ class SettingsState extends State<Settings> {
                           },
                           style: ElevatedButton.styleFrom(
                             elevation: 2,
+                            backgroundColor: themeNotifier.isDark
+                                ? ui.Color.fromARGB(255, 30, 30, 30)
+                                : Colors.white,
                             shadowColor: themeNotifier.isDark
                                 ? Colors.black
                                 : Colors.grey.withOpacity(0.5),
-                            primary: themeNotifier.isDark
-                                ? ui.Color.fromARGB(255, 30, 30, 30)
-                                : Colors.white,
                             padding: EdgeInsets.all(15),
                             shape: StadiumBorder(),
                           ),
