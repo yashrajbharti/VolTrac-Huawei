@@ -422,31 +422,23 @@ class _DrawersState extends State<Drawers> {
                           )
                         ]),
                   )))),
-      Consumer<ThemeModel>(
-          builder: (context, ThemeModel themeNotifier, child) => Positioned(
-              bottom: 30,
-              right: 30,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    elevation: 2,
-                    shadowColor: themeNotifier.isDark
-                        ? Colors.black
-                        : Colors.grey.withOpacity(0.5),
-                    primary: Color.fromARGB(255, 125, 164, 243),
-                    padding: EdgeInsets.all(15),
-                    shape: StadiumBorder(),
-                  ),
-                  onPressed: () {
-                    FeatureDiscovery.clearPreferences(
-                      context,
-                      const <String>{
-                        'feature3',
-                        'feature4',
-                        'feature5',
-                        'feature6',
-                        'feature7'
-                      },
-                    ).then((value) => FeatureDiscovery.discoverFeatures(
+      useTabletLayout
+          ? Consumer<ThemeModel>(
+              builder: (context, ThemeModel themeNotifier, child) => Positioned(
+                  bottom: 30,
+                  right: 30,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 2,
+                        shadowColor: themeNotifier.isDark
+                            ? Colors.black
+                            : Colors.grey.withOpacity(0.5),
+                        primary: Color.fromARGB(255, 125, 164, 243),
+                        padding: EdgeInsets.all(15),
+                        shape: StadiumBorder(),
+                      ),
+                      onPressed: () {
+                        FeatureDiscovery.clearPreferences(
                           context,
                           const <String>{
                             'feature3',
@@ -455,16 +447,26 @@ class _DrawersState extends State<Drawers> {
                             'feature6',
                             'feature7'
                           },
-                        ));
-                  },
-                  child: DefaultTextStyle(
-                      style: TextStyle(
-                          fontSize: useTabletLayout ? 30 : 15,
-                          color: themeNotifier.isDark
-                              ? Colors.white
-                              : Colors.black,
-                          fontFamily: "GoogleSans"),
-                      child: Text(translate("tour.take")))))),
+                        ).then((value) => FeatureDiscovery.discoverFeatures(
+                              context,
+                              const <String>{
+                                'feature3',
+                                'feature4',
+                                'feature5',
+                                'feature6',
+                                'feature7'
+                              },
+                            ));
+                      },
+                      child: DefaultTextStyle(
+                          style: TextStyle(
+                              fontSize: useTabletLayout ? 30 : 15,
+                              color: themeNotifier.isDark
+                                  ? Colors.white
+                                  : Colors.black,
+                              fontFamily: "GoogleSans"),
+                          child: Text(translate("tour.take"))))))
+          : SizedBox(width: 0),
     ]);
   }
 }
