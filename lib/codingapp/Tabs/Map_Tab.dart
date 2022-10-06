@@ -28,7 +28,7 @@ class MyMap extends StatefulWidget {
 }
 
 class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
-  static LatLng _center = const LatLng(28.63665656297236, -17.905454520583153);
+  static LatLng _center = const LatLng(28.61785656297236, -17.895854520583153);
   // late AnimationController _rotationiconcontroller;
 
   Uint8List? marketimages;
@@ -56,8 +56,8 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   bool isShowing = false;
   int rigcount = 5;
   double zoomvalue = 591657550.500000 / pow(2, 13.15393352508545);
-  double latvalue = 28.63665656297236;
-  double longvalue = -17.905454520583153;
+  double latvalue = 28.61785656297236;
+  double longvalue = -17.895854520583153;
   double tiltvalue = 41.82725143432617;
   double bearingvalue = 61.403038024902344; // 2D angle
 
@@ -14113,8 +14113,8 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
     );
 
     LookAt flyto = LookAt(
-      -17.905454520583153,
-      28.63665656297236,
+      -17.895854520583153,
+      28.61785656297236,
       "${zoomvalue / rigcount}",
       "41.82725143432617",
       "61.403038024902344",
@@ -14243,7 +14243,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
             alignment: Alignment.topLeft,
             child: Column(
               children: <Widget>[
-                SizedBox(height: useTabletLayout ? 57.0 : 10),
+                SizedBox(height: useTabletLayout ? 128.0 : 74),
                 FloatingActionButton(
                   heroTag: "btn3",
                   onPressed: () {
