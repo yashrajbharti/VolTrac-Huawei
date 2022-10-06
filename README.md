@@ -1,17 +1,17 @@
 <p align="center">
-  <img alt="VolTrac" src="https://raw.githubusercontent.com/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool/main/assets/volcano.png" height="250px">
+  <img alt="VolTrac" src="https://raw.githubusercontent.com/yashrajbharti/VolTrac-Huawei/main/assets/volcano.png" height="250px">
 </p>  
   
 <h1 align="center"> La Palma VolTrac</h1>
   
 <p align="center">
-  <img alt="" src="https://github.com/yashrajbharti/Volcano-Tracker-Web-Scraper-demo/actions/workflows/main.yml/badge.svg">
-  <img alt="" src="https://img.shields.io/github/license/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool">
-  <img alt="" src="https://img.shields.io/github/languages/top/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool?color=pink">
-  <img alt="" src="https://img.shields.io/github/issues/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool?color=blue">
-  <img alt="" src="https://img.shields.io/github/forks/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool?style=social">
+  <img alt="" src="https://github.com/yashrajbharti/VolTrac-Huawei/actions/workflows/main.yml/badge.svg">
+  <img alt="" src="https://img.shields.io/github/license/yashrajbharti/VolTrac-Huawei">
+  <img alt="" src="https://img.shields.io/github/languages/top/yashrajbharti/VolTrac-Huawei?color=pink">
+  <img alt="" src="https://img.shields.io/github/issues/yashrajbharti/VolTrac-Huawei?color=blue">
+  <img alt="" src="https://img.shields.io/github/forks/yashrajbharti/VolTrac-Huawei?style=social">
   <img alt="" src="https://img.shields.io/badge/Languages-10-important">
-  <img alt="" src="https://img.shields.io/github/repo-size/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool?color=cyan&label=Repo%20Size">
+  <img alt="" src="https://img.shields.io/github/repo-size/yashrajbharti/VolTrac-Huawei?color=cyan&label=Repo%20Size">
 </p>
 
 <h2 align="center">Scan the QR code to Install VolTrac<h2>
@@ -85,8 +85,8 @@ Documentation on how to set up Flutter SDK and its environment can be found [her
 * Clone the repository via the following terminal command:
   
 ```bash
-$ git clone https://github.com/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool.git
-$ cd La-Palma-Volcano-Eruption-Tracking-Tool
+$ git clone https://github.com/yashrajbharti/VolTrac-Huawei.git
+$ cd VolTrac-Huawei
 ```
     
 * To run the code, ppen a terminal and navigate to the project root directory. First you need to install the packages by running:
