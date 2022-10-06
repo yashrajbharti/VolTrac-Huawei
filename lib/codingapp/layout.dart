@@ -49,7 +49,11 @@ class _LayoutState extends State<Layout> {
                                   child: Text(
                                     translate('tabs.track'),
                                     style: TextStyle(
-                                        fontSize: useTabletLayout ? 40 : 25),
+                                      fontSize: useTabletLayout ? 40 : 25,
+                                      color: themeNotifier.isDark
+                                          ? Color.fromARGB(255, 204, 204, 204)
+                                          : Color.fromARGB(255, 16, 16, 16),
+                                    ),
                                   ))),
                           Tab(
                             child: Transform.translate(
@@ -58,7 +62,11 @@ class _LayoutState extends State<Layout> {
                                 child: Text(
                                   translate('tabs.map'),
                                   style: TextStyle(
-                                      fontSize: useTabletLayout ? 40 : 25),
+                                    fontSize: useTabletLayout ? 40 : 25,
+                                    color: themeNotifier.isDark
+                                        ? Color.fromARGB(255, 204, 204, 204)
+                                        : Color.fromARGB(255, 16, 16, 16),
+                                  ),
                                 )),
                           ),
                           Tab(
@@ -68,7 +76,11 @@ class _LayoutState extends State<Layout> {
                                 child: Text(
                                   translate('tabs.info'),
                                   style: TextStyle(
-                                      fontSize: useTabletLayout ? 40 : 25),
+                                    fontSize: useTabletLayout ? 40 : 25,
+                                    color: themeNotifier.isDark
+                                        ? Color.fromARGB(255, 204, 204, 204)
+                                        : Color.fromARGB(255, 16, 16, 16),
+                                  ),
                                 )),
                           ),
                         ],
