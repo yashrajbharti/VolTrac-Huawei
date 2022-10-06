@@ -77,6 +77,10 @@ class _SendtoLGState extends State<SendtoLG> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final double shortestSide = MediaQuery.of(context)
+            .size
+            .shortestSide; // get the shortest side of device
+        final bool useTabletLayout = shortestSide > 600.0; // check for tablet
         return BackdropFilter(
             filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 3),
             child: AlertDialog(
@@ -91,28 +95,28 @@ class _SendtoLGState extends State<SendtoLG> {
                       padding: EdgeInsets.only(left: 10),
                       child: Image.asset(
                         "assets/sad.png",
-                        width: 250,
-                        height: 250,
+                        width: useTabletLayout ? 250 : 125,
+                        height: useTabletLayout ? 250 : 125,
                       )),
                   Text(
                     '$title',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: useTabletLayout ? 25 : 18,
                       color: Color.fromARGB(255, 204, 204, 204),
                     ),
                   ),
                 ],
               ),
               content: SizedBox(
-                width: 320,
-                height: 180,
+                width: useTabletLayout ? 320 : 80,
+                height: useTabletLayout ? 180 : 120,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text('$msg',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: useTabletLayout ? 18 : 12,
                             color: Color.fromARGB(
                               255,
                               204,
@@ -122,7 +126,7 @@ class _SendtoLGState extends State<SendtoLG> {
                           ),
                           textAlign: TextAlign.center),
                       SizedBox(
-                          width: 300,
+                          width: useTabletLayout ? 300 : 150,
                           child: Padding(
                               padding: EdgeInsets.only(top: 10),
                               child: ElevatedButton(
@@ -131,7 +135,8 @@ class _SendtoLGState extends State<SendtoLG> {
                                   shadowColor: Colors.black,
                                   primary:
                                       ui.Color.fromARGB(255, 220, 220, 220),
-                                  padding: EdgeInsets.all(15),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
                                 ),
                                 onPressed: () {
@@ -141,7 +146,8 @@ class _SendtoLGState extends State<SendtoLG> {
                                   children: <Widget>[
                                     Text(translate('dismiss'),
                                         style: TextStyle(
-                                            fontSize: 20, color: Colors.black)),
+                                            fontSize: useTabletLayout ? 20 : 12,
+                                            color: Colors.black)),
                                   ],
                                 ),
                               ))),
@@ -568,12 +574,17 @@ class _SendtoLGState extends State<SendtoLG> {
   }
 
   void _showToast(String x, bool blackandwhite) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0;
+    // check for tablet
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
           "$x",
           style: TextStyle(
-              fontSize: 24.0,
+              fontSize: useTabletLayout ? 24.0 : 14,
               fontWeight: FontWeight.normal,
               fontFamily: "GoogleSans",
               color: Colors.white),
@@ -582,7 +593,7 @@ class _SendtoLGState extends State<SendtoLG> {
         backgroundColor: blackandwhite
             ? ui.Color.fromARGB(255, 22, 22, 22)
             : ui.Color.fromARGB(250, 43, 43, 43),
-        width: 500.0,
+        width: useTabletLayout ? 500.0 : 280,
         padding: const EdgeInsets.fromLTRB(
           35,
           20,
@@ -604,16 +615,20 @@ class _SendtoLGState extends State<SendtoLG> {
 
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => Container(
-              margin: const EdgeInsets.fromLTRB(90, 30, 90, 0),
+              margin: EdgeInsets.fromLTRB(90, useTabletLayout ? 30 : 15, 90, 0),
               child: Column(
                 children: [
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SizedBox(
-                          width: 500,
+                          width: useTabletLayout ? 500 : 280,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -623,7 +638,7 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
                             ),
                             onPressed: () async {
                               savekml_Task(projectname[0]);
@@ -651,10 +666,15 @@ class _SendtoLGState extends State<SendtoLG> {
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Text(translate('Track.hist'),
-                                    style: TextStyle(fontSize: 40)),
+                                Transform.translate(
+                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                        useTabletLayout ? 0.0 : 10.0),
+                                    child: Text(translate('Track.hist'),
+                                        style: TextStyle(
+                                            fontSize:
+                                                useTabletLayout ? 40 : 20))),
                                 Transform.scale(
-                                    scale: 1.5,
+                                    scale: useTabletLayout ? 1.5 : 0.8,
                                     child: Builder(
                                       builder: (context) => IconButton(
                                         icon: Image.asset(
@@ -667,7 +687,7 @@ class _SendtoLGState extends State<SendtoLG> {
                           ),
                         ),
                         SizedBox(
-                          width: 500,
+                          width: useTabletLayout ? 500 : 280,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -677,7 +697,7 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
                             ),
                             onPressed: () async {
                               savekml_Task(projectname[1]);
@@ -705,10 +725,15 @@ class _SendtoLGState extends State<SendtoLG> {
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Text(translate('Track.lava'),
-                                    style: TextStyle(fontSize: 40)),
+                                Transform.translate(
+                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                        useTabletLayout ? 0.0 : 10.0),
+                                    child: Text(translate('Track.lava'),
+                                        style: TextStyle(
+                                            fontSize:
+                                                useTabletLayout ? 40 : 20))),
                                 Transform.scale(
-                                    scale: 1.5,
+                                    scale: useTabletLayout ? 1.5 : 0.8,
                                     child: Builder(
                                       builder: (context) => IconButton(
                                         icon: Image.asset(
@@ -721,12 +746,12 @@ class _SendtoLGState extends State<SendtoLG> {
                           ),
                         )
                       ]),
-                  SizedBox(height: 16),
+                  SizedBox(height: useTabletLayout ? 16 : 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
-                        width: 500,
+                        width: useTabletLayout ? 500 : 280,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -736,7 +761,8 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15)),
+                              padding:
+                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
                           onPressed: () async {
                             savekml_Task(projectname[2]);
                             await _read(2);
@@ -763,10 +789,15 @@ class _SendtoLGState extends State<SendtoLG> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Text(translate('Track.prehistoric'),
-                                  style: TextStyle(fontSize: 40)),
+                              Transform.translate(
+                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                      useTabletLayout ? 0.0 : 10.0),
+                                  child: Text(translate('Track.prehistoric'),
+                                      style: TextStyle(
+                                          fontSize:
+                                              useTabletLayout ? 40 : 20))),
                               Transform.scale(
-                                  scale: 1.5,
+                                  scale: useTabletLayout ? 1.5 : 0.8,
                                   child: Builder(
                                     builder: (context) => IconButton(
                                       icon: Image.asset(
@@ -779,7 +810,7 @@ class _SendtoLGState extends State<SendtoLG> {
                         ),
                       ),
                       SizedBox(
-                        width: 500,
+                        width: useTabletLayout ? 500 : 280,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -789,7 +820,8 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15)),
+                              padding:
+                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
                           onPressed: () async {
                             savekml_Task(projectname[3]);
                             await _read(3);
@@ -816,10 +848,15 @@ class _SendtoLGState extends State<SendtoLG> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Text(translate('Track.aff'),
-                                  style: TextStyle(fontSize: 40)),
+                              Transform.translate(
+                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                      useTabletLayout ? 0.0 : 10.0),
+                                  child: Text(translate('Track.aff'),
+                                      style: TextStyle(
+                                          fontSize:
+                                              useTabletLayout ? 40 : 20))),
                               Transform.scale(
-                                  scale: 1.5,
+                                  scale: useTabletLayout ? 1.5 : 0.8,
                                   child: Builder(
                                     builder: (context) => IconButton(
                                       icon: Image.asset(
@@ -833,12 +870,12 @@ class _SendtoLGState extends State<SendtoLG> {
                       )
                     ],
                   ),
-                  SizedBox(height: 16),
+                  SizedBox(height: useTabletLayout ? 16 : 8),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SizedBox(
-                          width: 500,
+                          width: useTabletLayout ? 500 : 280,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -848,7 +885,7 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
                             ),
                             onPressed: () async {
                               savekml_Task(projectname[4]);
@@ -876,10 +913,15 @@ class _SendtoLGState extends State<SendtoLG> {
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Text(translate('Track.land'),
-                                    style: TextStyle(fontSize: 40)),
+                                Transform.translate(
+                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                        useTabletLayout ? 0.0 : 10.0),
+                                    child: Text(translate('Track.land'),
+                                        style: TextStyle(
+                                            fontSize:
+                                                useTabletLayout ? 40 : 20))),
                                 Transform.scale(
-                                    scale: 1.9,
+                                    scale: useTabletLayout ? 1.9 : 1.0,
                                     child: Builder(
                                       builder: (context) => IconButton(
                                         icon: Image.asset(
@@ -892,7 +934,7 @@ class _SendtoLGState extends State<SendtoLG> {
                           ),
                         ),
                         SizedBox(
-                          width: 500,
+                          width: useTabletLayout ? 500 : 280,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -902,7 +944,7 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
                             ),
                             onPressed: () async {
                               savekml_Task(projectname[5]);
@@ -930,10 +972,15 @@ class _SendtoLGState extends State<SendtoLG> {
                                 SizedBox(
                                   width: 10,
                                 ),
-                                Text(translate('Track.So2'),
-                                    style: TextStyle(fontSize: 40)),
+                                Transform.translate(
+                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                        useTabletLayout ? 0.0 : 10.0),
+                                    child: Text(translate('Track.So2'),
+                                        style: TextStyle(
+                                            fontSize:
+                                                useTabletLayout ? 40 : 20))),
                                 Transform.scale(
-                                    scale: 1.5,
+                                    scale: useTabletLayout ? 1.5 : 0.8,
                                     child: Builder(
                                       builder: (context) => IconButton(
                                         icon: Image.asset(
@@ -946,12 +993,12 @@ class _SendtoLGState extends State<SendtoLG> {
                           ),
                         )
                       ]),
-                  SizedBox(height: 16),
+                  SizedBox(height: useTabletLayout ? 16 : 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
-                        width: 500,
+                        width: useTabletLayout ? 500 : 280,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -961,7 +1008,8 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15)),
+                              padding:
+                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
                           onPressed: () async {
                             savekml_Task(projectname[6]);
                             await _read(6);
@@ -988,10 +1036,15 @@ class _SendtoLGState extends State<SendtoLG> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Text(translate('Track.situation'),
-                                  style: TextStyle(fontSize: 40)),
+                              Transform.translate(
+                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                      useTabletLayout ? 0.0 : 10.0),
+                                  child: Text(translate('Track.situation'),
+                                      style: TextStyle(
+                                          fontSize:
+                                              useTabletLayout ? 40 : 20))),
                               Transform.scale(
-                                  scale: 1.5,
+                                  scale: useTabletLayout ? 1.5 : 0.8,
                                   child: Builder(
                                     builder: (context) => IconButton(
                                       icon: Image.asset(
@@ -1004,7 +1057,7 @@ class _SendtoLGState extends State<SendtoLG> {
                         ),
                       ),
                       SizedBox(
-                        width: 500,
+                        width: useTabletLayout ? 500 : 280,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               elevation: 2,
@@ -1014,7 +1067,8 @@ class _SendtoLGState extends State<SendtoLG> {
                               primary: themeNotifier.isDark
                                   ? ui.Color.fromARGB(255, 43, 43, 43)
                                   : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(15)),
+                              padding:
+                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
                           onPressed: () async {
                             savekml_Task(projectname[7]);
                             await _read(7);
@@ -1041,10 +1095,15 @@ class _SendtoLGState extends State<SendtoLG> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Text(translate('Track.located'),
-                                  style: TextStyle(fontSize: 40)),
+                              Transform.translate(
+                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                      useTabletLayout ? 0.0 : 10.0),
+                                  child: Text(translate('Track.located'),
+                                      style: TextStyle(
+                                          fontSize:
+                                              useTabletLayout ? 40 : 20))),
                               Transform.scale(
-                                  scale: 1.5,
+                                  scale: useTabletLayout ? 1.5 : 0.8,
                                   child: Builder(
                                     builder: (context) => IconButton(
                                       icon: Image.asset(
@@ -1058,7 +1117,7 @@ class _SendtoLGState extends State<SendtoLG> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: useTabletLayout ? 20 : 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -1068,7 +1127,7 @@ class _SendtoLGState extends State<SendtoLG> {
                                   ? Image.asset(
                                       'assets/icons/calendar_dark.png')
                                   : Image.asset('assets/icons/calendar.png'),
-                              iconSize: 65,
+                              iconSize: useTabletLayout ? 65 : 20,
                               onPressed: () {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
@@ -1078,15 +1137,15 @@ class _SendtoLGState extends State<SendtoLG> {
                                 );
                               })),
                       SizedBox(
-                        width: 20,
+                        width: useTabletLayout ? 20 : 10,
                       ),
                       SizedBox(
-                        width: 360,
+                        width: useTabletLayout ? 360 : 200,
                         child: loading
                             ? LinearPercentIndicator(
                                 animation: true,
-                                width: 360,
-                                lineHeight: 76.0,
+                                width: useTabletLayout ? 360 : 200,
+                                lineHeight: useTabletLayout ? 76.0 : 40.0,
                                 backgroundColor: themeNotifier.isDark
                                     ? ui.Color.fromARGB(205, 42, 47, 48)
                                     : ui.Color.fromARGB(205, 180, 199, 206),
@@ -1100,16 +1159,17 @@ class _SendtoLGState extends State<SendtoLG> {
                                     ),
                                     Text(translate('Track.visual'),
                                         style: TextStyle(
-                                            fontSize: 35,
+                                            fontSize: useTabletLayout ? 35 : 15,
                                             fontWeight: ui.FontWeight.w500)),
                                     Icon(
                                       Icons.location_on_sharp,
                                       color: ui.Color.fromARGB(255, 228, 6, 9),
-                                      size: 45.0,
+                                      size: useTabletLayout ? 45.0 : 20,
                                     ),
                                   ],
                                 ),
-                                barRadius: ui.Radius.circular(50),
+                                barRadius: ui.Radius.circular(
+                                    useTabletLayout ? 50 : 25),
                                 progressColor: Colors.greenAccent,
                               )
                             : ElevatedButton(
@@ -1121,7 +1181,8 @@ class _SendtoLGState extends State<SendtoLG> {
                                   primary: themeNotifier.isDark
                                       ? ui.Color.fromARGB(255, 30, 30, 30)
                                       : Colors.white,
-                                  padding: EdgeInsets.all(15),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0),
                                   shape: StadiumBorder(),
                                 ),
                                 child: Wrap(
@@ -1130,11 +1191,13 @@ class _SendtoLGState extends State<SendtoLG> {
                                       width: 10,
                                     ),
                                     Text(translate('Track.visual'),
-                                        style: TextStyle(fontSize: 35)),
+                                        style: TextStyle(
+                                            fontSize:
+                                                useTabletLayout ? 35 : 15)),
                                     Icon(
                                       Icons.location_on_sharp,
                                       color: ui.Color.fromARGB(255, 228, 6, 9),
-                                      size: 45.0,
+                                      size: useTabletLayout ? 45.0 : 20,
                                     ),
                                   ],
                                 ),
@@ -1177,7 +1240,7 @@ class _SendtoLGState extends State<SendtoLG> {
                                 }),
                       ),
                       SizedBox(
-                        width: 18,
+                        width: useTabletLayout ? 18 : 8,
                       ),
                       isdemoactive
                           ? Transform.scale(
@@ -1189,7 +1252,7 @@ class _SendtoLGState extends State<SendtoLG> {
                                                 'assets/icons/stop-button-black.png')
                                             : Image.asset(
                                                 'assets/icons/stop-button.png'),
-                                        iconSize: 70,
+                                        iconSize: useTabletLayout ? 70 : 35,
                                         onPressed: () {
                                           // A demo of all buttons
                                           setState(() {
@@ -1207,7 +1270,7 @@ class _SendtoLGState extends State<SendtoLG> {
                                                 'assets/icons/demo_dark.png')
                                             : Image.asset(
                                                 'assets/icons/demo.png'),
-                                        iconSize: 70,
+                                        iconSize: useTabletLayout ? 70 : 35,
                                         onPressed: () {
                                           // A demo of all buttons
                                           setState(() {

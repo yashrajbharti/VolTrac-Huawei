@@ -25,6 +25,10 @@ class _DrawersState extends State<Drawers> {
   bool val = false;
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return Stack(children: [
       SizedBox(
           width: MediaQuery.of(context).size.width * 1.0,
@@ -39,65 +43,84 @@ class _DrawersState extends State<Drawers> {
                     height: MediaQuery.of(context).size.height * 1.0,
                     child: ListView(
                         shrinkWrap: true,
-                        padding: const EdgeInsets.only(left: 100),
+                        padding:
+                            EdgeInsets.only(left: useTabletLayout ? 100 : 60),
                         children: [
-                          DrawerHeader(
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 30),
-                                  child: Text(
-                                    translate("drawer.menu"),
-                                    style: TextStyle(
-                                        color: themeNotifier.isDark
-                                            ? Colors.white
-                                            : Colors.black,
-                                        fontSize: 46),
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(0, 0, 36, 65),
-                                  child: Align(
-                                    alignment: Alignment.centerRight,
-                                    child: ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                          elevation: 0.0,
-                                          shadowColor: Colors.transparent,
-                                          primary: themeNotifier.isDark
-                                              ? Color.fromARGB(255, 16, 16, 16)
-                                              : Color.fromARGB(
-                                                  255, 204, 204, 204),
-                                          padding: EdgeInsets.all(15)),
-                                      child: Icon(
-                                        Icons.clear_rounded,
-                                        color: themeNotifier.isDark
-                                            ? Color.fromARGB(255, 204, 204, 204)
-                                            : Color.fromARGB(255, 84, 84, 84),
-                                        size: 60,
-                                      ),
-                                      onPressed: () {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (BuildContext context) =>
-                                                First(),
+                          Transform.translate(
+                              offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                  useTabletLayout ? 0.0 : -30.0),
+                              child: DrawerHeader(
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Transform.translate(
+                                        offset: Offset(
+                                            0.0, useTabletLayout ? 0.0 : 10.0),
+                                        child: Container(
+                                            padding: EdgeInsets.fromLTRB(0, 0,
+                                                0, useTabletLayout ? 30 : 15),
+                                            child: Text(
+                                              translate("drawer.menu"),
+                                              style: TextStyle(
+                                                  color: themeNotifier.isDark
+                                                      ? Colors.white
+                                                      : Colors.black,
+                                                  fontSize: useTabletLayout
+                                                      ? 46
+                                                      : 30),
+                                            ))),
+                                    const Spacer(),
+                                    Transform.translate(
+                                        offset: Offset(
+                                            useTabletLayout ? 0.0 : 0.0,
+                                            useTabletLayout ? 0.0 : 8.0),
+                                        child: Container(
+                                          padding: EdgeInsets.fromLTRB(0, 0, 36,
+                                              useTabletLayout ? 65 : 10),
+                                          child: Align(
+                                            alignment: Alignment.centerRight,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                  elevation: 0.0,
+                                                  shadowColor:
+                                                      Colors.transparent,
+                                                  primary: themeNotifier.isDark
+                                                      ? Color.fromARGB(
+                                                          255, 16, 16, 16)
+                                                      : Color.fromARGB(
+                                                          255, 204, 204, 204),
+                                                  padding: EdgeInsets.all(15)),
+                                              child: Icon(
+                                                Icons.clear_rounded,
+                                                color: themeNotifier.isDark
+                                                    ? Color.fromARGB(
+                                                        255, 204, 204, 204)
+                                                    : Color.fromARGB(
+                                                        255, 84, 84, 84),
+                                                size: useTabletLayout ? 60 : 40,
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                    builder: (BuildContext
+                                                            context) =>
+                                                        First(),
+                                                  ),
+                                                );
+                                              },
+                                            ),
                                           ),
-                                        );
-                                      },
-                                    ),
-                                  ),
+                                        )),
+                                  ],
                                 ),
-                              ],
-                            ),
-                          ),
+                              )),
                           ListTile(
                               title: DescribedFeatureOverlay(
                                   featureId: 'feature3',
                                   // Unique id that identifies this overlay.
                                   tapTarget: Icon(
                                     Icons.help,
-                                    size: 60,
+                                    size: useTabletLayout ? 60 : 50,
                                   ), // The widget that will be displayed as the tap target.
                                   title: Text(
                                     translate("drawer.help"),
@@ -105,7 +128,7 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 30),
+                                        fontSize: useTabletLayout ? 30 : 20),
                                     // )
                                   ),
                                   description: Text(translate("tour.help"),
@@ -113,7 +136,7 @@ class _DrawersState extends State<Drawers> {
                                           color: themeNotifier.isDark
                                               ? Colors.white
                                               : Colors.black,
-                                          fontSize: 18)),
+                                          fontSize: useTabletLayout ? 18 : 12)),
                                   backgroundColor:
                                       Color.fromARGB(255, 125, 164, 243),
                                   targetColor: themeNotifier.isDark
@@ -128,7 +151,7 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 40),
+                                        fontSize: useTabletLayout ? 40 : 24),
                                     // )
                                   )),
                               onTap: () => Navigator.of(context).push(
@@ -137,14 +160,14 @@ class _DrawersState extends State<Drawers> {
                                           HelpScreen(),
                                     ),
                                   )),
-                          SizedBox(height: 24),
+                          SizedBox(height: useTabletLayout ? 24 : 0),
                           ListTile(
                               title: DescribedFeatureOverlay(
                                   featureId:
                                       'feature4', // Unique id that identifies this overlay.
                                   tapTarget: Icon(
                                     Icons.info_rounded,
-                                    size: 60,
+                                    size: useTabletLayout ? 60 : 50,
                                   ), // The widget that will be displayed as the tap target.
                                   title: Text(
                                     translate("drawer.about"),
@@ -152,7 +175,7 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 30),
+                                        fontSize: useTabletLayout ? 30 : 20),
                                     // )
                                   ),
                                   description: Text(translate("tour.about"),
@@ -160,7 +183,7 @@ class _DrawersState extends State<Drawers> {
                                           color: themeNotifier.isDark
                                               ? Colors.white
                                               : Colors.black,
-                                          fontSize: 18)),
+                                          fontSize: useTabletLayout ? 18 : 12)),
                                   backgroundColor:
                                       Color.fromARGB(255, 125, 164, 243),
                                   targetColor: themeNotifier.isDark
@@ -175,7 +198,7 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 40),
+                                        fontSize: useTabletLayout ? 40 : 24),
                                     // )
                                   )),
                               onTap: () => Navigator.of(context).push(
@@ -184,14 +207,14 @@ class _DrawersState extends State<Drawers> {
                                           AboutScreen(),
                                     ),
                                   )),
-                          SizedBox(height: 24),
+                          SizedBox(height: useTabletLayout ? 24 : 0),
                           ListTile(
                               title: DescribedFeatureOverlay(
                                   featureId:
                                       'feature5', // Unique id that identifies this overlay.
                                   tapTarget: Icon(
                                     Icons.calendar_month_rounded,
-                                    size: 60,
+                                    size: useTabletLayout ? 60 : 50,
                                   ), // The widget that will be displayed as the tap target.
                                   title: Text(
                                     translate("drawer.custom"),
@@ -199,14 +222,14 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 30),
+                                        fontSize: useTabletLayout ? 30 : 20),
                                   ),
                                   description: Text(translate("tour.custom"),
                                       style: TextStyle(
                                           color: themeNotifier.isDark
                                               ? Colors.white
                                               : Colors.black,
-                                          fontSize: 18)),
+                                          fontSize: useTabletLayout ? 18 : 12)),
                                   backgroundColor:
                                       Color.fromARGB(255, 125, 164, 243),
                                   targetColor: themeNotifier.isDark
@@ -221,7 +244,7 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 40),
+                                        fontSize: useTabletLayout ? 40 : 24),
                                   )),
                               onTap: () {
                                 Navigator.of(context).push(
@@ -231,14 +254,14 @@ class _DrawersState extends State<Drawers> {
                                   ),
                                 );
                               }),
-                          SizedBox(height: 24),
+                          SizedBox(height: useTabletLayout ? 24 : 0),
                           ListTile(
                               title: DescribedFeatureOverlay(
                                   featureId:
                                       'feature6', // Unique id that identifies this overlay.
                                   tapTarget: Icon(
                                     Icons.construction_rounded,
-                                    size: 60,
+                                    size: useTabletLayout ? 60 : 50,
                                   ), // The widget that will be displayed as the tap target.
                                   title: Text(
                                     translate("drawer.task"),
@@ -246,14 +269,14 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 30),
+                                        fontSize: useTabletLayout ? 30 : 20),
                                   ),
                                   description: Text(translate("tour.task"),
                                       style: TextStyle(
                                           color: themeNotifier.isDark
                                               ? Colors.white
                                               : Colors.black,
-                                          fontSize: 18)),
+                                          fontSize: useTabletLayout ? 18 : 12)),
                                   backgroundColor:
                                       Color.fromARGB(255, 125, 164, 243),
                                   targetColor: themeNotifier.isDark
@@ -268,7 +291,7 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 40),
+                                        fontSize: useTabletLayout ? 40 : 24),
                                   )),
                               onTap: () => Navigator.of(context).push(
                                     MaterialPageRoute(
@@ -276,14 +299,14 @@ class _DrawersState extends State<Drawers> {
                                           LGtasks(),
                                     ),
                                   )),
-                          SizedBox(height: 24),
+                          SizedBox(height: useTabletLayout ? 24 : 0),
                           ListTile(
                               title: DescribedFeatureOverlay(
                                   featureId:
                                       'feature7', // Unique id that identifies this overlay.
                                   tapTarget: Icon(
                                     Icons.settings,
-                                    size: 60,
+                                    size: useTabletLayout ? 60 : 50,
                                   ), // The widget that will be displayed as the tap target.
                                   title: Text(
                                     translate("drawer.settings"),
@@ -291,14 +314,14 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 30),
+                                        fontSize: useTabletLayout ? 30 : 20),
                                   ),
                                   description: Text(translate("tour.settings"),
                                       style: TextStyle(
                                           color: themeNotifier.isDark
                                               ? Colors.white
                                               : Colors.black,
-                                          fontSize: 18)),
+                                          fontSize: useTabletLayout ? 18 : 12)),
                                   backgroundColor:
                                       Color.fromARGB(255, 125, 164, 243),
                                   targetColor: themeNotifier.isDark
@@ -313,7 +336,7 @@ class _DrawersState extends State<Drawers> {
                                         color: themeNotifier.isDark
                                             ? Colors.white
                                             : Colors.black,
-                                        fontSize: 40),
+                                        fontSize: useTabletLayout ? 40 : 24),
                                   )),
                               onTap: () => Navigator.of(context).push(
                                     MaterialPageRoute(
@@ -322,32 +345,36 @@ class _DrawersState extends State<Drawers> {
                                     ),
                                   )),
                           Container(
-                            margin: EdgeInsets.only(right: 100),
+                            margin: EdgeInsets.only(
+                                right: 100, bottom: useTabletLayout ? 0 : 20),
                             padding: EdgeInsets.only(top: 30),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                DayNightSwitch(
-                                  value: themeNotifier.isDark
-                                      ? val = true
-                                      : val = false,
-                                  moonImage: AssetImage('assets/moon.png'),
-                                  sunImage: AssetImage('assets/sun.png'),
-                                  sunColor: Colors.transparent,
-                                  moonColor: Colors.transparent,
-                                  dayColor: dayColor,
-                                  nightColor: nightColor,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      val =
-                                          themeNotifier.isDark ? value : !value;
-                                    });
-                                    themeNotifier.isDark
-                                        ? themeNotifier.isDark = false
-                                        : themeNotifier.isDark = true;
-                                  },
-                                ),
+                                Transform.scale(
+                                    scale: useTabletLayout ? 1 : 0.8,
+                                    child: DayNightSwitch(
+                                      value: themeNotifier.isDark
+                                          ? val = true
+                                          : val = false,
+                                      moonImage: AssetImage('assets/moon.png'),
+                                      sunImage: AssetImage('assets/sun.png'),
+                                      sunColor: Colors.transparent,
+                                      moonColor: Colors.transparent,
+                                      dayColor: dayColor,
+                                      nightColor: nightColor,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          val = themeNotifier.isDark
+                                              ? value
+                                              : !value;
+                                        });
+                                        themeNotifier.isDark
+                                            ? themeNotifier.isDark = false
+                                            : themeNotifier.isDark = true;
+                                      },
+                                    )),
                               ],
                             ),
                           ),
@@ -390,7 +417,7 @@ class _DrawersState extends State<Drawers> {
                   },
                   child: DefaultTextStyle(
                       style: TextStyle(
-                          fontSize: 30,
+                          fontSize: useTabletLayout ? 30 : 15,
                           color: themeNotifier.isDark
                               ? Colors.white
                               : Colors.black,

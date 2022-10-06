@@ -24,6 +24,11 @@ class _HelpScreenState extends State<HelpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
+
     return Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => Scaffold(
               extendBodyBehindAppBar: true,
@@ -35,7 +40,7 @@ class _HelpScreenState extends State<HelpScreen> {
                   leading: IconButton(
                     icon: Icon(
                       Icons.arrow_back_rounded,
-                      size: 50.0,
+                      size: useTabletLayout ? 50.0 : 35,
                     ),
                     onPressed: () {
                       Navigator.of(context).pop(
@@ -52,8 +57,8 @@ class _HelpScreenState extends State<HelpScreen> {
                   : Color.fromARGB(255, 204, 204, 204),
               body: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 120.0, vertical: 0),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: useTabletLayout ? 120.0 : 60, vertical: 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -65,7 +70,7 @@ class _HelpScreenState extends State<HelpScreen> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 40,
+                              fontSize: useTabletLayout ? 40 : 25,
                               color: themeNotifier.isDark
                                   ? Colors.white
                                   : Colors.black),
@@ -78,7 +83,7 @@ class _HelpScreenState extends State<HelpScreen> {
                             Text(
                               translate("help.instruction"),
                               style: TextStyle(
-                                fontSize: 24,
+                                fontSize: useTabletLayout ? 24 : 15,
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.start,
@@ -90,7 +95,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         padding: EdgeInsets.symmetric(vertical: 15.0),
                         child: Text(
                           translate("help.points"),
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: useTabletLayout ? 18 : 12),
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -101,7 +106,7 @@ class _HelpScreenState extends State<HelpScreen> {
                             Text(
                               translate("help.Troubleshooting"),
                               style: TextStyle(
-                                fontSize: 24,
+                                fontSize: useTabletLayout ? 24 : 15,
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.start,
@@ -113,7 +118,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         padding: EdgeInsets.symmetric(vertical: 15.0),
                         child: Text(
                           translate("help.points2"),
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: useTabletLayout ? 18 : 12),
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -124,7 +129,7 @@ class _HelpScreenState extends State<HelpScreen> {
                             Text(
                               translate("help.mapcontrols"),
                               style: TextStyle(
-                                fontSize: 24,
+                                fontSize: useTabletLayout ? 24 : 15,
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.start,
@@ -136,7 +141,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         padding: EdgeInsets.symmetric(vertical: 15.0),
                         child: Text(
                           translate("help.points3"),
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: useTabletLayout ? 18 : 12),
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -155,14 +160,15 @@ class _HelpScreenState extends State<HelpScreen> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 24),
+                                        fontSize: useTabletLayout ? 24 : 15),
                                   ),
                                   Padding(
                                     padding:
                                         EdgeInsets.symmetric(vertical: 15.0),
                                     child: Text(
                                       translate("help.check"),
-                                      style: TextStyle(fontSize: 18),
+                                      style: TextStyle(
+                                          fontSize: useTabletLayout ? 18 : 12),
                                       textAlign: TextAlign.start,
                                     ),
                                   ),
@@ -175,7 +181,7 @@ class _HelpScreenState extends State<HelpScreen> {
                                       translate("help.website"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 12,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),
@@ -194,7 +200,7 @@ class _HelpScreenState extends State<HelpScreen> {
                                       translate("help.github"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 12,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),
@@ -204,7 +210,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                         EdgeInsets.symmetric(vertical: 15.0),
                                     child: Text(
                                       translate("help.queries"),
-                                      style: TextStyle(fontSize: 18),
+                                      style: TextStyle(
+                                          fontSize: useTabletLayout ? 18 : 12),
                                       textAlign: TextAlign.start,
                                     ),
                                   ),
@@ -217,7 +224,7 @@ class _HelpScreenState extends State<HelpScreen> {
                                       translate("help.install"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 12,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),
@@ -227,7 +234,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                         EdgeInsets.symmetric(vertical: 15.0),
                                     child: Text(
                                       translate("help.SSH"),
-                                      style: TextStyle(fontSize: 18),
+                                      style: TextStyle(
+                                          fontSize: useTabletLayout ? 18 : 12),
                                       textAlign: TextAlign.start,
                                     ),
                                   ),
@@ -240,7 +248,7 @@ class _HelpScreenState extends State<HelpScreen> {
                                       translate("help.SSHlink"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 12,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),
@@ -265,14 +273,15 @@ class _HelpScreenState extends State<HelpScreen> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 24),
+                                        fontSize: useTabletLayout ? 24 : 15),
                                   ),
                                   Padding(
                                     padding:
                                         EdgeInsets.symmetric(vertical: 15.0),
                                     child: Text(
                                       translate("help.meanings"),
-                                      style: TextStyle(fontSize: 18),
+                                      style: TextStyle(
+                                          fontSize: useTabletLayout ? 18 : 12),
                                       textAlign: TextAlign.start,
                                     ),
                                   ),
@@ -290,7 +299,7 @@ class _HelpScreenState extends State<HelpScreen> {
                                         radius: 20,
                                         child: Icon(
                                           Icons.map,
-                                          size: 32.0,
+                                          size: useTabletLayout ? 32.0 : 24,
                                           color: Color.fromARGB(
                                               255, 204, 204, 204),
                                         ),
@@ -305,7 +314,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                         child: Text(
                                           translate("help.switch"),
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize:
+                                                  useTabletLayout ? 20 : 12,
                                               color: themeNotifier.isDark
                                                   ? Colors.white
                                                   : Colors.black,
@@ -331,7 +341,7 @@ class _HelpScreenState extends State<HelpScreen> {
                                         radius: 20,
                                         child: Icon(
                                           Icons.gps_fixed_rounded,
-                                          size: 32.0,
+                                          size: useTabletLayout ? 32.0 : 24,
                                           color: Color.fromARGB(
                                               255, 204, 204, 204),
                                         ),
@@ -346,7 +356,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                         child: Text(
                                           translate("help.origin"),
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize:
+                                                  useTabletLayout ? 20 : 12,
                                               color: themeNotifier.isDark
                                                   ? Colors.white
                                                   : Colors.black,
@@ -385,7 +396,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                         child: Text(
                                           translate("help.DataKML"),
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize:
+                                                  useTabletLayout ? 20 : 12,
                                               color: themeNotifier.isDark
                                                   ? Colors.white
                                                   : Colors.black,
@@ -424,7 +436,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                         child: Text(
                                           translate("help.orbit"),
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize:
+                                                  useTabletLayout ? 20 : 12,
                                               color: themeNotifier.isDark
                                                   ? Colors.white
                                                   : Colors.black,
@@ -463,7 +476,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                         child: Text(
                                           translate("help.land"),
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize:
+                                                  useTabletLayout ? 20 : 12,
                                               color: themeNotifier.isDark
                                                   ? Colors.white
                                                   : Colors.black,

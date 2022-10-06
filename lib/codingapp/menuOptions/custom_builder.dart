@@ -164,6 +164,10 @@ class _CustomBuilderState extends State<CustomBuilder>
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final double shortestSide = MediaQuery.of(context)
+            .size
+            .shortestSide; // get the shortest side of device
+        final bool useTabletLayout = shortestSide > 600.0; // check for tablet
         return BackdropFilter(
             filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 3),
             child: AlertDialog(
@@ -178,28 +182,28 @@ class _CustomBuilderState extends State<CustomBuilder>
                       padding: EdgeInsets.only(left: 10),
                       child: Image.asset(
                         isSuccess ? "assets/happy.png" : "assets/sad.png",
-                        width: 250,
-                        height: 250,
+                        width: useTabletLayout ? 250 : 125,
+                        height: useTabletLayout ? 250 : 125,
                       )),
                   Text(
                     '$title',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: useTabletLayout ? 25 : 18,
                       color: Color.fromARGB(255, 204, 204, 204),
                     ),
                   ),
                 ],
               ),
               content: SizedBox(
-                width: 320,
-                height: 180,
+                width: useTabletLayout ? 320 : 80,
+                height: useTabletLayout ? 180 : 120,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text('$msg',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: useTabletLayout ? 18 : 12,
                             color: Color.fromARGB(
                               255,
                               204,
@@ -209,7 +213,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                           ),
                           textAlign: TextAlign.center),
                       SizedBox(
-                          width: 300,
+                          width: useTabletLayout ? 300 : 150,
                           child: Padding(
                               padding: EdgeInsets.only(top: 10),
                               child: ElevatedButton(
@@ -218,7 +222,8 @@ class _CustomBuilderState extends State<CustomBuilder>
                                   shadowColor: Colors.black,
                                   primary:
                                       ui.Color.fromARGB(255, 220, 220, 220),
-                                  padding: EdgeInsets.all(15),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
                                 ),
                                 onPressed: () {
@@ -231,7 +236,8 @@ class _CustomBuilderState extends State<CustomBuilder>
                                             ? translate('continue')
                                             : translate('dismiss'),
                                         style: TextStyle(
-                                            fontSize: 20, color: Colors.black)),
+                                            fontSize: useTabletLayout ? 20 : 12,
+                                            color: Colors.black)),
                                   ],
                                 ),
                               ))),
@@ -262,12 +268,17 @@ class _CustomBuilderState extends State<CustomBuilder>
   }
 
   void _showToast(String x, bool blackandwhite) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0;
+    // check for tablet
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
           "$x",
           style: TextStyle(
-              fontSize: 24.0,
+              fontSize: useTabletLayout ? 24.0 : 14,
               fontWeight: FontWeight.normal,
               fontFamily: "GoogleSans",
               color: Colors.white),
@@ -276,7 +287,7 @@ class _CustomBuilderState extends State<CustomBuilder>
         backgroundColor: blackandwhite
             ? ui.Color.fromARGB(255, 22, 22, 22)
             : ui.Color.fromARGB(250, 43, 43, 43),
-        width: 500.0,
+        width: useTabletLayout ? 500.0 : 280,
         padding: const EdgeInsets.fromLTRB(
           35,
           20,
@@ -302,6 +313,10 @@ class _CustomBuilderState extends State<CustomBuilder>
   );
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     start = dateRange.start;
     end = dateRange.end;
     return Consumer<ThemeModel>(
@@ -315,7 +330,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                 leading: IconButton(
                   icon: Icon(
                     Icons.arrow_back_rounded,
-                    size: 50.0,
+                    size: useTabletLayout ? 50.0 : 35,
                   ),
                   onPressed: () {
                     Navigator.of(context).pop(
@@ -333,8 +348,8 @@ class _CustomBuilderState extends State<CustomBuilder>
             body: Stack(children: <Widget>[
               SingleChildScrollView(
                   child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 120.0, vertical: 0),
+                padding: EdgeInsets.symmetric(
+                    horizontal: useTabletLayout ? 120.0 : 60, vertical: 0),
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -347,7 +362,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 40,
+                              fontSize: useTabletLayout ? 40 : 25,
                               color: themeNotifier.isDark
                                   ? Colors.white
                                   : Colors.black),
@@ -361,12 +376,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                             Text(
                               translate("custombuilder.range"),
                               style: TextStyle(
-                                fontSize: 22,
+                                fontSize: useTabletLayout ? 22 : 17,
                               ),
                               textAlign: TextAlign.start,
                             ),
                             SizedBox(
-                              width: 20,
+                              width: useTabletLayout ? 20 : 10,
                             ),
                             // Container(
                             //   child: SizedBox(
@@ -395,7 +410,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                             Container(
                               margin: EdgeInsets.only(left: 10),
                               child: SizedBox(
-                                width: 380,
+                                width: useTabletLayout ? 380 : 300,
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     elevation: 2,
@@ -403,7 +418,8 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         ? Colors.black
                                         : Colors.grey.withOpacity(0.5),
                                     primary: Color.fromARGB(255, 232, 108, 99),
-                                    padding: EdgeInsets.all(10),
+                                    padding: EdgeInsets.all(
+                                        useTabletLayout ? 10 : 3),
                                     shape: StadiumBorder(),
                                   ),
                                   child: Wrap(
@@ -414,13 +430,14 @@ class _CustomBuilderState extends State<CustomBuilder>
                                           '${start.year}/${start.month}/${start.day}',
                                           style: TextStyle(
                                             color: Colors.black,
+                                            fontSize: useTabletLayout ? 24 : 18,
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 10,
+                                          width: useTabletLayout ? 10 : 0,
                                         ),
                                         Transform.scale(
-                                            scale: 1.5,
+                                            scale: useTabletLayout ? 1.5 : 1.3,
                                             child: Builder(
                                               builder: (context) => IconButton(
                                                 icon: Image.asset(
@@ -430,12 +447,13 @@ class _CustomBuilderState extends State<CustomBuilder>
                                               ),
                                             )),
                                         SizedBox(
-                                          width: 10,
+                                          width: useTabletLayout ? 10 : 0,
                                         ),
                                         Text(
                                           '${end.year}/${end.month}/${end.day}',
                                           style: TextStyle(
                                             color: Colors.black,
+                                            fontSize: useTabletLayout ? 24 : 18,
                                           ),
                                         )
                                       ]),
@@ -452,7 +470,10 @@ class _CustomBuilderState extends State<CustomBuilder>
                       ),
                       Container(
                         padding: EdgeInsets.only(
-                            bottom: 55, left: 50, right: 50, top: 45),
+                            bottom: useTabletLayout ? 55 : 27,
+                            left: useTabletLayout ? 50 : 25,
+                            right: useTabletLayout ? 50 : 25,
+                            top: useTabletLayout ? 45 : 23),
                         child: Column(
                           children: [
                             Row(
@@ -462,14 +483,13 @@ class _CustomBuilderState extends State<CustomBuilder>
                                 Text(
                                   translate("custombuilder.after"),
                                   style: TextStyle(
-                                      fontSize: 22, color: Colors.white),
+                                      fontSize: useTabletLayout ? 22 : 15,
+                                      color: Colors.white),
                                   textAlign: TextAlign.start,
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: 20,
-                            ),
+                            SizedBox(height: useTabletLayout ? 20 : 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -482,7 +502,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: tremor,
                                           onChanged: _onTremorsActive,
@@ -495,7 +515,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.tremor"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -525,7 +545,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: lavaflow,
                                           onChanged: _onlavaflowActive,
@@ -538,7 +558,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("info.aff.lava"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -564,7 +584,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: vents,
                                           onChanged: _onventsActive,
@@ -577,7 +597,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("info.aff.vents"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -600,7 +620,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: hydrography,
                                           onChanged: _onhydrographyActive,
@@ -613,12 +633,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("info.aff.hydro"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 10,
+                                        width: useTabletLayout ? 10 : 0,
                                       ),
                                       Text(
                                         "▬▬",
@@ -633,9 +653,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: 20,
-                            ),
+                            SizedBox(height: useTabletLayout ? 20 : 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -648,7 +666,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: buildings,
                                           onChanged: _onbuildingsActive,
@@ -661,12 +679,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.buildings"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 4,
+                                        width: useTabletLayout ? 4 : 0,
                                       ),
                                       const Icon(
                                         Icons.square_rounded,
@@ -690,7 +708,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: roads,
                                           onChanged: _onroadsActive,
@@ -703,12 +721,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.roads"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 4,
+                                        width: useTabletLayout ? 4 : 0,
                                       ),
                                       Text(
                                         "▬▬  ",
@@ -730,9 +748,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: 20,
-                            ),
+                            SizedBox(height: useTabletLayout ? 20 : 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -745,7 +761,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: maritime,
                                           onChanged: _onmaritimeActive,
@@ -758,7 +774,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.maritime"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -784,7 +800,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: closedroads,
                                           onChanged: _onclosedroadsActive,
@@ -797,12 +813,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.closed"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 4,
+                                        width: useTabletLayout ? 4 : 0,
                                       ),
                                       Builder(
                                         builder: (context) => IconButton(
@@ -823,7 +839,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: municipalities,
                                           onChanged: _onmunicipalitiesActive,
@@ -837,7 +853,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         translate(
                                             "info.situation.municipality"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -854,9 +870,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: 20,
-                            ),
+                            SizedBox(height: useTabletLayout ? 20 : 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -869,7 +883,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: maineruptive,
                                           onChanged: _onmaineruptiveActive,
@@ -882,21 +896,24 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.main"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
-                                      Opacity(
-                                        opacity: 0.7,
-                                        child: Builder(
-                                          builder: (context) => IconButton(
-                                            icon: Image.asset(
-                                                'assets/icons/main_eruptive_event.png'),
-                                            iconSize: 20,
-                                            onPressed: () => {},
+                                      Transform.scale(
+                                        scale: useTabletLayout ? 1 : 0.8,
+                                        child: Opacity(
+                                          opacity: 0.7,
+                                          child: Builder(
+                                            builder: (context) => IconButton(
+                                              icon: Image.asset(
+                                                  'assets/icons/main_eruptive_event.png'),
+                                              iconSize: 20,
+                                              onPressed: () => {},
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                      )
                                     ],
                                   ),
                                 ),
@@ -908,7 +925,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: naturalland,
                                           onChanged: _onnaturallandActive,
@@ -921,12 +938,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.natural"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 4,
+                                        width: useTabletLayout ? 4 : 0,
                                       ),
                                       Builder(
                                         builder: (context) => IconButton(
@@ -947,7 +964,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: physiography,
                                           onChanged: _onphysiographyActive,
@@ -960,12 +977,12 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.physiography"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 4,
+                                        width: useTabletLayout ? 4 : 0,
                                       ),
                                       Builder(
                                         builder: (context) => IconButton(
@@ -986,7 +1003,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Transform.scale(
-                                        scale: 1.3,
+                                        scale: useTabletLayout ? 1.3 : 1,
                                         child: Checkbox(
                                           value: areaofinterest,
                                           onChanged: _onareaofinterestActive,
@@ -999,17 +1016,17 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       Text(
                                         translate("custombuilder.area"),
                                         style: TextStyle(
-                                          fontSize: 18.0,
+                                          fontSize: useTabletLayout ? 18.0 : 12,
                                           color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 4,
+                                        width: useTabletLayout ? 4 : 0,
                                       ),
-                                      const Icon(
+                                      Icon(
                                         Icons.rectangle_outlined,
                                         color: Color.fromARGB(255, 72, 188, 26),
-                                        size: 46,
+                                        size: useTabletLayout ? 46 : 29.9,
                                       ),
                                     ],
                                   ),
@@ -1038,7 +1055,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                           ],
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: useTabletLayout ? 30 : 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -1046,16 +1063,16 @@ class _CustomBuilderState extends State<CustomBuilder>
                           isloading
                               ? CupertinoActivityIndicator(
                                   animating: true,
-                                  radius: 20,
+                                  radius: useTabletLayout ? 20 : 15,
                                 )
                               : SizedBox(
-                                  width: 40,
+                                  width: useTabletLayout ? 40 : 30,
                                 ),
                           SizedBox(
-                            width: 25,
+                            width: useTabletLayout ? 25 : 20,
                           ),
                           SizedBox(
-                            width: 300,
+                            width: useTabletLayout ? 300 : 240,
                             child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
@@ -1065,7 +1082,8 @@ class _CustomBuilderState extends State<CustomBuilder>
                                   primary: themeNotifier.isDark
                                       ? Color.fromARGB(255, 30, 30, 30)
                                       : Colors.white,
-                                  padding: EdgeInsets.all(15),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 10),
                                   shape: StadiumBorder(),
                                 ),
                                 child: Wrap(
@@ -1074,11 +1092,13 @@ class _CustomBuilderState extends State<CustomBuilder>
                                       width: 7,
                                     ),
                                     Text(translate('Track.visual'),
-                                        style: TextStyle(fontSize: 26)),
+                                        style: TextStyle(
+                                            fontSize:
+                                                useTabletLayout ? 26 : 20)),
                                     Icon(
                                       Icons.location_on_sharp,
                                       color: Color.fromARGB(255, 228, 6, 9),
-                                      size: 30.0,
+                                      size: useTabletLayout ? 30.0 : 26,
                                     ),
                                   ],
                                 ),
@@ -1136,7 +1156,7 @@ class _CustomBuilderState extends State<CustomBuilder>
                                 builder: (context) => IconButton(
                                   icon:
                                       Image.asset('assets/icons/download.png'),
-                                  iconSize: 55,
+                                  iconSize: useTabletLayout ? 55 : 40,
                                   onPressed: () async {
                                     setState(() {
                                       String customDataFinal = "";
@@ -1202,6 +1222,9 @@ class _CustomBuilderState extends State<CustomBuilder>
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: useTabletLayout ? 0 : 20,
+                      ),
                     ],
                   ),
                 ),
@@ -1209,15 +1232,15 @@ class _CustomBuilderState extends State<CustomBuilder>
               Consumer<ThemeModel>(
                 builder: (context, ThemeModel themeNotifier, child) =>
                     Positioned(
-                  top: 288.5,
-                  right: 0,
+                  top: useTabletLayout ? 288.5 : 100,
+                  right: useTabletLayout ? 0 : 5,
                   child: Card(
                     elevation: 0,
                     child: Container(
                       color: themeNotifier.isDark
                           ? Color.fromARGB(255, 30, 30, 30)
                           : Color.fromARGB(255, 68, 68, 68),
-                      width: 69.5,
+                      width: useTabletLayout ? 69.5 : 60,
                       height: 262.5,
                       child: Column(
                         children: <Widget>[

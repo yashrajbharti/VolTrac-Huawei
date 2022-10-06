@@ -37,7 +37,7 @@ final isLightTheme = ThemeData(
   primarySwatch: myColour,
   fontFamily: 'GoogleSans',
   textTheme: TextTheme(
-    button: TextStyle(fontSize: 24.0),
+    button: TextStyle(fontSize: 18.0),
   ),
 );
 final isDarkTheme = ThemeData(
@@ -47,6 +47,6 @@ final isDarkTheme = ThemeData(
   primarySwatch: yourColour,
   fontFamily: 'GoogleSans',
   textTheme: TextTheme(
-    button: TextStyle(fontSize: 24.0),
+    button: TextStyle(fontSize: 18.0),
   ),
 );

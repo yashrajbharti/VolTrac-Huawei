@@ -315,6 +315,10 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return Stack(
       children: <Widget>[
         GoogleMap(
@@ -352,27 +356,27 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
             alignment: Alignment.topRight,
             child: Column(
               children: <Widget>[
-                SizedBox(height: 57.0),
+                SizedBox(height: useTabletLayout ? 57.0 : 10),
                 FloatingActionButton(
                   heroTag: "btn1",
                   onPressed: _onMapTypeButtonPressed,
                   materialTapTargetSize: MaterialTapTargetSize.padded,
                   backgroundColor: Color.fromARGB(255, 75, 127, 82),
-                  child: const Icon(
+                  child: Icon(
                     Icons.map,
-                    size: 36.0,
+                    size: useTabletLayout ? 36.0 : 30,
                     color: Color.fromARGB(255, 204, 204, 204),
                   ),
                 ),
-                SizedBox(height: 16.0),
+                SizedBox(height: useTabletLayout ? 16.0 : 8),
                 FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: _ongpsfixedButtonPressed,
                   materialTapTargetSize: MaterialTapTargetSize.padded,
                   backgroundColor: Color.fromARGB(255, 75, 127, 82),
-                  child: const Icon(
+                  child: Icon(
                     Icons.gps_fixed_rounded,
-                    size: 36.0,
+                    size: useTabletLayout ? 36.0 : 30,
                     color: Color.fromARGB(255, 204, 204, 204),
                   ),
                 ),
@@ -381,22 +385,22 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
           ),
         ),
         Positioned(
-          bottom: 80,
-          right: 20,
+          bottom: useTabletLayout ? 80 : 10,
+          right: useTabletLayout ? 20 : 12,
           child: Card(
             elevation: 0,
             child: Container(
               color: Color.fromARGB(255, 68, 68, 68),
-              width: 59.5,
-              height: 124.25,
+              width: useTabletLayout ? 59.5 : 55,
+              height: useTabletLayout ? 124.25 : 112,
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 6),
+                  SizedBox(height: useTabletLayout ? 6 : 0),
                   IconButton(
                       icon: Icon(
                         Icons.add,
                         color: Color.fromARGB(255, 204, 204, 204),
-                        size: 32,
+                        size: useTabletLayout ? 32 : 24,
                       ),
                       onPressed: () async {
                         var currentZoomLevel =
@@ -421,7 +425,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
                   IconButton(
                       icon: Icon(
                         Icons.remove,
-                        size: 32,
+                        size: useTabletLayout ? 32 : 24,
                         color: Color.fromARGB(255, 204, 204, 204),
                       ),
                       onPressed: () async {

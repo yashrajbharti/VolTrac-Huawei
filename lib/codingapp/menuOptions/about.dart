@@ -24,6 +24,11 @@ class _AboutScreenState extends State<AboutScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
+
     return Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => Scaffold(
               extendBodyBehindAppBar: true,
@@ -35,7 +40,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   leading: IconButton(
                     icon: Icon(
                       Icons.arrow_back_rounded,
-                      size: 50.0,
+                      size: useTabletLayout ? 50.0 : 35,
                     ),
                     onPressed: () {
                       Navigator.of(context).pop(
@@ -65,7 +70,7 @@ class _AboutScreenState extends State<AboutScreen> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 40,
+                              fontSize: useTabletLayout ? 40 : 25,
                               color: themeNotifier.isDark
                                   ? Colors.white
                                   : Colors.black),
@@ -74,14 +79,14 @@ class _AboutScreenState extends State<AboutScreen> {
                       Builder(
                           builder: (context) => IconButton(
                               icon: Image.asset('assets/volcano.png'),
-                              iconSize: 410,
+                              iconSize: useTabletLayout ? 410 : 200,
                               onPressed: null)),
                       Linkify(
                         onOpen: _onOpen,
                         text: translate("About.author"),
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 24,
+                            fontSize: useTabletLayout ? 24 : 20,
                             color: themeNotifier.isDark
                                 ? Colors.white
                                 : Colors.black),
@@ -90,7 +95,7 @@ class _AboutScreenState extends State<AboutScreen> {
                               ? Colors.white
                               : Colors.black,
                           fontWeight: FontWeight.w500,
-                          fontSize: 24,
+                          fontSize: useTabletLayout ? 24 : 20,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -107,7 +112,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 24,
+                                      fontSize: useTabletLayout ? 24 : 20,
                                       color: Color.fromARGB(255, 97, 146, 245)),
                                 )),
                             GestureDetector(
@@ -120,7 +125,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 24,
+                                      fontSize: useTabletLayout ? 24 : 20,
                                       color: Color.fromARGB(255, 97, 146, 245)),
                                 )),
                             GestureDetector(
@@ -133,7 +138,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 24,
+                                      fontSize: useTabletLayout ? 24 : 20,
                                       color: Color.fromARGB(255, 97, 146, 245)),
                                 )),
                             GestureDetector(
@@ -146,7 +151,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 24,
+                                      fontSize: useTabletLayout ? 24 : 20,
                                       color: Color.fromARGB(255, 97, 146, 245)),
                                 )),
                           ]),
@@ -154,7 +159,7 @@ class _AboutScreenState extends State<AboutScreen> {
                         translate("About.lab"),
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 24,
+                            fontSize: useTabletLayout ? 24 : 20,
                             color: themeNotifier.isDark
                                 ? Colors.white
                                 : Colors.black),
@@ -165,7 +170,7 @@ class _AboutScreenState extends State<AboutScreen> {
                           child: Builder(
                               builder: (context) => IconButton(
                                   icon: Image.asset('assets/icons/logos.png'),
-                                  iconSize: 580,
+                                  iconSize: useTabletLayout ? 580 : 360,
                                   onPressed: null))),
                       Container(
                         child: Row(
@@ -174,7 +179,7 @@ class _AboutScreenState extends State<AboutScreen> {
                             Text(
                               translate("About.all"),
                               style: TextStyle(
-                                fontSize: 24,
+                                fontSize: useTabletLayout ? 24 : 20,
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.start,
@@ -191,13 +196,13 @@ class _AboutScreenState extends State<AboutScreen> {
                             color: themeNotifier.isDark
                                 ? Colors.white
                                 : Colors.black,
-                            fontSize: 18,
+                            fontSize: useTabletLayout ? 18 : 12,
                           ),
                           linkStyle: TextStyle(
                               color: themeNotifier.isDark
                                   ? Colors.white
                                   : Colors.black,
-                              fontSize: 18),
+                              fontSize: useTabletLayout ? 18 : 12),
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -215,14 +220,15 @@ class _AboutScreenState extends State<AboutScreen> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 24),
+                                        fontSize: useTabletLayout ? 24 : 15),
                                   ),
                                   Padding(
                                     padding:
                                         EdgeInsets.symmetric(vertical: 15.0),
                                     child: Text(
                                       translate("About.check"),
-                                      style: TextStyle(fontSize: 18),
+                                      style: TextStyle(
+                                          fontSize: useTabletLayout ? 18 : 12),
                                       textAlign: TextAlign.start,
                                     ),
                                   ),
@@ -235,7 +241,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                       translate("About.github"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 15,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),
@@ -254,7 +260,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                       translate("About.privacy"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 15,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),
@@ -279,14 +285,15 @@ class _AboutScreenState extends State<AboutScreen> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 24),
+                                        fontSize: useTabletLayout ? 24 : 15),
                                   ),
                                   Padding(
                                     padding:
                                         EdgeInsets.symmetric(vertical: 15.0),
                                     child: Text(
                                       translate("About.resource"),
-                                      style: TextStyle(fontSize: 18),
+                                      style: TextStyle(
+                                          fontSize: useTabletLayout ? 18 : 12),
                                       textAlign: TextAlign.start,
                                     ),
                                   ),
@@ -299,7 +306,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                       translate("Flaticon | Freepik"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 15,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),
@@ -318,7 +325,7 @@ class _AboutScreenState extends State<AboutScreen> {
                                       translate("Icon Archive"),
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 15,
                                           color: Color.fromARGB(
                                               255, 97, 146, 245)),
                                     ),

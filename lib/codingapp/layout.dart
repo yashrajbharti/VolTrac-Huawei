@@ -16,11 +16,15 @@ class Layout extends StatefulWidget {
 class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(50.0),
+            preferredSize: Size.fromHeight(useTabletLayout ? 50.0 : 36.0),
             child: AppBar(
               automaticallyImplyLeading: false,
               elevation: 0,
@@ -35,30 +39,42 @@ class _LayoutState extends State<Layout> {
                       color: themeNotifier.isDark
                           ? Color.fromARGB(255, 30, 30, 30)
                           : Color.fromARGB(255, 149, 149, 149),
-                      padding: const EdgeInsets.symmetric(vertical: 50.0),
+                      padding: EdgeInsets.symmetric(vertical: 50.0),
                       child: TabBar(
                         tabs: <Widget>[
                           Tab(
-                              child: Text(
-                            translate('tabs.track'),
-                            style: TextStyle(fontSize: 40),
-                          )),
+                              child: Transform.translate(
+                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                      useTabletLayout ? 0.0 : 5.0),
+                                  child: Text(
+                                    translate('tabs.track'),
+                                    style: TextStyle(
+                                        fontSize: useTabletLayout ? 40 : 25),
+                                  ))),
                           Tab(
-                            child: Text(
-                              translate('tabs.map'),
-                              style: TextStyle(fontSize: 40),
-                            ),
+                            child: Transform.translate(
+                                offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                    useTabletLayout ? 0.0 : 5.0),
+                                child: Text(
+                                  translate('tabs.map'),
+                                  style: TextStyle(
+                                      fontSize: useTabletLayout ? 40 : 25),
+                                )),
                           ),
                           Tab(
-                            child: Text(
-                              translate('tabs.info'),
-                              style: TextStyle(fontSize: 40),
-                            ),
+                            child: Transform.translate(
+                                offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                                    useTabletLayout ? 0.0 : 5.0),
+                                child: Text(
+                                  translate('tabs.info'),
+                                  style: TextStyle(
+                                      fontSize: useTabletLayout ? 40 : 25),
+                                )),
                           ),
                         ],
                         indicatorColor: Colors.white,
                         indicatorSize: TabBarIndicatorSize.label,
-                        indicatorWeight: 5.0,
+                        indicatorWeight: useTabletLayout ? 5.0 : 15.0,
                         indicatorPadding: EdgeInsets.only(top: 5),
                       ),
                     ),

@@ -42,10 +42,14 @@ Future savekml_Task(String kmlname) async {
 
 class _LGtasksState extends State<LGtasks> {
   showAlertDialog(
-      String title, String msg, bool isSuccess, bool blackandwhite) {
+      String title, String msg, bool blackandwhite, bool isSuccess) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final double shortestSide = MediaQuery.of(context)
+            .size
+            .shortestSide; // get the shortest side of device
+        final bool useTabletLayout = shortestSide > 600.0; // check for tablet
         return BackdropFilter(
             filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 3),
             child: AlertDialog(
@@ -60,28 +64,28 @@ class _LGtasksState extends State<LGtasks> {
                       padding: EdgeInsets.only(left: 10),
                       child: Image.asset(
                         isSuccess ? "assets/happy.png" : "assets/sad.png",
-                        width: 250,
-                        height: 250,
+                        width: useTabletLayout ? 250 : 125,
+                        height: useTabletLayout ? 250 : 125,
                       )),
                   Text(
                     '$title',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: useTabletLayout ? 25 : 18,
                       color: Color.fromARGB(255, 204, 204, 204),
                     ),
                   ),
                 ],
               ),
               content: SizedBox(
-                width: 320,
-                height: 180,
+                width: useTabletLayout ? 320 : 80,
+                height: useTabletLayout ? 180 : 120,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text('$msg',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: useTabletLayout ? 18 : 12,
                             color: Color.fromARGB(
                               255,
                               204,
@@ -91,7 +95,7 @@ class _LGtasksState extends State<LGtasks> {
                           ),
                           textAlign: TextAlign.center),
                       SizedBox(
-                          width: 300,
+                          width: useTabletLayout ? 300 : 150,
                           child: Padding(
                               padding: EdgeInsets.only(top: 10),
                               child: ElevatedButton(
@@ -100,7 +104,8 @@ class _LGtasksState extends State<LGtasks> {
                                   shadowColor: Colors.black,
                                   primary:
                                       ui.Color.fromARGB(255, 220, 220, 220),
-                                  padding: EdgeInsets.all(15),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
                                 ),
                                 onPressed: () {
@@ -113,7 +118,8 @@ class _LGtasksState extends State<LGtasks> {
                                             ? translate('continue')
                                             : translate('dismiss'),
                                         style: TextStyle(
-                                            fontSize: 20, color: Colors.black)),
+                                            fontSize: useTabletLayout ? 20 : 12,
+                                            color: Colors.black)),
                                   ],
                                 ),
                               ))),
@@ -129,6 +135,10 @@ class _LGtasksState extends State<LGtasks> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final double shortestSide = MediaQuery.of(context)
+            .size
+            .shortestSide; // get the shortest side of device
+        final bool useTabletLayout = shortestSide > 600.0; // check for tablet
         return BackdropFilter(
             filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 3),
             child: AlertDialog(
@@ -142,28 +152,28 @@ class _LGtasksState extends State<LGtasks> {
                   Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Image.asset("assets/sure.png",
-                          width: 250,
-                          height: 250,
+                          width: useTabletLayout ? 250 : 125,
+                          height: useTabletLayout ? 250 : 125,
                           opacity: AlwaysStoppedAnimation<double>(0.8))),
                   Text(
                     '$title',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: useTabletLayout ? 25 : 18,
                       color: Color.fromARGB(255, 204, 204, 204),
                     ),
                   ),
                 ],
               ),
               content: SizedBox(
-                width: 320,
-                height: 180,
+                width: useTabletLayout ? 320 : 80,
+                height: useTabletLayout ? 180 : 120,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text('$msg',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: useTabletLayout ? 18 : 12,
                             color: Color.fromARGB(
                               255,
                               204,
@@ -173,7 +183,7 @@ class _LGtasksState extends State<LGtasks> {
                           ),
                           textAlign: TextAlign.center),
                       SizedBox(
-                          width: 300,
+                          width: useTabletLayout ? 300 : 150,
                           child: Padding(
                               padding: EdgeInsets.only(top: 10),
                               child: ElevatedButton(
@@ -182,7 +192,8 @@ class _LGtasksState extends State<LGtasks> {
                                   shadowColor: Colors.black,
                                   primary:
                                       ui.Color.fromARGB(255, 220, 220, 220),
-                                  padding: EdgeInsets.all(15),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
                                 ),
                                 onPressed: () {
@@ -254,14 +265,16 @@ class _LGtasksState extends State<LGtasks> {
                                   children: <Widget>[
                                     Text(translate('Tasks.Yes'),
                                         style: TextStyle(
-                                            fontSize: 20, color: Colors.black)),
+                                            fontSize: useTabletLayout ? 20 : 12,
+                                            color: Colors.black)),
                                   ],
                                 ),
                               ))),
                       SizedBox(
-                          width: 300,
+                          width: useTabletLayout ? 300 : 150,
                           child: Padding(
-                              padding: EdgeInsets.only(top: 10),
+                              padding: EdgeInsets.only(
+                                  top: useTabletLayout ? 10 : 0),
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
@@ -272,7 +285,8 @@ class _LGtasksState extends State<LGtasks> {
                                         ui.Color.fromARGB(255, 125, 164, 243),
                                   ),
                                   primary: Colors.transparent,
-                                  padding: EdgeInsets.all(15),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 5),
                                   shape: StadiumBorder(),
                                 ),
                                 onPressed: () {
@@ -282,7 +296,7 @@ class _LGtasksState extends State<LGtasks> {
                                   children: <Widget>[
                                     Text(translate('Tasks.No'),
                                         style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: useTabletLayout ? 20 : 12,
                                           color: Color.fromARGB(
                                               255, 125, 164, 243),
                                         )),
@@ -298,6 +312,10 @@ class _LGtasksState extends State<LGtasks> {
 
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => Scaffold(
               extendBodyBehindAppBar: true,
@@ -309,7 +327,7 @@ class _LGtasksState extends State<LGtasks> {
                   leading: IconButton(
                     icon: Icon(
                       Icons.arrow_back_rounded,
-                      size: 50.0,
+                      size: useTabletLayout ? 50.0 : 35,
                     ),
                     onPressed: () {
                       Navigator.of(context).pop(
@@ -331,11 +349,12 @@ class _LGtasksState extends State<LGtasks> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                          padding: EdgeInsets.only(bottom: 10.0, top: 50),
+                          padding: EdgeInsets.only(
+                              bottom: 10.0, top: useTabletLayout ? 50 : 30),
                           child: Text(
                             translate("Tasks.LG"),
                             style: TextStyle(
-                              fontSize: 42,
+                              fontSize: useTabletLayout ? 42 : 25,
                               fontWeight: FontWeight.bold,
                               color: themeNotifier.isDark
                                   ? Colors.white
@@ -343,15 +362,16 @@ class _LGtasksState extends State<LGtasks> {
                             ),
                           )),
                       Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 20.0, horizontal: 60.0),
+                        margin: EdgeInsets.symmetric(
+                            vertical: useTabletLayout ? 20.0 : 5,
+                            horizontal: 60.0),
                         child: Column(
                           children: [
                             Row(
                               children: [
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
@@ -360,7 +380,8 @@ class _LGtasksState extends State<LGtasks> {
                                           : Colors.grey.withOpacity(0.5),
                                       primary:
                                           Color.fromARGB(255, 223, 161, 160),
-                                      padding: EdgeInsets.all(15),
+                                      padding: EdgeInsets.all(
+                                          useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
                                     ),
                                     child: Wrap(
@@ -370,7 +391,8 @@ class _LGtasksState extends State<LGtasks> {
                                         ),
                                         Text(translate("Tasks.Logo"),
                                             style: TextStyle(
-                                                fontSize: 39,
+                                                fontSize:
+                                                    useTabletLayout ? 39 : 25,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0))),
                                       ],
@@ -398,8 +420,8 @@ class _LGtasksState extends State<LGtasks> {
                                 ),
                                 Spacer(),
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
@@ -408,7 +430,8 @@ class _LGtasksState extends State<LGtasks> {
                                             : Colors.grey.withOpacity(0.5),
                                         primary:
                                             Color.fromARGB(255, 230, 154, 224),
-                                        padding: EdgeInsets.all(15),
+                                        padding: EdgeInsets.all(
+                                            useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),
                                       ),
                                       child: Wrap(
@@ -418,7 +441,8 @@ class _LGtasksState extends State<LGtasks> {
                                           ),
                                           Text(translate("Tasks.Clean"),
                                               style: TextStyle(
-                                                  fontSize: 39,
+                                                  fontSize:
+                                                      useTabletLayout ? 39 : 25,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],
@@ -445,8 +469,8 @@ class _LGtasksState extends State<LGtasks> {
                                 ),
                                 Spacer(),
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
@@ -455,7 +479,8 @@ class _LGtasksState extends State<LGtasks> {
                                           : Colors.grey.withOpacity(0.5),
                                       primary:
                                           Color.fromARGB(255, 125, 164, 243),
-                                      padding: EdgeInsets.all(15),
+                                      padding: EdgeInsets.all(
+                                          useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
                                     ),
                                     child: Wrap(
@@ -465,7 +490,8 @@ class _LGtasksState extends State<LGtasks> {
                                         ),
                                         Text(translate("Tasks.Save"),
                                             style: TextStyle(
-                                                fontSize: 39,
+                                                fontSize:
+                                                    useTabletLayout ? 39 : 25,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0))),
                                       ],
@@ -528,14 +554,14 @@ class _LGtasksState extends State<LGtasks> {
                               ],
                             ),
                             SizedBox(
-                              height: 30,
+                              height: useTabletLayout ? 30 : 8,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
@@ -543,7 +569,8 @@ class _LGtasksState extends State<LGtasks> {
                                           ? Colors.black
                                           : Colors.grey.withOpacity(0.5),
                                       primary: Color.fromARGB(255, 3, 200, 196),
-                                      padding: EdgeInsets.all(15),
+                                      padding: EdgeInsets.all(
+                                          useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
                                     ),
                                     child: Wrap(
@@ -553,7 +580,8 @@ class _LGtasksState extends State<LGtasks> {
                                         ),
                                         Text(translate("Tasks.set"),
                                             style: TextStyle(
-                                                fontSize: 39,
+                                                fontSize:
+                                                    useTabletLayout ? 39 : 25,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0))),
                                       ],
@@ -568,8 +596,8 @@ class _LGtasksState extends State<LGtasks> {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
@@ -578,7 +606,8 @@ class _LGtasksState extends State<LGtasks> {
                                             : Colors.grey.withOpacity(0.5),
                                         primary:
                                             Color.fromARGB(255, 238, 163, 123),
-                                        padding: EdgeInsets.all(15),
+                                        padding: EdgeInsets.all(
+                                            useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),
                                       ),
                                       child: Wrap(
@@ -588,7 +617,8 @@ class _LGtasksState extends State<LGtasks> {
                                           ),
                                           Text(translate("Tasks.reset"),
                                               style: TextStyle(
-                                                  fontSize: 39,
+                                                  fontSize:
+                                                      useTabletLayout ? 39 : 25,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],
@@ -605,13 +635,13 @@ class _LGtasksState extends State<LGtasks> {
                               ],
                             ),
                             SizedBox(
-                              height: 30,
+                              height: useTabletLayout ? 30 : 8,
                             ),
                             Row(
                               children: [
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
@@ -620,7 +650,8 @@ class _LGtasksState extends State<LGtasks> {
                                           : Colors.grey.withOpacity(0.5),
                                       primary:
                                           Color.fromARGB(255, 115, 184, 117),
-                                      padding: EdgeInsets.all(15),
+                                      padding: EdgeInsets.all(
+                                          useTabletLayout ? 15 : 5),
                                       shape: StadiumBorder(),
                                     ),
                                     child: Wrap(
@@ -631,7 +662,8 @@ class _LGtasksState extends State<LGtasks> {
                                         Text(
                                           translate("Tasks.Relaunch"),
                                           style: TextStyle(
-                                              fontSize: 39,
+                                              fontSize:
+                                                  useTabletLayout ? 39 : 25,
                                               color:
                                                   Color.fromARGB(255, 0, 0, 0)),
                                         ),
@@ -649,8 +681,8 @@ class _LGtasksState extends State<LGtasks> {
                                 ),
                                 Spacer(),
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
@@ -659,7 +691,8 @@ class _LGtasksState extends State<LGtasks> {
                                             : Colors.grey.withOpacity(0.5),
                                         primary:
                                             Color.fromARGB(255, 240, 226, 103),
-                                        padding: EdgeInsets.all(15),
+                                        padding: EdgeInsets.all(
+                                            useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),
                                       ),
                                       child: Wrap(
@@ -669,7 +702,8 @@ class _LGtasksState extends State<LGtasks> {
                                           ),
                                           Text(translate("Tasks.Reboot"),
                                               style: TextStyle(
-                                                  fontSize: 39,
+                                                  fontSize:
+                                                      useTabletLayout ? 39 : 25,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],
@@ -685,8 +719,8 @@ class _LGtasksState extends State<LGtasks> {
                                 ),
                                 Spacer(),
                                 SizedBox(
-                                  width: 335,
-                                  height: 175,
+                                  width: useTabletLayout ? 335 : 190,
+                                  height: useTabletLayout ? 175 : 94,
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         elevation: 2,
@@ -695,7 +729,8 @@ class _LGtasksState extends State<LGtasks> {
                                             : Colors.grey.withOpacity(0.5),
                                         primary:
                                             Color.fromARGB(255, 232, 108, 99),
-                                        padding: EdgeInsets.all(15),
+                                        padding: EdgeInsets.all(
+                                            useTabletLayout ? 15 : 5),
                                         shape: StadiumBorder(),
                                       ),
                                       child: Wrap(
@@ -705,7 +740,8 @@ class _LGtasksState extends State<LGtasks> {
                                           ),
                                           Text(translate("Tasks.Shutdown"),
                                               style: TextStyle(
-                                                  fontSize: 39,
+                                                  fontSize:
+                                                      useTabletLayout ? 39 : 25,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],

@@ -15,6 +15,11 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
+
     return Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => SplashScreenView(
               duration: 5000,
@@ -23,14 +28,14 @@ class _SplashState extends State<Splash> {
               textType: TextType.TyperAnimatedText,
               textStyle: TextStyle(
                 fontFamily: 'GoogleSans',
-                fontSize: 55,
+                fontSize: useTabletLayout ? 55 : 32,
                 color: Color.fromARGB(255, 204, 204, 204),
               ),
               imageSrc: "assets/icons/volcanoandlogo.png",
               backgroundColor: themeNotifier.isDark
                   ? Color.fromARGB(255, 16, 16, 16)
                   : Color.fromARGB(255, 30, 30, 30),
-              imageSize: 650,
+              imageSize: useTabletLayout ? 650 : 280,
               // loaderColor: const Color.fromARGB(255, 204, 204, 204),
             ));
   }

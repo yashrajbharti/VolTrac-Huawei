@@ -95,6 +95,10 @@ class SettingsState extends State<Settings> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final double shortestSide = MediaQuery.of(context)
+            .size
+            .shortestSide; // get the shortest side of device
+        final bool useTabletLayout = shortestSide > 600.0; // check for tablet
         return Consumer<ThemeModel>(
             builder: (context, ThemeModel themeNotifier, child) =>
                 BackdropFilter(
@@ -113,28 +117,28 @@ class SettingsState extends State<Settings> {
                                 isSuccess
                                     ? "assets/happy.png"
                                     : "assets/sad.png",
-                                width: 250,
-                                height: 250,
+                                width: useTabletLayout ? 250 : 125,
+                                height: useTabletLayout ? 250 : 125,
                               )),
                           Text(
                             '$title',
                             style: TextStyle(
-                              fontSize: 25,
+                              fontSize: useTabletLayout ? 25 : 18,
                               color: Color.fromARGB(255, 204, 204, 204),
                             ),
                           ),
                         ],
                       ),
                       content: SizedBox(
-                        width: 320,
-                        height: 180,
+                        width: useTabletLayout ? 320 : 80,
+                        height: useTabletLayout ? 180 : 120,
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text('$msg',
                                   style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: useTabletLayout ? 18 : 12,
                                     color: Color.fromARGB(
                                       255,
                                       204,
@@ -144,7 +148,7 @@ class SettingsState extends State<Settings> {
                                   ),
                                   textAlign: TextAlign.center),
                               SizedBox(
-                                  width: 300,
+                                  width: useTabletLayout ? 300 : 150,
                                   child: Padding(
                                       padding: EdgeInsets.only(top: 10),
                                       child: ElevatedButton(
@@ -153,7 +157,8 @@ class SettingsState extends State<Settings> {
                                           shadowColor: Colors.black,
                                           primary: ui.Color.fromARGB(
                                               255, 220, 220, 220),
-                                          padding: EdgeInsets.all(15),
+                                          padding: EdgeInsets.all(
+                                              useTabletLayout ? 15 : 5),
                                           shape: StadiumBorder(),
                                         ),
                                         onPressed: () {
@@ -166,7 +171,9 @@ class SettingsState extends State<Settings> {
                                                     ? translate('continue')
                                                     : translate('dismiss'),
                                                 style: TextStyle(
-                                                    fontSize: 20,
+                                                    fontSize: useTabletLayout
+                                                        ? 20
+                                                        : 12,
                                                     color: Colors.black)),
                                           ],
                                         ),
@@ -193,7 +200,10 @@ class SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     if (!loaded) init();
     var localizationDelegate = LocalizedApp.of(context).delegate;
-
+    final double shortestSide = MediaQuery.of(context)
+        .size
+        .shortestSide; // get the shortest side of device
+    final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => Scaffold(
             extendBodyBehindAppBar: true,
@@ -208,7 +218,7 @@ class SettingsState extends State<Settings> {
                 leading: IconButton(
                   icon: Icon(
                     Icons.arrow_back_rounded,
-                    size: 50.0,
+                    size: useTabletLayout ? 50.0 : 35,
                   ),
                   onPressed: () {
                     Navigator.of(context).push(
@@ -222,7 +232,8 @@ class SettingsState extends State<Settings> {
             ),
             body: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 120.0),
+                padding: EdgeInsets.symmetric(
+                    vertical: 0.0, horizontal: useTabletLayout ? 120.0 : 90),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -236,7 +247,8 @@ class SettingsState extends State<Settings> {
                         translate("Settings.title"),
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 40, fontWeight: FontWeight.bold),
+                            fontSize: useTabletLayout ? 40 : 25,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     Padding(
@@ -249,24 +261,26 @@ class SettingsState extends State<Settings> {
                             translate("Settings.Status"),
                             textAlign: TextAlign.start,
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                                fontSize: useTabletLayout ? 20 : 15,
+                                fontWeight: FontWeight.bold),
                           ),
                           Text(
                             connectionStatus
                                 ? translate("Settings.connect")
                                 : translate("Settings.disconnect"),
-                            style: TextStyle(fontSize: 20),
+                            style:
+                                TextStyle(fontSize: useTabletLayout ? 20 : 15),
                           ),
                           connectionStatus
                               ? Icon(
                                   Icons.check_circle,
                                   color: Colors.green,
-                                  size: 20,
+                                  size: useTabletLayout ? 20 : 15,
                                 )
                               : Icon(
                                   Icons.cancel,
                                   color: Colors.red,
-                                  size: 20,
+                                  size: useTabletLayout ? 20 : 15,
                                 ),
                         ],
                       ),
@@ -375,7 +389,8 @@ class SettingsState extends State<Settings> {
                                 width: 10,
                               ),
                               Text(translate("Settings.button"),
-                                  style: TextStyle(fontSize: 25)),
+                                  style: TextStyle(
+                                      fontSize: useTabletLayout ? 25 : 20)),
                             ],
                           ),
                           onPressed: () {
@@ -417,7 +432,7 @@ class SettingsState extends State<Settings> {
                         },
                         icon: Icon(
                           Icons.translate_rounded,
-                          size: 32,
+                          size: useTabletLayout ? 32 : 25,
                           color: themeNotifier.isDark
                               ? Color.fromARGB(255, 204, 204, 204)
                               : Color.fromARGB(255, 74, 74, 74),
