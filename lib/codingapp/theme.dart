@@ -41,7 +41,7 @@ final isLightTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(
     primarySwatch: myColour,
     brightness: Brightness.light,
-  ).copyWith(secondary: Colors.blue),
+  ).copyWith(secondary: Color.fromARGB(255, 125, 164, 243)),
 );
 final isDarkTheme = ThemeData(
   brightness: Brightness.dark,
@@ -54,5 +54,5 @@ final isDarkTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(
     primarySwatch: yourColour,
     brightness: Brightness.dark,
-  ).copyWith(secondary: Colors.blue),
+  ).copyWith(secondary: Color.fromARGB(255, 125, 164, 243)),
 );
