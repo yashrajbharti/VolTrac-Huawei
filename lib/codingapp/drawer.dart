@@ -156,308 +156,270 @@ class _DrawersState extends State<Drawers> {
                                     ),
                                   ],
                                 ),
-                          Transform.translate(
-                              offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                  useTabletLayout ? 0.0 : -4.0),
-                              child: ListTile(
-                                  title: DescribedFeatureOverlay(
-                                      featureId: 'feature3',
-                                      // Unique id that identifies this overlay.
-                                      tapTarget: Icon(
-                                        Icons.help,
-                                        size: useTabletLayout ? 60 : 50,
-                                      ), // The widget that will be displayed as the tap target.
-                                      title: Text(
-                                        translate("drawer.help"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 30 : 20),
-                                        // )
-                                      ),
-                                      description: Text(translate("tour.help"),
-                                          style: TextStyle(
-                                              color: themeNotifier.isDark
-                                                  ? Colors.white
-                                                  : Colors.black,
-                                              fontSize:
-                                                  useTabletLayout ? 18 : 12)),
-                                      backgroundColor:
-                                          Color.fromARGB(255, 125, 164, 243),
-                                      targetColor: themeNotifier.isDark
-                                          ? Color.fromARGB(255, 30, 30, 30)
-                                          : Colors.white,
-                                      textColor: themeNotifier.isDark
-                                          ? Colors.white
-                                          : Colors.black,
-                                      child: Text(
-                                        translate("drawer.help"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 40 : 24),
-                                        // )
-                                      )),
-                                  onTap: () => Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              HelpScreen(),
-                                        ),
-                                      ))),
+                          ListTile(
+                              title: DescribedFeatureOverlay(
+                                  featureId: 'feature3',
+                                  // Unique id that identifies this overlay.
+                                  tapTarget: Icon(
+                                    Icons.help,
+                                    size: useTabletLayout ? 60 : 50,
+                                  ), // The widget that will be displayed as the tap target.
+                                  title: Text(
+                                    translate("drawer.help"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 30 : 20),
+                                    // )
+                                  ),
+                                  description: Text(translate("tour.help"),
+                                      style: TextStyle(
+                                          color: themeNotifier.isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                          fontSize: useTabletLayout ? 18 : 12)),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 125, 164, 243),
+                                  targetColor: themeNotifier.isDark
+                                      ? Color.fromARGB(255, 30, 30, 30)
+                                      : Colors.white,
+                                  textColor: themeNotifier.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                  child: Text(
+                                    translate("drawer.help"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 40 : 24),
+                                    // )
+                                  )),
+                              onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          HelpScreen(),
+                                    ),
+                                  )),
                           SizedBox(height: useTabletLayout ? 24 : 0),
-                          Transform.translate(
-                              offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                  useTabletLayout ? 0.0 : -14.0),
-                              child: ListTile(
-                                  title: DescribedFeatureOverlay(
-                                      featureId:
-                                          'feature4', // Unique id that identifies this overlay.
-                                      tapTarget: Icon(
-                                        Icons.info_rounded,
-                                        size: useTabletLayout ? 60 : 50,
-                                      ), // The widget that will be displayed as the tap target.
-                                      title: Text(
-                                        translate("drawer.about"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 30 : 20),
-                                        // )
-                                      ),
-                                      description: Text(translate("tour.about"),
-                                          style: TextStyle(
-                                              color: themeNotifier.isDark
-                                                  ? Colors.white
-                                                  : Colors.black,
-                                              fontSize:
-                                                  useTabletLayout ? 18 : 12)),
-                                      backgroundColor:
-                                          Color.fromARGB(255, 125, 164, 243),
-                                      targetColor: themeNotifier.isDark
-                                          ? Color.fromARGB(255, 30, 30, 30)
-                                          : Colors.white,
-                                      textColor: themeNotifier.isDark
-                                          ? Colors.white
-                                          : Colors.black,
-                                      child: Text(
-                                        translate("drawer.about"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 40 : 24),
-                                        // )
-                                      )),
-                                  onTap: () => Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              AboutScreen(),
-                                        ),
-                                      ))),
+                          ListTile(
+                              title: DescribedFeatureOverlay(
+                                  featureId:
+                                      'feature4', // Unique id that identifies this overlay.
+                                  tapTarget: Icon(
+                                    Icons.info_rounded,
+                                    size: useTabletLayout ? 60 : 50,
+                                  ), // The widget that will be displayed as the tap target.
+                                  title: Text(
+                                    translate("drawer.about"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 30 : 20),
+                                    // )
+                                  ),
+                                  description: Text(translate("tour.about"),
+                                      style: TextStyle(
+                                          color: themeNotifier.isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                          fontSize: useTabletLayout ? 18 : 12)),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 125, 164, 243),
+                                  targetColor: themeNotifier.isDark
+                                      ? Color.fromARGB(255, 30, 30, 30)
+                                      : Colors.white,
+                                  textColor: themeNotifier.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                  child: Text(
+                                    translate("drawer.about"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 40 : 24),
+                                    // )
+                                  )),
+                              onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          AboutScreen(),
+                                    ),
+                                  )),
                           SizedBox(height: useTabletLayout ? 24 : 0),
-                          Transform.translate(
-                              offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                  useTabletLayout ? 0.0 : -22.0),
-                              child: ListTile(
-                                  title: DescribedFeatureOverlay(
-                                      featureId:
-                                          'feature5', // Unique id that identifies this overlay.
-                                      tapTarget: Icon(
-                                        Icons.calendar_month_rounded,
-                                        size: useTabletLayout ? 60 : 50,
-                                      ), // The widget that will be displayed as the tap target.
-                                      title: Text(
-                                        translate("drawer.custom"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 30 : 20),
-                                      ),
-                                      description: Text(
-                                          translate("tour.custom"),
-                                          style: TextStyle(
-                                              color: themeNotifier.isDark
-                                                  ? Colors.white
-                                                  : Colors.black,
-                                              fontSize:
-                                                  useTabletLayout ? 18 : 12)),
-                                      backgroundColor:
-                                          Color.fromARGB(255, 125, 164, 243),
-                                      targetColor: themeNotifier.isDark
-                                          ? Color.fromARGB(255, 30, 30, 30)
-                                          : Colors.white,
-                                      textColor: themeNotifier.isDark
-                                          ? Colors.white
-                                          : Colors.black,
-                                      child: Text(
-                                        translate("drawer.custom"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 40 : 24),
-                                      )),
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                            CustomBuilder(),
-                                      ),
-                                    );
-                                  })),
+                          ListTile(
+                              title: DescribedFeatureOverlay(
+                                  featureId:
+                                      'feature5', // Unique id that identifies this overlay.
+                                  tapTarget: Icon(
+                                    Icons.calendar_month_rounded,
+                                    size: useTabletLayout ? 60 : 50,
+                                  ), // The widget that will be displayed as the tap target.
+                                  title: Text(
+                                    translate("drawer.custom"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 30 : 20),
+                                  ),
+                                  description: Text(translate("tour.custom"),
+                                      style: TextStyle(
+                                          color: themeNotifier.isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                          fontSize: useTabletLayout ? 18 : 12)),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 125, 164, 243),
+                                  targetColor: themeNotifier.isDark
+                                      ? Color.fromARGB(255, 30, 30, 30)
+                                      : Colors.white,
+                                  textColor: themeNotifier.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                  child: Text(
+                                    translate("drawer.custom"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 40 : 24),
+                                  )),
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        CustomBuilder(),
+                                  ),
+                                );
+                              }),
                           SizedBox(height: useTabletLayout ? 24 : 0),
-                          Transform.translate(
-                              offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                  useTabletLayout ? 0.0 : -28.0),
-                              child: ListTile(
-                                  title: DescribedFeatureOverlay(
-                                      featureId:
-                                          'feature6', // Unique id that identifies this overlay.
-                                      tapTarget: Icon(
-                                        Icons.construction_rounded,
-                                        size: useTabletLayout ? 60 : 50,
-                                      ), // The widget that will be displayed as the tap target.
-                                      title: Text(
-                                        translate("drawer.task"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 30 : 20),
-                                      ),
-                                      description: Text(translate("tour.task"),
-                                          style: TextStyle(
-                                              color: themeNotifier.isDark
-                                                  ? Colors.white
-                                                  : Colors.black,
-                                              fontSize:
-                                                  useTabletLayout ? 18 : 12)),
-                                      backgroundColor:
-                                          Color.fromARGB(255, 125, 164, 243),
-                                      targetColor: themeNotifier.isDark
-                                          ? Color.fromARGB(255, 30, 30, 30)
-                                          : Colors.white,
-                                      textColor: themeNotifier.isDark
-                                          ? Colors.white
-                                          : Colors.black,
-                                      child: Text(
-                                        translate("drawer.task"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 40 : 24),
-                                      )),
-                                  onTap: () => Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              LGtasks(),
-                                        ),
-                                      ))),
+                          ListTile(
+                              title: DescribedFeatureOverlay(
+                                  featureId:
+                                      'feature6', // Unique id that identifies this overlay.
+                                  tapTarget: Icon(
+                                    Icons.construction_rounded,
+                                    size: useTabletLayout ? 60 : 50,
+                                  ), // The widget that will be displayed as the tap target.
+                                  title: Text(
+                                    translate("drawer.task"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 30 : 20),
+                                  ),
+                                  description: Text(translate("tour.task"),
+                                      style: TextStyle(
+                                          color: themeNotifier.isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                          fontSize: useTabletLayout ? 18 : 12)),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 125, 164, 243),
+                                  targetColor: themeNotifier.isDark
+                                      ? Color.fromARGB(255, 30, 30, 30)
+                                      : Colors.white,
+                                  textColor: themeNotifier.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                  child: Text(
+                                    translate("drawer.task"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 40 : 24),
+                                  )),
+                              onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          LGtasks(),
+                                    ),
+                                  )),
                           SizedBox(height: useTabletLayout ? 24 : 0),
-                          Transform.translate(
-                              offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                  useTabletLayout ? 0.0 : -33.0),
-                              child: ListTile(
-                                  title: DescribedFeatureOverlay(
-                                      featureId:
-                                          'feature7', // Unique id that identifies this overlay.
-                                      tapTarget: Icon(
-                                        Icons.settings,
-                                        size: useTabletLayout ? 60 : 50,
-                                      ), // The widget that will be displayed as the tap target.
-                                      title: Text(
-                                        translate("drawer.settings"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 30 : 20),
-                                      ),
-                                      description: Text(
-                                          translate("tour.settings"),
-                                          style: TextStyle(
-                                              color: themeNotifier.isDark
-                                                  ? Colors.white
-                                                  : Colors.black,
-                                              fontSize:
-                                                  useTabletLayout ? 18 : 12)),
-                                      backgroundColor:
-                                          Color.fromARGB(255, 125, 164, 243),
-                                      targetColor: themeNotifier.isDark
-                                          ? Color.fromARGB(255, 30, 30, 30)
-                                          : Colors.white,
-                                      textColor: themeNotifier.isDark
-                                          ? Colors.white
-                                          : Colors.black,
-                                      child: Text(
-                                        translate("drawer.settings"),
-                                        style: TextStyle(
-                                            color: themeNotifier.isDark
-                                                ? Colors.white
-                                                : Colors.black,
-                                            fontSize:
-                                                useTabletLayout ? 40 : 24),
-                                      )),
-                                  onTap: () => Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              Settings(),
-                                        ),
-                                      ))),
-                          Transform.translate(
-                              offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                  useTabletLayout ? 0.0 : -50.0),
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                    right: 100,
-                                    bottom: useTabletLayout ? 0 : 10),
-                                padding: EdgeInsets.only(top: 30),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Transform.scale(
-                                        scale: useTabletLayout ? 1 : 0.8,
-                                        child: DayNightSwitch(
-                                          value: themeNotifier.isDark
-                                              ? val = true
-                                              : val = false,
-                                          moonImage:
-                                              AssetImage('assets/moon.png'),
-                                          sunImage:
-                                              AssetImage('assets/sun.png'),
-                                          sunColor: Colors.transparent,
-                                          moonColor: Colors.transparent,
-                                          dayColor: dayColor,
-                                          nightColor: nightColor,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              val = themeNotifier.isDark
-                                                  ? value
-                                                  : !value;
-                                            });
-                                            themeNotifier.isDark
-                                                ? themeNotifier.isDark = false
-                                                : themeNotifier.isDark = true;
-                                          },
-                                        )),
-                                  ],
-                                ),
-                              ))
+                          ListTile(
+                              title: DescribedFeatureOverlay(
+                                  featureId:
+                                      'feature7', // Unique id that identifies this overlay.
+                                  tapTarget: Icon(
+                                    Icons.settings,
+                                    size: useTabletLayout ? 60 : 50,
+                                  ), // The widget that will be displayed as the tap target.
+                                  title: Text(
+                                    translate("drawer.settings"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 30 : 20),
+                                  ),
+                                  description: Text(translate("tour.settings"),
+                                      style: TextStyle(
+                                          color: themeNotifier.isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                          fontSize: useTabletLayout ? 18 : 12)),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 125, 164, 243),
+                                  targetColor: themeNotifier.isDark
+                                      ? Color.fromARGB(255, 30, 30, 30)
+                                      : Colors.white,
+                                  textColor: themeNotifier.isDark
+                                      ? Colors.white
+                                      : Colors.black,
+                                  child: Text(
+                                    translate("drawer.settings"),
+                                    style: TextStyle(
+                                        color: themeNotifier.isDark
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: useTabletLayout ? 40 : 24),
+                                  )),
+                              onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          Settings(),
+                                    ),
+                                  )),
+                          Container(
+                            margin: EdgeInsets.only(
+                                right: 100, bottom: useTabletLayout ? 0 : 10),
+                            padding: EdgeInsets.only(top: 30),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Transform.scale(
+                                    scale: useTabletLayout ? 1 : 0.8,
+                                    child: DayNightSwitch(
+                                      value: themeNotifier.isDark
+                                          ? val = true
+                                          : val = false,
+                                      moonImage: AssetImage('assets/moon.png'),
+                                      sunImage: AssetImage('assets/sun.png'),
+                                      sunColor: Colors.transparent,
+                                      moonColor: Colors.transparent,
+                                      dayColor: dayColor,
+                                      nightColor: nightColor,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          val = themeNotifier.isDark
+                                              ? value
+                                              : !value;
+                                        });
+                                        themeNotifier.isDark
+                                            ? themeNotifier.isDark = false
+                                            : themeNotifier.isDark = true;
+                                      },
+                                    )),
+                              ],
+                            ),
+                          )
                         ]),
                   )))),
       Consumer<ThemeModel>(

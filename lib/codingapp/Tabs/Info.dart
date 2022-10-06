@@ -30,7 +30,7 @@ String retryname = "";
 Future retryButton(String KML, String name, dynamic duration) async {
   retrykml = await KML;
   retryname = await name;
-  _duration = await duration;
+  //_duration = await duration;
 }
 
 class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
@@ -3669,14 +3669,14 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                               SizedBox(
-                                height: 10,
+                                height: useTabletLayout ? 10 : 15,
                               ),
                               RotatedBox(
                                   quarterTurns: -1,
                                   child: LinearPercentIndicator(
                                     animation: true,
-                                    width: 51,
-                                    lineHeight: 51,
+                                    width: useTabletLayout ? 51 : 43,
+                                    lineHeight: useTabletLayout ? 51 : 43,
                                     alignment: MainAxisAlignment.center,
                                     backgroundColor: themeNotifier.isDark
                                         ? Color.fromARGB(205, 42, 47, 48)
@@ -3695,7 +3695,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                                               Icons.location_on_sharp,
                                               color: Color.fromARGB(
                                                   255, 228, 6, 9),
-                                              size: 45.0,
+                                              size: useTabletLayout ? 45.0 : 36,
                                             )),
                                       ],
                                     ),
