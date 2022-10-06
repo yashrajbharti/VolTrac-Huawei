@@ -6,6 +6,7 @@ import 'package:voltrac/codingapp/splash.dart';
 import 'package:provider/provider.dart';
 import 'package:voltrac/codingapp/theme-storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,10 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
     var localizationDelegate = LocalizedApp.of(context).delegate;
     return LocalizationProvider(
       state: LocalizationProvider.of(context).state,

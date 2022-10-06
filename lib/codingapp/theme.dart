@@ -34,19 +34,25 @@ final isLightTheme = ThemeData(
   brightness: Brightness.light,
   appBarTheme: AppBarTheme(color: myColour),
   scaffoldBackgroundColor: myColour,
-  primarySwatch: myColour,
   fontFamily: 'GoogleSans',
   textTheme: TextTheme(
     button: TextStyle(fontSize: 18.0),
   ),
+  colorScheme: ColorScheme.fromSwatch(
+    primarySwatch: myColour,
+    brightness: Brightness.light,
+  ).copyWith(secondary: Colors.blue),
 );
 final isDarkTheme = ThemeData(
   brightness: Brightness.dark,
   appBarTheme: AppBarTheme(color: yourColour),
   scaffoldBackgroundColor: yourColour,
-  primarySwatch: yourColour,
   fontFamily: 'GoogleSans',
   textTheme: TextTheme(
     button: TextStyle(fontSize: 18.0),
   ),
+  colorScheme: ColorScheme.fromSwatch(
+    primarySwatch: yourColour,
+    brightness: Brightness.dark,
+  ).copyWith(secondary: Colors.blue),
 );

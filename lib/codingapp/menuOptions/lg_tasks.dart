@@ -42,7 +42,7 @@ Future savekml_Task(String kmlname) async {
 
 class _LGtasksState extends State<LGtasks> {
   showAlertDialog(
-      String title, String msg, bool blackandwhite, bool isSuccess) {
+      String title, String msg, bool isSuccess, bool blackandwhite) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
