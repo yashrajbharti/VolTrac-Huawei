@@ -621,670 +621,698 @@ class _SendtoLGState extends State<SendtoLG> {
     final bool useTabletLayout = shortestSide > 600.0; // check for tablet
     return Consumer<ThemeModel>(
         builder: (context, ThemeModel themeNotifier, child) => Container(
-              margin: EdgeInsets.fromLTRB(90, useTabletLayout ? 30 : 15, 90, 0),
-              child: Column(
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SizedBox(
-                          width: useTabletLayout ? 500 : 280,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
-                            ),
-                            onPressed: () async {
-                              savekml_Task(projectname[0]);
-                              await _read(0);
-                              await LGConnection().openBalloon(
-                                  projectname[0],
-                                  translate('Track.hist').trim(),
-                                  translate("info.hist.date"),
-                                  240,
-                                  translate("info.description") +
-                                      " " +
-                                      translate("info.hist.description"),
-                                  "COPERNICUS, ResearchGate, Global Volcanism Program",
-                                  translate('title.name'),
-                                  "historic_infographic.png");
-                              setState(() {
-                                _duration = 2290;
-                              });
-                              jumpToPage(0);
-                              _showToast(translate('Track.ready'),
-                                  themeNotifier.isDark);
-                            },
-                            child: Wrap(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Transform.translate(
-                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                        useTabletLayout ? 0.0 : 10.0),
-                                    child: Text(translate('Track.hist'),
-                                        style: TextStyle(
-                                            fontSize:
-                                                useTabletLayout ? 40 : 20))),
-                                Transform.scale(
-                                    scale: useTabletLayout ? 1.5 : 0.8,
-                                    child: Builder(
-                                      builder: (context) => IconButton(
-                                        icon: Image.asset(
-                                            'assets/icons/historic.png'),
-                                        onPressed: null,
-                                      ),
-                                    )),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: useTabletLayout ? 500 : 280,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
-                            ),
-                            onPressed: () async {
-                              savekml_Task(projectname[1]);
-                              await _read(1);
-                              await LGConnection().openBalloon(
-                                  projectname[1],
-                                  translate('Track.lava').trim(),
-                                  translate("info.lava.date"),
-                                  240,
-                                  translate("info.description") +
-                                      " " +
-                                      translate("info.lava.description"),
-                                  "COPERNICUS, Wikipedia | Cumbre Vieja",
-                                  translate('title.name'),
-                                  "lavaflow_infographic.jpg");
-                              setState(() {
-                                _duration = 4000;
-                              });
-                              jumpToPage(1);
-                              _showToast(translate('Track.ready'),
-                                  themeNotifier.isDark);
-                            },
-                            child: Wrap(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Transform.translate(
-                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                        useTabletLayout ? 0.0 : 10.0),
-                                    child: Text(translate('Track.lava'),
-                                        style: TextStyle(
-                                            fontSize:
-                                                useTabletLayout ? 40 : 20))),
-                                Transform.scale(
-                                    scale: useTabletLayout ? 1.5 : 0.8,
-                                    child: Builder(
-                                      builder: (context) => IconButton(
-                                        icon: Image.asset(
-                                            'assets/icons/lavaflow.png'),
-                                        onPressed: null,
-                                      ),
-                                    )),
-                              ],
-                            ),
-                          ),
-                        )
-                      ]),
-                  SizedBox(height: useTabletLayout ? 16 : 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            margin: EdgeInsets.fromLTRB(90, useTabletLayout ? 30 : 15, 90, 0),
+            child: Transform.scale(
+                scale: useTabletLayout ? 1.0 : 0.9,
+                child: Transform.translate(
+                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
+                      useTabletLayout ? 0.0 : -15.0),
+                  child: Column(
                     children: [
-                      SizedBox(
-                        width: useTabletLayout ? 500 : 280,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding:
-                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
-                          onPressed: () async {
-                            savekml_Task(projectname[2]);
-                            await _read(2);
-                            await LGConnection().openBalloon(
-                                projectname[2],
-                                translate('Track.prehistoric').trim(),
-                                translate("info.prehistoric.date"),
-                                270,
-                                translate("info.description") +
-                                    " " +
-                                    translate("info.prehistoric.description"),
-                                "ResearchGate, Global Volcanism Program",
-                                translate('title.name'),
-                                "prehistoric_infographic.png");
-                            setState(() {
-                              _duration = 2080;
-                            });
-                            jumpToPage(2);
-                            _showToast(
-                                translate('Track.ready'), themeNotifier.isDark);
-                          },
-                          child: Wrap(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Transform.translate(
-                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                      useTabletLayout ? 0.0 : 10.0),
-                                  child: Text(translate('Track.prehistoric'),
-                                      style: TextStyle(
-                                          fontSize:
-                                              useTabletLayout ? 40 : 20))),
-                              Transform.scale(
-                                  scale: useTabletLayout ? 1.5 : 0.8,
-                                  child: Builder(
-                                    builder: (context) => IconButton(
-                                      icon: Image.asset(
-                                          'assets/icons/prehistoric.png'),
-                                      onPressed: null,
-                                    ),
-                                  )),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: useTabletLayout ? 500 : 280,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding:
-                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
-                          onPressed: () async {
-                            savekml_Task(projectname[3]);
-                            await _read(3);
-                            await LGConnection().openBalloon(
-                                projectname[3],
-                                translate('Track.aff').trim(),
-                                translate("info.aff.date"),
-                                240,
-                                translate("info.description") +
-                                    " " +
-                                    translate("info.aff.description"),
-                                "COPERNICUS",
-                                translate('title.name'),
-                                "affectedareas_infographic.jpg");
-                            setState(() {
-                              _duration = 56040;
-                            });
-                            jumpToPage(3);
-                            _showToast(
-                                translate('Track.ready'), themeNotifier.isDark);
-                          },
-                          child: Wrap(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Transform.translate(
-                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                      useTabletLayout ? 0.0 : 10.0),
-                                  child: Text(translate('Track.aff'),
-                                      style: TextStyle(
-                                          fontSize:
-                                              useTabletLayout ? 40 : 20))),
-                              Transform.scale(
-                                  scale: useTabletLayout ? 1.5 : 0.8,
-                                  child: Builder(
-                                    builder: (context) => IconButton(
-                                      icon: Image.asset(
-                                          'assets/icons/affectedareas.png'),
-                                      onPressed: null,
-                                    ),
-                                  )),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: useTabletLayout ? 16 : 8),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SizedBox(
-                          width: useTabletLayout ? 500 : 280,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
-                            ),
-                            onPressed: () async {
-                              savekml_Task(projectname[4]);
-                              await _read(4);
-                              await LGConnection().openBalloon(
-                                  projectname[4],
-                                  translate('Track.land').trim(),
-                                  translate("info.land.date"),
-                                  240,
-                                  translate("info.description") +
-                                      " " +
-                                      translate("info.land.description"),
-                                  "NASA Earth Observatory , Sentinel Playground, COPERNICUS",
-                                  translate('title.name'),
-                                  "landscape_infographic.jpg");
-                              setState(() {
-                                _duration = 4000;
-                              });
-                              jumpToPage(4);
-                              _showToast(translate('Track.ready'),
-                                  themeNotifier.isDark);
-                            },
-                            child: Wrap(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Transform.translate(
-                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                        useTabletLayout ? 0.0 : 10.0),
-                                    child: Text(translate('Track.land'),
-                                        style: TextStyle(
-                                            fontSize:
-                                                useTabletLayout ? 40 : 20))),
-                                Transform.scale(
-                                    scale: useTabletLayout ? 1.9 : 1.0,
-                                    child: Builder(
-                                      builder: (context) => IconButton(
-                                        icon: Image.asset(
-                                            'assets/icons/landscape.png'),
-                                        onPressed: null,
-                                      ),
-                                    )),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: useTabletLayout ? 500 : 280,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding: EdgeInsets.all(useTabletLayout ? 15 : 0),
-                            ),
-                            onPressed: () async {
-                              savekml_Task(projectname[5]);
-                              await _read(5);
-                              await LGConnection().openBalloon(
-                                  projectname[5],
-                                  translate('Track.So2').trim(),
-                                  translate("info.So2.date"),
-                                  240,
-                                  translate("info.description") +
-                                      " " +
-                                      translate("info.So2.description"),
-                                  "Sentinel EO Browser, GDACS, Twitter | Platform ADAM",
-                                  translate('title.name'),
-                                  "so2_infographic.gif");
-                              setState(() {
-                                _duration = 3710;
-                              });
-                              jumpToPage(5);
-                              _showToast(translate('Track.ready'),
-                                  themeNotifier.isDark);
-                            },
-                            child: Wrap(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Transform.translate(
-                                    offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                        useTabletLayout ? 0.0 : 10.0),
-                                    child: Text(translate('Track.So2'),
-                                        style: TextStyle(
-                                            fontSize:
-                                                useTabletLayout ? 40 : 20))),
-                                Transform.scale(
-                                    scale: useTabletLayout ? 1.5 : 0.8,
-                                    child: Builder(
-                                      builder: (context) => IconButton(
-                                        icon: Image.asset(
-                                            'assets/icons/so2emissions.png'),
-                                        onPressed: null,
-                                      ),
-                                    )),
-                              ],
-                            ),
-                          ),
-                        )
-                      ]),
-                  SizedBox(height: useTabletLayout ? 16 : 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: useTabletLayout ? 500 : 280,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding:
-                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
-                          onPressed: () async {
-                            savekml_Task(projectname[6]);
-                            await _read(6);
-                            await LGConnection().openBalloon(
-                                projectname[6],
-                                translate('Track.situation').trim(),
-                                translate("info.situation.date"),
-                                270,
-                                translate("info.description") +
-                                    " " +
-                                    translate("info.situation.description"),
-                                "Instituto Geográfico Nacional, GDACS, ERCC Portal",
-                                translate('title.name'),
-                                "situation_infographic.png");
-                            setState(() {
-                              _duration = 5250;
-                            });
-                            jumpToPage(6);
-                            _showToast(
-                                translate('Track.ready'), themeNotifier.isDark);
-                          },
-                          child: Wrap(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Transform.translate(
-                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                      useTabletLayout ? 0.0 : 10.0),
-                                  child: Text(translate('Track.situation'),
-                                      style: TextStyle(
-                                          fontSize:
-                                              useTabletLayout ? 40 : 20))),
-                              Transform.scale(
-                                  scale: useTabletLayout ? 1.5 : 0.8,
-                                  child: Builder(
-                                    builder: (context) => IconButton(
-                                      icon: Image.asset(
-                                          'assets/icons/situation.png'),
-                                      onPressed: null,
-                                    ),
-                                  )),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: useTabletLayout ? 500 : 280,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              shadowColor: themeNotifier.isDark
-                                  ? Colors.black
-                                  : Colors.grey.withOpacity(0.3),
-                              primary: themeNotifier.isDark
-                                  ? ui.Color.fromARGB(255, 43, 43, 43)
-                                  : ui.Color.fromARGB(255, 220, 220, 220),
-                              padding:
-                                  EdgeInsets.all(useTabletLayout ? 15 : 0)),
-                          onPressed: () async {
-                            savekml_Task(projectname[7]);
-                            await _read(7);
-                            await LGConnection().openBalloon(
-                                projectname[7],
-                                translate('Track.located').trim(),
-                                translate("info.located.date"),
-                                230,
-                                translate("info.description") +
-                                    " " +
-                                    translate("info.located.description"),
-                                "Instituto Geográfico Nacional",
-                                translate('title.name'),
-                                "locatedevents_infographic.jpg");
-                            setState(() {
-                              _duration = 8710;
-                            });
-                            jumpToPage(7);
-                            _showToast(
-                                translate('Track.ready'), themeNotifier.isDark);
-                          },
-                          child: Wrap(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Transform.translate(
-                                  offset: Offset(useTabletLayout ? 0.0 : 0.0,
-                                      useTabletLayout ? 0.0 : 10.0),
-                                  child: Text(translate('Track.located'),
-                                      style: TextStyle(
-                                          fontSize:
-                                              useTabletLayout ? 40 : 20))),
-                              Transform.scale(
-                                  scale: useTabletLayout ? 1.5 : 0.8,
-                                  child: Builder(
-                                    builder: (context) => IconButton(
-                                      icon: Image.asset(
-                                          'assets/icons/locatedevents.png'),
-                                      onPressed: null,
-                                    ),
-                                  )),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: useTabletLayout ? 20 : 5),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Builder(
-                          builder: (context) => IconButton(
-                              icon: themeNotifier.isDark
-                                  ? Image.asset(
-                                      'assets/icons/calendar_dark.png')
-                                  : Image.asset('assets/icons/calendar.png'),
-                              iconSize: useTabletLayout ? 65 : 20,
-                              onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        CustomBuilder(),
-                                  ),
-                                );
-                              })),
-                      SizedBox(
-                        width: useTabletLayout ? 20 : 10,
-                      ),
-                      SizedBox(
-                        width: useTabletLayout ? 360 : 200,
-                        child: loading
-                            ? LinearPercentIndicator(
-                                animation: true,
-                                width: useTabletLayout ? 360 : 200,
-                                lineHeight: useTabletLayout ? 76.0 : 40.0,
-                                backgroundColor: themeNotifier.isDark
-                                    ? ui.Color.fromARGB(205, 42, 47, 48)
-                                    : ui.Color.fromARGB(205, 180, 199, 206),
-                                percent: 1.0,
-                                padding: EdgeInsets.all(0),
-                                animationDuration: _duration,
-                                center: Wrap(
-                                  children: <Widget>[
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text(translate('Track.visual'),
-                                        style: TextStyle(
-                                            fontSize: useTabletLayout ? 35 : 15,
-                                            fontWeight: ui.FontWeight.w500)),
-                                    Icon(
-                                      Icons.location_on_sharp,
-                                      color: ui.Color.fromARGB(255, 228, 6, 9),
-                                      size: useTabletLayout ? 45.0 : 20,
-                                    ),
-                                  ],
-                                ),
-                                barRadius: ui.Radius.circular(
-                                    useTabletLayout ? 50 : 25),
-                                progressColor: Colors.greenAccent,
-                              )
-                            : ElevatedButton(
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SizedBox(
+                              width: useTabletLayout ? 500 : 280,
+                              child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
                                   shadowColor: themeNotifier.isDark
                                       ? Colors.black
                                       : Colors.grey.withOpacity(0.3),
                                   primary: themeNotifier.isDark
-                                      ? ui.Color.fromARGB(255, 30, 30, 30)
-                                      : Colors.white,
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
                                   padding:
                                       EdgeInsets.all(useTabletLayout ? 15 : 0),
-                                  shape: StadiumBorder(),
                                 ),
+                                onPressed: () async {
+                                  savekml_Task(projectname[0]);
+                                  await _read(0);
+                                  await LGConnection().openBalloon(
+                                      projectname[0],
+                                      translate('Track.hist').trim(),
+                                      translate("info.hist.date"),
+                                      240,
+                                      translate("info.description") +
+                                          " " +
+                                          translate("info.hist.description"),
+                                      "COPERNICUS, ResearchGate, Global Volcanism Program",
+                                      translate('title.name'),
+                                      "historic_infographic.png");
+                                  setState(() {
+                                    _duration = 2290;
+                                  });
+                                  jumpToPage(0);
+                                  _showToast(translate('Track.ready'),
+                                      themeNotifier.isDark);
+                                },
                                 child: Wrap(
                                   children: <Widget>[
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text(translate('Track.visual'),
-                                        style: TextStyle(
-                                            fontSize:
-                                                useTabletLayout ? 35 : 15)),
-                                    Icon(
-                                      Icons.location_on_sharp,
-                                      color: ui.Color.fromARGB(255, 228, 6, 9),
-                                      size: useTabletLayout ? 45.0 : 20,
-                                    ),
+                                    Transform.translate(
+                                        offset: Offset(
+                                            useTabletLayout ? 0.0 : 0.0,
+                                            useTabletLayout ? 0.0 : 10.0),
+                                        child: Text(translate('Track.hist'),
+                                            style: TextStyle(
+                                                fontSize: useTabletLayout
+                                                    ? 40
+                                                    : 20))),
+                                    Transform.scale(
+                                        scale: useTabletLayout ? 1.5 : 0.8,
+                                        child: Builder(
+                                          builder: (context) => IconButton(
+                                            icon: Image.asset(
+                                                'assets/icons/historic.png'),
+                                            onPressed: null,
+                                          ),
+                                        )),
                                   ],
                                 ),
-                                onPressed: () {
-                                  // send to LG
+                              ),
+                            ),
+                            SizedBox(
+                              width: useTabletLayout ? 500 : 280,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 2,
+                                  shadowColor: themeNotifier.isDark
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.3),
+                                  primary: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0),
+                                ),
+                                onPressed: () async {
+                                  savekml_Task(projectname[1]);
+                                  await _read(1);
+                                  await LGConnection().openBalloon(
+                                      projectname[1],
+                                      translate('Track.lava').trim(),
+                                      translate("info.lava.date"),
+                                      240,
+                                      translate("info.description") +
+                                          " " +
+                                          translate("info.lava.description"),
+                                      "COPERNICUS, Wikipedia | Cumbre Vieja",
+                                      translate('title.name'),
+                                      "lavaflow_infographic.jpg");
                                   setState(() {
-                                    loading = true;
+                                    _duration = 4000;
                                   });
-
-                                  LGConnection()
-                                      .sendToLG(kml.mount(), finalname)
-                                      .then((value) {
-                                    _showToast(translate('Track.Visualize'),
-                                        themeNotifier.isDark);
-
-                                    setState(() {
-                                      isOpen = true;
-                                      loading = false;
-                                    });
-                                    retryButton(
-                                        kml.mount(), finalname, _duration / 2);
-                                    DefaultTabController.of(context)
-                                        ?.animateTo(2);
-                                  }).catchError((onError) {
-                                    print('oh no $onError');
-                                    setState(() {
-                                      loading = false;
-                                    });
-                                    if (onError == 'nogeodata') {
-                                      showAlertDialog(
-                                          translate('Track.alert'),
-                                          translate('Track.alert2'),
-                                          themeNotifier.isDark);
-                                    }
-                                    showAlertDialog(
-                                        translate('Track.alert3'),
-                                        translate('Track.alert4'),
-                                        themeNotifier.isDark);
+                                  jumpToPage(1);
+                                  _showToast(translate('Track.ready'),
+                                      themeNotifier.isDark);
+                                },
+                                child: Wrap(
+                                  children: <Widget>[
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Transform.translate(
+                                        offset: Offset(
+                                            useTabletLayout ? 0.0 : 0.0,
+                                            useTabletLayout ? 0.0 : 10.0),
+                                        child: Text(translate('Track.lava'),
+                                            style: TextStyle(
+                                                fontSize: useTabletLayout
+                                                    ? 40
+                                                    : 20))),
+                                    Transform.scale(
+                                        scale: useTabletLayout ? 1.5 : 0.8,
+                                        child: Builder(
+                                          builder: (context) => IconButton(
+                                            icon: Image.asset(
+                                                'assets/icons/lavaflow.png'),
+                                            onPressed: null,
+                                          ),
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            )
+                          ]),
+                      SizedBox(height: useTabletLayout ? 16 : 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(
+                            width: useTabletLayout ? 500 : 280,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 2,
+                                  shadowColor: themeNotifier.isDark
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.3),
+                                  primary: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0)),
+                              onPressed: () async {
+                                savekml_Task(projectname[2]);
+                                await _read(2);
+                                await LGConnection().openBalloon(
+                                    projectname[2],
+                                    translate('Track.prehistoric').trim(),
+                                    translate("info.prehistoric.date"),
+                                    270,
+                                    translate("info.description") +
+                                        " " +
+                                        translate(
+                                            "info.prehistoric.description"),
+                                    "ResearchGate, Global Volcanism Program",
+                                    translate('title.name'),
+                                    "prehistoric_infographic.png");
+                                setState(() {
+                                  _duration = 2080;
+                                });
+                                jumpToPage(2);
+                                _showToast(translate('Track.ready'),
+                                    themeNotifier.isDark);
+                              },
+                              child: Wrap(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Transform.translate(
+                                      offset: Offset(
+                                          useTabletLayout ? 0.0 : 0.0,
+                                          useTabletLayout ? 0.0 : 10.0),
+                                      child: Text(
+                                          translate('Track.prehistoric'),
+                                          style: TextStyle(
+                                              fontSize:
+                                                  useTabletLayout ? 40 : 20))),
+                                  Transform.scale(
+                                      scale: useTabletLayout ? 1.5 : 0.8,
+                                      child: Builder(
+                                        builder: (context) => IconButton(
+                                          icon: Image.asset(
+                                              'assets/icons/prehistoric.png'),
+                                          onPressed: null,
+                                        ),
+                                      )),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: useTabletLayout ? 500 : 280,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 2,
+                                  shadowColor: themeNotifier.isDark
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.3),
+                                  primary: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0)),
+                              onPressed: () async {
+                                savekml_Task(projectname[3]);
+                                await _read(3);
+                                await LGConnection().openBalloon(
+                                    projectname[3],
+                                    translate('Track.aff').trim(),
+                                    translate("info.aff.date"),
+                                    240,
+                                    translate("info.description") +
+                                        " " +
+                                        translate("info.aff.description"),
+                                    "COPERNICUS",
+                                    translate('title.name'),
+                                    "affectedareas_infographic.jpg");
+                                setState(() {
+                                  _duration = 56040;
+                                });
+                                jumpToPage(3);
+                                _showToast(translate('Track.ready'),
+                                    themeNotifier.isDark);
+                              },
+                              child: Wrap(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Transform.translate(
+                                      offset: Offset(
+                                          useTabletLayout ? 0.0 : 0.0,
+                                          useTabletLayout ? 0.0 : 10.0),
+                                      child: Text(translate('Track.aff'),
+                                          style: TextStyle(
+                                              fontSize:
+                                                  useTabletLayout ? 40 : 20))),
+                                  Transform.scale(
+                                      scale: useTabletLayout ? 1.5 : 0.8,
+                                      child: Builder(
+                                        builder: (context) => IconButton(
+                                          icon: Image.asset(
+                                              'assets/icons/affectedareas.png'),
+                                          onPressed: null,
+                                        ),
+                                      )),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: useTabletLayout ? 16 : 8),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SizedBox(
+                              width: useTabletLayout ? 500 : 280,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 2,
+                                  shadowColor: themeNotifier.isDark
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.3),
+                                  primary: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0),
+                                ),
+                                onPressed: () async {
+                                  savekml_Task(projectname[4]);
+                                  await _read(4);
+                                  await LGConnection().openBalloon(
+                                      projectname[4],
+                                      translate('Track.land').trim(),
+                                      translate("info.land.date"),
+                                      240,
+                                      translate("info.description") +
+                                          " " +
+                                          translate("info.land.description"),
+                                      "NASA Earth Observatory , Sentinel Playground, COPERNICUS",
+                                      translate('title.name'),
+                                      "landscape_infographic.jpg");
+                                  setState(() {
+                                    _duration = 4000;
                                   });
-                                }),
+                                  jumpToPage(4);
+                                  _showToast(translate('Track.ready'),
+                                      themeNotifier.isDark);
+                                },
+                                child: Wrap(
+                                  children: <Widget>[
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Transform.translate(
+                                        offset: Offset(
+                                            useTabletLayout ? 0.0 : 0.0,
+                                            useTabletLayout ? 0.0 : 10.0),
+                                        child: Text(translate('Track.land'),
+                                            style: TextStyle(
+                                                fontSize: useTabletLayout
+                                                    ? 40
+                                                    : 20))),
+                                    Transform.scale(
+                                        scale: useTabletLayout ? 1.9 : 1.0,
+                                        child: Builder(
+                                          builder: (context) => IconButton(
+                                            icon: Image.asset(
+                                                'assets/icons/landscape.png'),
+                                            onPressed: null,
+                                          ),
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: useTabletLayout ? 500 : 280,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 2,
+                                  shadowColor: themeNotifier.isDark
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.3),
+                                  primary: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0),
+                                ),
+                                onPressed: () async {
+                                  savekml_Task(projectname[5]);
+                                  await _read(5);
+                                  await LGConnection().openBalloon(
+                                      projectname[5],
+                                      translate('Track.So2').trim(),
+                                      translate("info.So2.date"),
+                                      240,
+                                      translate("info.description") +
+                                          " " +
+                                          translate("info.So2.description"),
+                                      "Sentinel EO Browser, GDACS, Twitter | Platform ADAM",
+                                      translate('title.name'),
+                                      "so2_infographic.gif");
+                                  setState(() {
+                                    _duration = 3710;
+                                  });
+                                  jumpToPage(5);
+                                  _showToast(translate('Track.ready'),
+                                      themeNotifier.isDark);
+                                },
+                                child: Wrap(
+                                  children: <Widget>[
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Transform.translate(
+                                        offset: Offset(
+                                            useTabletLayout ? 0.0 : 0.0,
+                                            useTabletLayout ? 0.0 : 10.0),
+                                        child: Text(translate('Track.So2'),
+                                            style: TextStyle(
+                                                fontSize: useTabletLayout
+                                                    ? 40
+                                                    : 20))),
+                                    Transform.scale(
+                                        scale: useTabletLayout ? 1.5 : 0.8,
+                                        child: Builder(
+                                          builder: (context) => IconButton(
+                                            icon: Image.asset(
+                                                'assets/icons/so2emissions.png'),
+                                            onPressed: null,
+                                          ),
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            )
+                          ]),
+                      SizedBox(height: useTabletLayout ? 16 : 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(
+                            width: useTabletLayout ? 500 : 280,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 2,
+                                  shadowColor: themeNotifier.isDark
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.3),
+                                  primary: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0)),
+                              onPressed: () async {
+                                savekml_Task(projectname[6]);
+                                await _read(6);
+                                await LGConnection().openBalloon(
+                                    projectname[6],
+                                    translate('Track.situation').trim(),
+                                    translate("info.situation.date"),
+                                    270,
+                                    translate("info.description") +
+                                        " " +
+                                        translate("info.situation.description"),
+                                    "Instituto Geográfico Nacional, GDACS, ERCC Portal",
+                                    translate('title.name'),
+                                    "situation_infographic.png");
+                                setState(() {
+                                  _duration = 5250;
+                                });
+                                jumpToPage(6);
+                                _showToast(translate('Track.ready'),
+                                    themeNotifier.isDark);
+                              },
+                              child: Wrap(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Transform.translate(
+                                      offset: Offset(
+                                          useTabletLayout ? 0.0 : 0.0,
+                                          useTabletLayout ? 0.0 : 10.0),
+                                      child: Text(translate('Track.situation'),
+                                          style: TextStyle(
+                                              fontSize:
+                                                  useTabletLayout ? 40 : 20))),
+                                  Transform.scale(
+                                      scale: useTabletLayout ? 1.5 : 0.8,
+                                      child: Builder(
+                                        builder: (context) => IconButton(
+                                          icon: Image.asset(
+                                              'assets/icons/situation.png'),
+                                          onPressed: null,
+                                        ),
+                                      )),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: useTabletLayout ? 500 : 280,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 2,
+                                  shadowColor: themeNotifier.isDark
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.3),
+                                  primary: themeNotifier.isDark
+                                      ? ui.Color.fromARGB(255, 43, 43, 43)
+                                      : ui.Color.fromARGB(255, 220, 220, 220),
+                                  padding:
+                                      EdgeInsets.all(useTabletLayout ? 15 : 0)),
+                              onPressed: () async {
+                                savekml_Task(projectname[7]);
+                                await _read(7);
+                                await LGConnection().openBalloon(
+                                    projectname[7],
+                                    translate('Track.located').trim(),
+                                    translate("info.located.date"),
+                                    230,
+                                    translate("info.description") +
+                                        " " +
+                                        translate("info.located.description"),
+                                    "Instituto Geográfico Nacional",
+                                    translate('title.name'),
+                                    "locatedevents_infographic.jpg");
+                                setState(() {
+                                  _duration = 8710;
+                                });
+                                jumpToPage(7);
+                                _showToast(translate('Track.ready'),
+                                    themeNotifier.isDark);
+                              },
+                              child: Wrap(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Transform.translate(
+                                      offset: Offset(
+                                          useTabletLayout ? 0.0 : 0.0,
+                                          useTabletLayout ? 0.0 : 10.0),
+                                      child: Text(translate('Track.located'),
+                                          style: TextStyle(
+                                              fontSize:
+                                                  useTabletLayout ? 40 : 20))),
+                                  Transform.scale(
+                                      scale: useTabletLayout ? 1.5 : 0.8,
+                                      child: Builder(
+                                        builder: (context) => IconButton(
+                                          icon: Image.asset(
+                                              'assets/icons/locatedevents.png'),
+                                          onPressed: null,
+                                        ),
+                                      )),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: useTabletLayout ? 18 : 8,
+                      SizedBox(height: useTabletLayout ? 20 : 5),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Builder(
+                              builder: (context) => IconButton(
+                                  icon: themeNotifier.isDark
+                                      ? Image.asset(
+                                          'assets/icons/calendar_dark.png')
+                                      : Image.asset(
+                                          'assets/icons/calendar.png'),
+                                  iconSize: useTabletLayout ? 65 : 20,
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            CustomBuilder(),
+                                      ),
+                                    );
+                                  })),
+                          SizedBox(
+                            width: useTabletLayout ? 20 : 10,
+                          ),
+                          SizedBox(
+                            width: useTabletLayout ? 360 : 200,
+                            child: loading
+                                ? LinearPercentIndicator(
+                                    animation: true,
+                                    width: useTabletLayout ? 360 : 200,
+                                    lineHeight: useTabletLayout ? 76.0 : 40.0,
+                                    backgroundColor: themeNotifier.isDark
+                                        ? ui.Color.fromARGB(205, 42, 47, 48)
+                                        : ui.Color.fromARGB(205, 180, 199, 206),
+                                    percent: 1.0,
+                                    padding: EdgeInsets.all(0),
+                                    animationDuration: _duration,
+                                    center: Wrap(
+                                      children: <Widget>[
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(translate('Track.visual'),
+                                            style: TextStyle(
+                                                fontSize:
+                                                    useTabletLayout ? 35 : 15,
+                                                fontWeight:
+                                                    ui.FontWeight.w500)),
+                                        Icon(
+                                          Icons.location_on_sharp,
+                                          color:
+                                              ui.Color.fromARGB(255, 228, 6, 9),
+                                          size: useTabletLayout ? 45.0 : 20,
+                                        ),
+                                      ],
+                                    ),
+                                    barRadius: ui.Radius.circular(
+                                        useTabletLayout ? 50 : 25),
+                                    progressColor: Colors.greenAccent,
+                                  )
+                                : ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      elevation: 2,
+                                      shadowColor: themeNotifier.isDark
+                                          ? Colors.black
+                                          : Colors.grey.withOpacity(0.3),
+                                      primary: themeNotifier.isDark
+                                          ? ui.Color.fromARGB(255, 30, 30, 30)
+                                          : Colors.white,
+                                      padding: EdgeInsets.all(
+                                          useTabletLayout ? 15 : 0),
+                                      shape: StadiumBorder(),
+                                    ),
+                                    child: Wrap(
+                                      children: <Widget>[
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(translate('Track.visual'),
+                                            style: TextStyle(
+                                                fontSize:
+                                                    useTabletLayout ? 35 : 15)),
+                                        Icon(
+                                          Icons.location_on_sharp,
+                                          color:
+                                              ui.Color.fromARGB(255, 228, 6, 9),
+                                          size: useTabletLayout ? 45.0 : 20,
+                                        ),
+                                      ],
+                                    ),
+                                    onPressed: () {
+                                      // send to LG
+                                      setState(() {
+                                        loading = true;
+                                      });
+
+                                      LGConnection()
+                                          .sendToLG(kml.mount(), finalname)
+                                          .then((value) {
+                                        _showToast(translate('Track.Visualize'),
+                                            themeNotifier.isDark);
+
+                                        setState(() {
+                                          isOpen = true;
+                                          loading = false;
+                                        });
+                                        retryButton(kml.mount(), finalname,
+                                            _duration / 2);
+                                        DefaultTabController.of(context)
+                                            ?.animateTo(2);
+                                      }).catchError((onError) {
+                                        print('oh no $onError');
+                                        setState(() {
+                                          loading = false;
+                                        });
+                                        if (onError == 'nogeodata') {
+                                          showAlertDialog(
+                                              translate('Track.alert'),
+                                              translate('Track.alert2'),
+                                              themeNotifier.isDark);
+                                        }
+                                        showAlertDialog(
+                                            translate('Track.alert3'),
+                                            translate('Track.alert4'),
+                                            themeNotifier.isDark);
+                                      });
+                                    }),
+                          ),
+                          SizedBox(
+                            width: useTabletLayout ? 18 : 8,
+                          ),
+                          isdemoactive
+                              ? Transform.scale(
+                                  scale: 0.925,
+                                  child: Builder(
+                                      builder: (context) => IconButton(
+                                            icon: themeNotifier.isDark
+                                                ? Image.asset(
+                                                    'assets/icons/stop-button-black.png')
+                                                : Image.asset(
+                                                    'assets/icons/stop-button.png'),
+                                            iconSize: useTabletLayout ? 70 : 35,
+                                            onPressed: () {
+                                              // A demo of all buttons
+                                              setState(() {
+                                                stopdemo = true;
+                                                isdemoactive = false;
+                                              });
+                                            },
+                                          )))
+                              : Transform.scale(
+                                  scale: 1.25,
+                                  child: Builder(
+                                      builder: (context) => IconButton(
+                                            icon: themeNotifier.isDark
+                                                ? Image.asset(
+                                                    'assets/icons/demo_dark.png')
+                                                : Image.asset(
+                                                    'assets/icons/demo.png'),
+                                            iconSize: useTabletLayout ? 70 : 35,
+                                            onPressed: () {
+                                              // A demo of all buttons
+                                              setState(() {
+                                                stopdemo = false;
+                                                isdemoactive = true;
+                                              });
+                                              _One(themeNotifier.isDark);
+                                            },
+                                          )))
+                        ],
                       ),
-                      isdemoactive
-                          ? Transform.scale(
-                              scale: 0.925,
-                              child: Builder(
-                                  builder: (context) => IconButton(
-                                        icon: themeNotifier.isDark
-                                            ? Image.asset(
-                                                'assets/icons/stop-button-black.png')
-                                            : Image.asset(
-                                                'assets/icons/stop-button.png'),
-                                        iconSize: useTabletLayout ? 70 : 35,
-                                        onPressed: () {
-                                          // A demo of all buttons
-                                          setState(() {
-                                            stopdemo = true;
-                                            isdemoactive = false;
-                                          });
-                                        },
-                                      )))
-                          : Transform.scale(
-                              scale: 1.25,
-                              child: Builder(
-                                  builder: (context) => IconButton(
-                                        icon: themeNotifier.isDark
-                                            ? Image.asset(
-                                                'assets/icons/demo_dark.png')
-                                            : Image.asset(
-                                                'assets/icons/demo.png'),
-                                        iconSize: useTabletLayout ? 70 : 35,
-                                        onPressed: () {
-                                          // A demo of all buttons
-                                          setState(() {
-                                            stopdemo = false;
-                                            isdemoactive = true;
-                                          });
-                                          _One(themeNotifier.isDark);
-                                        },
-                                      )))
                     ],
                   ),
-                ],
-              ),
-            ));
+                ))));
   }
 }
 

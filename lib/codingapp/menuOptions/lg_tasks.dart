@@ -387,12 +387,12 @@ class _LGtasksState extends State<LGtasks> {
                                     child: Wrap(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 10,
+                                          width: useTabletLayout ? 10 : 0,
                                         ),
                                         Text(translate("Tasks.Logo"),
                                             style: TextStyle(
                                                 fontSize:
-                                                    useTabletLayout ? 39 : 25,
+                                                    useTabletLayout ? 39 : 20,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0))),
                                       ],
@@ -437,12 +437,12 @@ class _LGtasksState extends State<LGtasks> {
                                       child: Wrap(
                                         children: <Widget>[
                                           SizedBox(
-                                            width: 10,
+                                            width: useTabletLayout ? 10 : 0,
                                           ),
                                           Text(translate("Tasks.Clean"),
                                               style: TextStyle(
                                                   fontSize:
-                                                      useTabletLayout ? 39 : 25,
+                                                      useTabletLayout ? 39 : 20,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],
@@ -486,12 +486,12 @@ class _LGtasksState extends State<LGtasks> {
                                     child: Wrap(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 10,
+                                          width: useTabletLayout ? 10 : 0,
                                         ),
                                         Text(translate("Tasks.Save"),
                                             style: TextStyle(
                                                 fontSize:
-                                                    useTabletLayout ? 39 : 25,
+                                                    useTabletLayout ? 39 : 20,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0))),
                                       ],
@@ -576,12 +576,12 @@ class _LGtasksState extends State<LGtasks> {
                                     child: Wrap(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 10,
+                                          width: useTabletLayout ? 10 : 0,
                                         ),
                                         Text(translate("Tasks.set"),
                                             style: TextStyle(
                                                 fontSize:
-                                                    useTabletLayout ? 39 : 25,
+                                                    useTabletLayout ? 39 : 20,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0))),
                                       ],
@@ -613,12 +613,12 @@ class _LGtasksState extends State<LGtasks> {
                                       child: Wrap(
                                         children: <Widget>[
                                           SizedBox(
-                                            width: 10,
+                                            width: useTabletLayout ? 10 : 0,
                                           ),
                                           Text(translate("Tasks.reset"),
                                               style: TextStyle(
                                                   fontSize:
-                                                      useTabletLayout ? 39 : 25,
+                                                      useTabletLayout ? 39 : 20,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],
@@ -657,13 +657,13 @@ class _LGtasksState extends State<LGtasks> {
                                     child: Wrap(
                                       children: <Widget>[
                                         SizedBox(
-                                          width: 10,
+                                          width: useTabletLayout ? 10 : 0,
                                         ),
                                         Text(
                                           translate("Tasks.Relaunch"),
                                           style: TextStyle(
                                               fontSize:
-                                                  useTabletLayout ? 39 : 25,
+                                                  useTabletLayout ? 39 : 20,
                                               color:
                                                   Color.fromARGB(255, 0, 0, 0)),
                                         ),
@@ -698,12 +698,12 @@ class _LGtasksState extends State<LGtasks> {
                                       child: Wrap(
                                         children: <Widget>[
                                           SizedBox(
-                                            width: 10,
+                                            width: useTabletLayout ? 10 : 0,
                                           ),
                                           Text(translate("Tasks.Reboot"),
                                               style: TextStyle(
                                                   fontSize:
-                                                      useTabletLayout ? 39 : 25,
+                                                      useTabletLayout ? 39 : 20,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],
@@ -736,12 +736,12 @@ class _LGtasksState extends State<LGtasks> {
                                       child: Wrap(
                                         children: <Widget>[
                                           SizedBox(
-                                            width: 10,
+                                            width: useTabletLayout ? 10 : 0,
                                           ),
                                           Text(translate("Tasks.Shutdown"),
                                               style: TextStyle(
                                                   fontSize:
-                                                      useTabletLayout ? 39 : 25,
+                                                      useTabletLayout ? 39 : 20,
                                                   color: Color.fromARGB(
                                                       255, 0, 0, 0))),
                                         ],

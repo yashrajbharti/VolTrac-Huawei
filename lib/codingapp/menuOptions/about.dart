@@ -57,8 +57,8 @@ class _AboutScreenState extends State<AboutScreen> {
                   : Color.fromARGB(255, 204, 204, 204),
               body: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 120.0, vertical: 0),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: useTabletLayout ? 120.0 : 90, vertical: 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [

@@ -239,7 +239,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -252,7 +252,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -267,7 +267,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate('info.land.description'),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -292,7 +292,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -305,7 +305,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -320,7 +320,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate('info.land.date'),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -346,7 +346,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -359,7 +359,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -373,11 +373,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate('info.land.legend'),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -394,13 +394,13 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text(translate('info.land.landscape'),
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
                 ),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -417,7 +417,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text(translate('info.land.infoicon'),
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
@@ -445,7 +445,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -458,7 +458,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -479,7 +479,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'NASA Earth Observatory',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -487,7 +487,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontWeight: FontWeight.bold),
                   ),
@@ -500,7 +500,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Sentinel Playground',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -508,7 +508,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontWeight: FontWeight.bold),
                   ),
@@ -521,7 +521,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'COPERNICUS',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -560,7 +560,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -573,7 +573,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -588,7 +588,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.hist.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -613,7 +613,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -626,7 +626,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -641,7 +641,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.hist.date"),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -667,7 +667,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -680,7 +680,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -694,11 +694,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate("info.hist.legend"),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -715,7 +715,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text("1480    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -730,7 +730,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "1585   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -746,7 +746,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "1646   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -762,14 +762,14 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.hist.and"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -786,7 +786,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text("1712    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -801,7 +801,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "1949   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -817,7 +817,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "1949   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -833,7 +833,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "2021   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -849,7 +849,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.hist.lava"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -878,7 +878,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -891,7 +891,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -912,7 +912,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'COPERNICUS',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                       ),
                     ),
@@ -920,7 +920,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -933,7 +933,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'ResearchGate',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                       ),
                     ),
@@ -941,7 +941,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -954,7 +954,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Global Volcanism Program',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                       ),
                     ),
@@ -993,7 +993,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1006,7 +1006,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1021,7 +1021,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.lava.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -1046,7 +1046,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1059,7 +1059,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1074,7 +1074,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.lava.date"),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -1100,7 +1100,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1113,7 +1113,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1127,11 +1127,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate("info.lava.legend"),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1148,7 +1148,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text("24 Sep    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -1163,7 +1163,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "8 Oct   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1179,7 +1179,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "21 Oct   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1195,14 +1195,14 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "4 Nov   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1219,7 +1219,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text("14 Nov    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -1234,7 +1234,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "21 Nov   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1250,7 +1250,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "1 Dec   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1266,7 +1266,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "18 Dec   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1282,7 +1282,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.lava.vents"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1311,7 +1311,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1324,7 +1324,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1345,7 +1345,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'COPERNICUS',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                       ),
                     ),
@@ -1353,7 +1353,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -1366,7 +1366,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Wikipedia | Cumbre Vieja',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                       ),
                     ),
@@ -1405,7 +1405,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1418,7 +1418,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1433,7 +1433,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.prehistoric.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -1458,7 +1458,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1471,7 +1471,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1486,7 +1486,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.prehistoric.date"),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -1512,7 +1512,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1525,7 +1525,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1539,11 +1539,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate("info.prehistoric.legend"),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1560,7 +1560,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text("6 ± 2 Ka    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -1575,7 +1575,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "3.2 ± 0.1 Ka   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1591,14 +1591,14 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "3.2 ± 0.1 Ka   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1615,7 +1615,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text("1.04 ± 0.009    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -1630,7 +1630,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "1480 AD   ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1646,7 +1646,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.prehistoric.lava"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1675,7 +1675,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1688,7 +1688,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1709,7 +1709,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'ResearchGate',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                       ),
                     ),
@@ -1717,7 +1717,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -1730,7 +1730,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Global Volcanism Program',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                       ),
                     ),
@@ -1769,7 +1769,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1782,7 +1782,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1797,7 +1797,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.aff.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -1822,7 +1822,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1835,7 +1835,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1850,7 +1850,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.aff.date"),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -1876,7 +1876,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -1889,7 +1889,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -1903,11 +1903,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate("info.aff.legend"),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1925,7 +1925,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.aff.destroyed"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1941,7 +1941,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.aff.possible"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1965,7 +1965,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text(translate("info.aff.lava"),
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -1980,7 +1980,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.aff.vents"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -1992,21 +1992,21 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.aff.area"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
                     Text(
                       "▬▬  ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Color.fromARGB(255, 3, 95, 171),
                           fontFamily: "GoogleSans"),
                     ),
                     Text(
                       translate("info.aff.hydro"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -2022,42 +2022,42 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       "▬▬  ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.red,
                           fontFamily: "GoogleSans"),
                     ),
                     Text(
                       translate("info.aff.roads"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
                     Text(
                       "▬▬  ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Color.fromARGB(255, 249, 233, 82),
                           fontFamily: "GoogleSans"),
                     ),
                     Text(
                       translate("info.aff.possible"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
                     Text(
                       "▬▬  ",
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Color.fromARGB(255, 0, 0, 0),
                           fontFamily: "GoogleSans"),
                     ),
                     Text(
                       translate("info.aff.novisible"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -2089,7 +2089,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2102,7 +2102,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2123,7 +2123,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'COPERNICUS',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -2162,7 +2162,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2175,7 +2175,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2190,7 +2190,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.So2.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -2215,7 +2215,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2228,7 +2228,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2243,7 +2243,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.So2.date"),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -2269,7 +2269,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2282,7 +2282,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2296,7 +2296,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate("info.So2.legend"),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
@@ -2313,7 +2313,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 1E - 2    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2323,7 +2323,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 8.75E - 3    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2333,7 +2333,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 6.25E - 3    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2343,13 +2343,13 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 3.75E - 3    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
                 ),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -2362,7 +2362,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 1.25E - 3    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2372,7 +2372,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 0.0    ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -2387,7 +2387,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.So2.volcano"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -2416,7 +2416,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2429,7 +2429,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2450,7 +2450,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Sentinel EO Browser',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -2458,7 +2458,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2471,7 +2471,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'GDACS',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -2479,7 +2479,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2492,7 +2492,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Twitter | Platform ADAM',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -2531,7 +2531,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2544,7 +2544,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2559,7 +2559,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.situation.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -2584,7 +2584,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2597,7 +2597,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2612,7 +2612,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.situation.date"),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -2638,7 +2638,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2651,7 +2651,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2665,7 +2665,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate("info.situation.legend"),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
@@ -2688,7 +2688,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.situation.main"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -2704,7 +2704,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.situation.orange"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -2719,7 +2719,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text(translate("info.situation.maritime"),
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
@@ -2742,7 +2742,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text(translate("info.situation.closed"),
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     Transform.scale(
@@ -2757,7 +2757,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.situation.lava"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -2771,7 +2771,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     Text(
                       translate("info.situation.municipality"),
                       style: TextStyle(
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontFamily: "GoogleSans"),
                     ),
@@ -2791,7 +2791,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 11-12  ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2801,7 +2801,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 13-14  ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2811,7 +2811,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 15-16  ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2821,7 +2821,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 17-18  ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2831,7 +2831,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 19  ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2841,7 +2841,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 20  ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                     const Icon(
@@ -2851,7 +2851,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(translate("info.situation.data"),
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
@@ -2879,7 +2879,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -2892,7 +2892,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2913,7 +2913,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Instituto Geográfico Nacional',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -2921,7 +2921,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2934,7 +2934,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'GDACS',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -2942,7 +2942,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   Text(
                     ' , ',
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontWeight: FontWeight.bold),
                   ),
@@ -2955,7 +2955,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'ERCC Portal',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -2994,7 +2994,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.info_outline_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -3007,7 +3007,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -3022,7 +3022,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.located.description"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70),
                   ),
                 ],
@@ -3047,7 +3047,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.calendar_month_rounded,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -3060,7 +3060,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.date"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -3075,7 +3075,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.located.date"),
                     style: new TextStyle(
-                      fontSize: useTabletLayout ? 18.5 : 14,
+                      fontSize: useTabletLayout ? 18.5 : 12,
                       color: Colors.white70,
                     ),
                   ),
@@ -3101,7 +3101,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Color.fromARGB(255, 125, 164, 243),
                 child: Icon(Icons.map_sharp,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -3114,7 +3114,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.legend"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -3128,11 +3128,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               children: <Widget>[
                 Text(translate("info.located.legend"),
                     style: TextStyle(
-                        fontSize: useTabletLayout ? 18.5 : 14,
+                        fontSize: useTabletLayout ? 18.5 : 12,
                         color: Colors.white70,
                         fontFamily: "GoogleSans")),
                 SizedBox(
-                  height: useTabletLayout ? 8 : 2,
+                  height: useTabletLayout ? 8 : 0,
                 ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -3148,7 +3148,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 0 - 2 mbLg   ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
@@ -3170,7 +3170,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 2 - 3 mbLg   ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
@@ -3192,7 +3192,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                     ),
                     Text(" 3 - 4 mbLg   ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
@@ -3216,7 +3216,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                         )),
                     Text("5 - 6 mbLg   ",
                         style: TextStyle(
-                            fontSize: useTabletLayout ? 18.5 : 14,
+                            fontSize: useTabletLayout ? 18.5 : 12,
                             color: Colors.white70,
                             fontFamily: "GoogleSans")),
                   ],
@@ -3244,7 +3244,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
               child: Container(
                 color: Colors.transparent,
                 child: Icon(Icons.link,
-                    color: Colors.white, size: useTabletLayout ? 36.0 : 18.0),
+                    color: Colors.white, size: useTabletLayout ? 36.0 : 16.0),
               ),
             ),
           ),
@@ -3257,7 +3257,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                   new Text(
                     translate("info.sources"),
                     style: new TextStyle(
-                        fontSize: useTabletLayout ? 20.0 : 14,
+                        fontSize: useTabletLayout ? 20.0 : 12,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
@@ -3278,7 +3278,7 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
                       'Instituto Geográfico Nacional',
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: useTabletLayout ? 18.5 : 14,
+                          fontSize: useTabletLayout ? 18.5 : 12,
                           color: Colors.white70,
                           fontWeight: FontWeight.bold),
                     ),
@@ -3298,14 +3298,16 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? histwidget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
                         child: histwidget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
@@ -3332,14 +3334,16 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? lavawidget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
                         child: lavawidget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
@@ -3365,14 +3369,17 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? prewidget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10), child: prewidget),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
+                        child: prewidget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
                   border: Border.all(
@@ -3397,14 +3404,17 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? affwidget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10), child: affwidget),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
+                        child: affwidget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
                   border: Border.all(
@@ -3429,14 +3439,16 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? landscapewidget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
                         child: landscapewidget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
@@ -3462,14 +3474,17 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? SO2widget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10), child: SO2widget),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
+                        child: SO2widget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
                   border: Border.all(
@@ -3494,14 +3509,16 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? situationwidget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
                         child: situationwidget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
@@ -3527,14 +3544,16 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
                 padding: EdgeInsets.only(
-                    top: useTabletLayout ? 20 : 20,
-                    bottom: useTabletLayout ? 0 : 20,
-                    left: useTabletLayout ? 0 : 20,
-                    right: useTabletLayout ? 0 : 20),
+                  top: useTabletLayout ? 20 : 0,
+                ),
                 child: useTabletLayout
                     ? locatedeventswidget
                     : SingleChildScrollView(
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.only(
+                            top: useTabletLayout ? 0 : 20,
+                            bottom: useTabletLayout ? 0 : 20,
+                            left: useTabletLayout ? 0 : 20,
+                            right: useTabletLayout ? 0 : 20),
                         child: locatedeventswidget),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 125, 164, 243),
