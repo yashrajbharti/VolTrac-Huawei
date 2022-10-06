@@ -78,7 +78,7 @@ class _MainpageState extends State<Mainpage> {
                                         fontSize: useTabletLayout ? 16 : 12,
                                       )),
                                   backgroundColor:
-                                      Theme.of(context).primaryColor,
+                                      Color.fromARGB(255, 125, 164, 243),
                                   targetColor: themeNotifier.isDark
                                       ? Color.fromARGB(255, 30, 30, 30)
                                       : Colors.white,
