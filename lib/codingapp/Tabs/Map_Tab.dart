@@ -13864,6 +13864,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    HuaweiMapInitializer.initializeMap();
     // initialize loadData method
     _polygonlava();
     getImages("assets/icons/molten.png", 69).then((value) => _moltenlava());
