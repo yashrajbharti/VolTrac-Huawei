@@ -23,7 +23,7 @@
 
 - **[About VolTrac](#about-voltrac)**
 - **[App Features](#app-features)**
-- **[Running Play Store app](#running-play-store-app)**
+- **[Running App Gallery app](#running-play-store-app)**
 - **[Building from source](#building-from-source)**
 - **[Setting up the rig](#setting-up-the-rig)**
 - **[Guide for Open Source Contributors](#guide-for-open-source-contributors)**
@@ -39,7 +39,7 @@
 The project presents multiple layers of information on the events that occurred in the eruption of the Cumbre Vieja volcano in La Palma during the fall of 2021. 
 * Data such as the evolution of lava flows and many more are presented in a graphical and interactive way on the Liquid Galaxy platform, a visualization cluster based on Google Earth.
 * Further customizations are possible with the help of the Custom Builder, which has an interactive UX where the user can check the data he wants and visualize the Custom KML by providing start and end dates with the help of a calendar widget. 
-* The Map screen UI is a perfect interaction tool for the panoramic display of Google Earth with the help of Google maps, and it allows us to control the LG and send Orbit movements and various other controls. 
+* The Map screen UI is a perfect interaction tool for the panoramic display of Google Earth with the help of Huawei maps, and it allows us to control the LG and send Orbit movements and various other controls. 
 The app shows essential information about the La Palma Volcanic activity in an elegant and user-friendly way.
 * It supports 10 Languages: Arabic, German, English, Spanish, Hindi, Japanese, Portuguese, Russian, Albanian, and Chinese (Simplified). 
 The app comes in both day and night modes, and one can "tour" the app to get familiar with all the features.
@@ -51,16 +51,16 @@ Lastly, the app has an info tab that lists helpful information along with the so
 * Allows Visualization of various Tracks such as Historic, Lava Flow, Affected Areas, etc for La Palmas onto the Liquid Galaxy. One can also visualize Custom KML by providing start and end dates with the help of calender widget. The Map screen UI allows us to Control the LG and send Orbit movements and various other controls. The app shows a significant amount of information about the La Palma Volcanic activity in an elegant and user-friendly way.     
 * Supports 10 Languages: 🇦🇪 Arabic, 🇩🇪 German, 🇺🇸 English, 🇪🇸 Spanish, 🇮🇳 Hindi, 🇯🇵 Japanese, 🇵🇹 Portuguese, 🇷🇺 Russian, 🇦🇱 Albanian, and 🇨🇳 Chinese (Simplified).  
 * Comes with Day and Night theme switch.  
-* One can seemlessly control the Google Earth of the Liquid Galaxy by performing touch interactions on the Google maps of the VolTrac app.
+* One can seemlessly control the Google Earth of the Liquid Galaxy by performing touch interactions on the Huawei maps of the VolTrac app.
   
-## Running Play Store app
+## Running App Gallery app
   
 #### Prerequisites:
   
 * 10-inch Android Tablet
 
 #### Steps:
-* Download and install the app using this [Play Store link](https://play.google.com/store/apps/details?id=lapalma.voltrac). Alternatively, you can scan the QR code showcased at top to download and install the app.
+* Download and install the app using this [App Gallery link](https://play.google.com/store/apps/details?id=lapalma.voltrac). Alternatively, you can scan the QR code showcased at top to download and install the app.
 * To connect to the Liquid Galaxy, tap on menu icon and go to Connection Manager; then fill the details similar to below:
 <p align="center">
   <img alt="" src="https://raw.githubusercontent.com/yashrajbharti/kml-images/main/connect.jpeg" width="700px">
@@ -88,27 +88,6 @@ Documentation on how to set up Flutter SDK and its environment can be found [her
 $ git clone https://github.com/yashrajbharti/La-Palma-Volcano-Eruption-Tracking-Tool.git
 $ cd La-Palma-Volcano-Eruption-Tracking-Tool
 ```
-  
-* After you have successfully cloned the project, set up Google maps API Key as La Palma VolTrac uses [Google maps Android API](https://developers.google.com/maps/documentation/android-sdk/overview?hl=pt-br) as the map service. To use Google maps you required an **API KEY**. To get this key you need to:
-
-1. Have a Google Account
-2. Create a Google Cloud Project
-3. Open Google Cloud Console
-4. Enable Maps Android SDK
-5. Generate an API KEY
-
-With the key in hands, the next step is placing the key inside the app. Go to *android/app/main* and edit the **AndroidManifest.xml**.
-
-Replace the **PLACE_HERE_YOUR_API_KEY** with the key you just created.
-
-```XML
-<application
-        android:label="lapalmavoltrac"
-        android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="PLACE_HERE_YOUR_API_KEY"/>
-        
-```  
     
 * To run the code, ppen a terminal and navigate to the project root directory. First you need to install the packages by running:
   
