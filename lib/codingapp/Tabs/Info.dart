@@ -3297,7 +3297,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? histwidget
                     : SingleChildScrollView(
@@ -3327,7 +3331,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? lavawidget
                     : SingleChildScrollView(
@@ -3356,7 +3364,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? prewidget
                     : SingleChildScrollView(
@@ -3384,7 +3396,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? affwidget
                     : SingleChildScrollView(
@@ -3412,7 +3428,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? landscapewidget
                     : SingleChildScrollView(
@@ -3441,7 +3461,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? SO2widget
                     : SingleChildScrollView(
@@ -3469,7 +3493,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? situationwidget
                     : SingleChildScrollView(
@@ -3498,7 +3526,11 @@ class _VerticalCardPagerDemoState extends State<VerticalCardPagerDemo>
       Consumer<ThemeModel>(
           builder: (context, ThemeModel themeNotifier, child) => Container(
                 margin: EdgeInsets.fromLTRB(90, 0, 90, 0),
-                padding: EdgeInsets.only(top: useTabletLayout ? 20 : 10),
+                padding: EdgeInsets.only(
+                    top: useTabletLayout ? 20 : 20,
+                    bottom: useTabletLayout ? 0 : 20,
+                    left: useTabletLayout ? 0 : 20,
+                    right: useTabletLayout ? 0 : 20),
                 child: useTabletLayout
                     ? locatedeventswidget
                     : SingleChildScrollView(
