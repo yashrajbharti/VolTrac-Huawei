@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <application android:label="La Palma VolTrac" android:name="${applicationName}" android:icon="@mipmap/launcher_icon" android:requestLegacyExternalStorage="true">
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="DAEDAIjk+PiecosWHUYMqu+UwIpxZx4XIIJUsDfCdIkfZSmCT1NL3YASwomjatebxtgpkn4pVWYDhTNQqFrV36Q+GAVmuXZ6g7QZzw=="/>
         <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop" android:theme="@style/LaunchTheme" android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" android:hardwareAccelerated="true" android:screenOrientation="sensorLandscape" android:windowSoftInputMode="adjustResize">
