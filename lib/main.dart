@@ -25,7 +25,6 @@ main() async {
         'sq',
         'pt'
       ]);
-
   runApp(LocalizedApp(delegate, MyApp()));
 }
 
@@ -33,6 +32,15 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+    //     overlays: [SystemUiOverlay.bottom]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.black,
+      // navigation bar color
+      statusBarColor: Color.fromARGB(105, 16, 16, 16),
+      statusBarIconBrightness: Brightness.light,
+      // status bar color
+    ));
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,

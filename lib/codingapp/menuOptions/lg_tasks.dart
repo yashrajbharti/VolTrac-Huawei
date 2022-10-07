@@ -322,6 +322,13 @@ class _LGtasksState extends State<LGtasks> {
               appBar: PreferredSize(
                 preferredSize: const Size.fromHeight(50),
                 child: AppBar(
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    systemNavigationBarColor:
+                        Colors.black, // navigation bar color
+                    statusBarColor: Color.fromARGB(105, 16, 16, 16),
+                    statusBarIconBrightness:
+                        Brightness.light, // status bar color
+                  ),
                   backgroundColor: Colors.transparent,
                   elevation: 0,
                   leading: IconButton(

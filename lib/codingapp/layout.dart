@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:provider/provider.dart';
 import 'package:voltrac/codingapp/theme-storage.dart';
@@ -26,6 +27,11 @@ class _LayoutState extends State<Layout> {
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(useTabletLayout ? 50.0 : 36.0),
             child: AppBar(
+              systemOverlayStyle: SystemUiOverlayStyle(
+                systemNavigationBarColor: Colors.black, // navigation bar color
+                statusBarColor: Color.fromARGB(105, 16, 16, 16),
+                statusBarIconBrightness: Brightness.light, // status bar color
+              ),
               automaticallyImplyLeading: false,
               elevation: 0,
               actions: const <Widget>[],

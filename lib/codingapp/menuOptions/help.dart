@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -35,6 +36,13 @@ class _HelpScreenState extends State<HelpScreen> {
               appBar: PreferredSize(
                 preferredSize: const Size.fromHeight(50),
                 child: AppBar(
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    systemNavigationBarColor:
+                        Colors.black, // navigation bar color
+                    statusBarColor: Color.fromARGB(105, 16, 16, 16),
+                    statusBarIconBrightness:
+                        Brightness.light, // status bar color
+                  ),
                   elevation: 0,
                   backgroundColor: Colors.transparent,
                   leading: IconButton(

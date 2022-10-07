@@ -55,11 +55,11 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   // bool isDemoActive = false;
   bool isShowing = false;
   int rigcount = 5;
-  double zoomvalue = 591657550.500000 / pow(2, 13.15393352508545);
+  double zoomvalue = 591657550.500000 / pow(2, 12.65393352508545);
   double latvalue = 28.61785656297236;
   double longvalue = -17.895854520583153;
   double tiltvalue = 41.82725143432617;
-  double bearingvalue = 61.403038024902344; // 2D angle
+  double bearingvalue = -61.403038024902344; // 2D angle
 
   bool blackandwhite = false;
   Set<Polygon> _polygon = HashSet<Polygon>();
@@ -13918,15 +13918,15 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   void _ongpsfixedButtonPressed() {
     setState(() {
       _fixposition();
-      zoomvalue = (591657550.500000 / pow(2, 13.15393352508545));
+      zoomvalue = (591657550.500000 / pow(2, 12.65393352508545));
       LatLng newlatlang = _center;
       mapController?.animateCamera(
         CameraUpdate.newCameraPosition(
           CameraPosition(
               target: newlatlang,
-              zoom: 13.15393352508545,
+              zoom: 12.65393352508545,
               tilt: 41.82725143432617,
-              bearing: 61.403038024902344),
+              bearing: -61.403038024902344),
         ),
       );
     });
@@ -14163,7 +14163,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
 
   void _onCameraIdle() {
     motionControls(
-        latvalue, longvalue, zoomvalue / rigcount, tiltvalue, bearingvalue);
+        latvalue, longvalue, zoomvalue / rigcount, tiltvalue, -bearingvalue);
   }
 
   @override
@@ -14189,7 +14189,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
           },
           initialCameraPosition: CameraPosition(
               target: _center,
-              zoom: 13.15393352508545,
+              zoom: 12.65393352508545,
               bearing: bearingvalue,
               tilt: tiltvalue),
           minMaxZoomPreference: MinMaxZoomPreference.unbounded,
@@ -14207,7 +14207,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Align(
-            alignment: Alignment.topRight,
+            alignment: Alignment.topLeft,
             child: Column(
               children: <Widget>[
                 SizedBox(height: useTabletLayout ? 57.0 : 10),
@@ -14241,7 +14241,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Align(
-            alignment: Alignment.topLeft,
+            alignment: Alignment.topRight,
             child: Column(
               children: <Widget>[
                 SizedBox(height: useTabletLayout ? 128.0 : 74),

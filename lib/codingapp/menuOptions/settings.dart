@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:ssh2/ssh2.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -213,6 +214,12 @@ class SettingsState extends State<Settings> {
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(50),
               child: AppBar(
+                systemOverlayStyle: SystemUiOverlayStyle(
+                  systemNavigationBarColor:
+                      Colors.black, // navigation bar color
+                  statusBarColor: Color.fromARGB(105, 16, 16, 16),
+                  statusBarIconBrightness: Brightness.light, // status bar color
+                ),
                 backgroundColor: Colors.transparent,
                 elevation: 0,
                 leading: IconButton(

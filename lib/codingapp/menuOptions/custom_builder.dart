@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
 
 import 'package:flutter_translate/flutter_translate.dart';
@@ -325,6 +326,12 @@ class _CustomBuilderState extends State<CustomBuilder>
             appBar: PreferredSize(
               preferredSize: const Size.fromHeight(50),
               child: AppBar(
+                systemOverlayStyle: SystemUiOverlayStyle(
+                  systemNavigationBarColor:
+                      Colors.black, // navigation bar color
+                  statusBarColor: Color.fromARGB(105, 16, 16, 16),
+                  statusBarIconBrightness: Brightness.light, // status bar color
+                ),
                 elevation: 0,
                 backgroundColor: Colors.transparent,
                 leading: IconButton(
