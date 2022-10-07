@@ -1,10 +1,12 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="lapalma.voltrac">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.voltrac.fluttermap">
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application android:label="La Palma VolTrac" android:name="${applicationName}" android:icon="@mipmap/launcher_icon" android:requestLegacyExternalStorage="true">
-        <!-- <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCDwPQxMBBAt3FiuUMLvDJKUUYlQMP5v4M"/> -->
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="DAEDAIjk+PiecosWHUYMqu+UwIpxZx4XIIJUsDfCdIkfZSmCT1NL3YASwomjatebxtgpkn4pVWYDhTNQqFrV36Q+GAVmuXZ6g7QZzw=="/>
         <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop" android:theme="@style/LaunchTheme" android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" android:hardwareAccelerated="true" android:screenOrientation="sensorLandscape" android:windowSoftInputMode="adjustResize">
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
