@@ -163,17 +163,24 @@ class _SendtoLGState extends State<SendtoLG> {
         translate("Track.loading") + "(" + translate('Track.hist').trim() + ")",
         isDark);
     await _read(0);
-    await LGConnection().openBalloon(
-        projectname[0],
-        translate('Track.hist').trim(),
-        translate("info.hist.date"),
-        240,
-        translate("info.description") +
-            " " +
-            translate("info.hist.description"),
-        "COPERNICUS, ResearchGate, Global Volcanism Program",
-        translate('title.name'),
-        "historic_infographic.png");
+    await LGConnection()
+        .openBalloon(
+            projectname[0],
+            translate('Track.hist').trim(),
+            translate("info.hist.date"),
+            240,
+            translate("info.description") +
+                " " +
+                translate("info.hist.description"),
+            "COPERNICUS, ResearchGate, Global Volcanism Program",
+            translate('title.name'),
+            "historic_infographic.png")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") + "(" + translate('Track.hist').trim() + ")",
         isDark);
@@ -214,7 +221,6 @@ class _SendtoLGState extends State<SendtoLG> {
       showAlertDialog(
           translate('Track.alert3'), translate('Track.alert4'), isDark);
     });
-    ;
   }
 
   _Two(bool isDark) async {
@@ -222,17 +228,24 @@ class _SendtoLGState extends State<SendtoLG> {
         translate("Track.loading") + "(" + translate('Track.lava').trim() + ")",
         isDark);
     await _read(1);
-    await LGConnection().openBalloon(
-        projectname[1],
-        translate('Track.lava').trim(),
-        translate("info.lava.date"),
-        240,
-        translate("info.description") +
-            " " +
-            translate("info.lava.description"),
-        "COPERNICUS, Wikipedia | Cumbre Vieja",
-        translate('title.name'),
-        "lavaflow_infographic.jpg");
+    await LGConnection()
+        .openBalloon(
+            projectname[1],
+            translate('Track.lava').trim(),
+            translate("info.lava.date"),
+            240,
+            translate("info.description") +
+                " " +
+                translate("info.lava.description"),
+            "COPERNICUS, Wikipedia | Cumbre Vieja",
+            translate('title.name'),
+            "lavaflow_infographic.jpg")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") + "(" + translate('Track.lava').trim() + ")",
         isDark);
@@ -272,17 +285,24 @@ class _SendtoLGState extends State<SendtoLG> {
             ")",
         isDark);
     await _read(2);
-    await LGConnection().openBalloon(
-        projectname[2],
-        translate('Track.prehistoric').trim(),
-        translate("info.prehistoric.date"),
-        270,
-        translate("info.description") +
-            " " +
-            translate("info.prehistoric.description"),
-        "ResearchGate, Global Volcanism Program",
-        translate('title.name'),
-        "prehistoric_infographic.png");
+    await LGConnection()
+        .openBalloon(
+            projectname[2],
+            translate('Track.prehistoric').trim(),
+            translate("info.prehistoric.date"),
+            270,
+            translate("info.description") +
+                " " +
+                translate("info.prehistoric.description"),
+            "ResearchGate, Global Volcanism Program",
+            translate('title.name'),
+            "prehistoric_infographic.png")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") +
             "(" +
@@ -322,15 +342,24 @@ class _SendtoLGState extends State<SendtoLG> {
         translate("Track.loading") + "(" + translate('Track.aff').trim() + ")",
         isDark);
     await _read(3);
-    await LGConnection().openBalloon(
-        projectname[3],
-        translate('Track.aff').trim(),
-        translate("info.aff.date"),
-        240,
-        translate("info.description") + " " + translate("info.aff.description"),
-        "COPERNICUS",
-        translate('title.name'),
-        "affectedareas_infographic.jpg");
+    await LGConnection()
+        .openBalloon(
+            projectname[3],
+            translate('Track.aff').trim(),
+            translate("info.aff.date"),
+            240,
+            translate("info.description") +
+                " " +
+                translate("info.aff.description"),
+            "COPERNICUS",
+            translate('title.name'),
+            "affectedareas_infographic.jpg")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") + "(" + translate('Track.aff').trim() + ")",
         isDark);
@@ -367,17 +396,24 @@ class _SendtoLGState extends State<SendtoLG> {
         translate("Track.loading") + "(" + translate('Track.land').trim() + ")",
         isDark);
     await _read(4);
-    await LGConnection().openBalloon(
-        projectname[4],
-        translate('Track.land').trim(),
-        translate("info.land.date"),
-        240,
-        translate("info.description") +
-            " " +
-            translate("info.land.description"),
-        "NASA Earth Observatory , Sentinel Playground, COPERNICUS",
-        translate('title.name'),
-        "landscape_infographic.jpg");
+    await LGConnection()
+        .openBalloon(
+            projectname[4],
+            translate('Track.land').trim(),
+            translate("info.land.date"),
+            240,
+            translate("info.description") +
+                " " +
+                translate("info.land.description"),
+            "NASA Earth Observatory , Sentinel Playground, COPERNICUS",
+            translate('title.name'),
+            "landscape_infographic.jpg")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") + "(" + translate('Track.land').trim() + ")",
         isDark);
@@ -414,15 +450,24 @@ class _SendtoLGState extends State<SendtoLG> {
         translate("Track.loading") + "(" + translate('Track.So2').trim() + ")",
         isDark);
     await _read(5);
-    await LGConnection().openBalloon(
-        projectname[5],
-        translate('Track.So2').trim(),
-        translate("info.So2.date"),
-        240,
-        translate("info.description") + " " + translate("info.So2.description"),
-        "Sentinel EO Browser, GDACS, Twitter | Platform ADAM",
-        translate('title.name'),
-        "so2_infographic.gif");
+    await LGConnection()
+        .openBalloon(
+            projectname[5],
+            translate('Track.So2').trim(),
+            translate("info.So2.date"),
+            240,
+            translate("info.description") +
+                " " +
+                translate("info.So2.description"),
+            "Sentinel EO Browser, GDACS, Twitter | Platform ADAM",
+            translate('title.name'),
+            "so2_infographic.gif")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") + "(" + translate('Track.So2').trim() + ")",
         isDark);
@@ -462,17 +507,24 @@ class _SendtoLGState extends State<SendtoLG> {
             ")",
         isDark);
     await _read(6);
-    await LGConnection().openBalloon(
-        projectname[6],
-        translate('Track.situation').trim(),
-        translate("info.situation.date"),
-        270,
-        translate("info.description") +
-            " " +
-            translate("info.situation.description"),
-        "Instituto Geográfico Nacional, GDACS, ERCC Portal",
-        translate('title.name'),
-        "situation_infographic.png");
+    await LGConnection()
+        .openBalloon(
+            projectname[6],
+            translate('Track.situation').trim(),
+            translate("info.situation.date"),
+            270,
+            translate("info.description") +
+                " " +
+                translate("info.situation.description"),
+            "Instituto Geográfico Nacional, GDACS, ERCC Portal",
+            translate('title.name'),
+            "situation_infographic.png")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") +
             "(" +
@@ -515,17 +567,24 @@ class _SendtoLGState extends State<SendtoLG> {
             ")",
         isDark);
     await _read(7);
-    await LGConnection().openBalloon(
-        projectname[7],
-        translate('Track.located').trim(),
-        translate("info.located.date"),
-        230,
-        translate("info.description") +
-            " " +
-            translate("info.located.description"),
-        "Instituto Geográfico Nacional",
-        translate('title.name'),
-        "locatedevents_infographic.jpg");
+    await LGConnection()
+        .openBalloon(
+            projectname[7],
+            translate('Track.located').trim(),
+            translate("info.located.date"),
+            230,
+            translate("info.description") +
+                " " +
+                translate("info.located.description"),
+            "Instituto Geográfico Nacional",
+            translate('title.name'),
+            "locatedevents_infographic.jpg")
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        loading = false;
+      });
+    });
     _showToast(
         translate("Track.sending") +
             "(" +
@@ -649,17 +708,25 @@ class _SendtoLGState extends State<SendtoLG> {
                                 onPressed: () async {
                                   savekml_Task(projectname[0]);
                                   await _read(0);
-                                  await LGConnection().openBalloon(
-                                      projectname[0],
-                                      translate('Track.hist').trim(),
-                                      translate("info.hist.date"),
-                                      240,
-                                      translate("info.description") +
-                                          " " +
-                                          translate("info.hist.description"),
-                                      "COPERNICUS, ResearchGate, Global Volcanism Program",
-                                      translate('title.name'),
-                                      "historic_infographic.png");
+                                  await LGConnection()
+                                      .openBalloon(
+                                          projectname[0],
+                                          translate('Track.hist').trim(),
+                                          translate("info.hist.date"),
+                                          240,
+                                          translate("info.description") +
+                                              " " +
+                                              translate(
+                                                  "info.hist.description"),
+                                          "COPERNICUS, ResearchGate, Global Volcanism Program",
+                                          translate('title.name'),
+                                          "historic_infographic.png")
+                                      .catchError((onError) {
+                                    print('oh no $onError');
+                                    setState(() {
+                                      loading = false;
+                                    });
+                                  });
                                   setState(() {
                                     _duration = 2290;
                                   });
@@ -711,17 +778,25 @@ class _SendtoLGState extends State<SendtoLG> {
                                 onPressed: () async {
                                   savekml_Task(projectname[1]);
                                   await _read(1);
-                                  await LGConnection().openBalloon(
-                                      projectname[1],
-                                      translate('Track.lava').trim(),
-                                      translate("info.lava.date"),
-                                      240,
-                                      translate("info.description") +
-                                          " " +
-                                          translate("info.lava.description"),
-                                      "COPERNICUS, Wikipedia | Cumbre Vieja",
-                                      translate('title.name'),
-                                      "lavaflow_infographic.jpg");
+                                  await LGConnection()
+                                      .openBalloon(
+                                          projectname[1],
+                                          translate('Track.lava').trim(),
+                                          translate("info.lava.date"),
+                                          240,
+                                          translate("info.description") +
+                                              " " +
+                                              translate(
+                                                  "info.lava.description"),
+                                          "COPERNICUS, Wikipedia | Cumbre Vieja",
+                                          translate('title.name'),
+                                          "lavaflow_infographic.jpg")
+                                      .catchError((onError) {
+                                    print('oh no $onError');
+                                    setState(() {
+                                      loading = false;
+                                    });
+                                  });
                                   setState(() {
                                     _duration = 4000;
                                   });
@@ -777,18 +852,25 @@ class _SendtoLGState extends State<SendtoLG> {
                               onPressed: () async {
                                 savekml_Task(projectname[2]);
                                 await _read(2);
-                                await LGConnection().openBalloon(
-                                    projectname[2],
-                                    translate('Track.prehistoric').trim(),
-                                    translate("info.prehistoric.date"),
-                                    270,
-                                    translate("info.description") +
-                                        " " +
-                                        translate(
-                                            "info.prehistoric.description"),
-                                    "ResearchGate, Global Volcanism Program",
-                                    translate('title.name'),
-                                    "prehistoric_infographic.png");
+                                await LGConnection()
+                                    .openBalloon(
+                                        projectname[2],
+                                        translate('Track.prehistoric').trim(),
+                                        translate("info.prehistoric.date"),
+                                        270,
+                                        translate("info.description") +
+                                            " " +
+                                            translate(
+                                                "info.prehistoric.description"),
+                                        "ResearchGate, Global Volcanism Program",
+                                        translate('title.name'),
+                                        "prehistoric_infographic.png")
+                                    .catchError((onError) {
+                                  print('oh no $onError');
+                                  setState(() {
+                                    loading = false;
+                                  });
+                                });
                                 setState(() {
                                   _duration = 2080;
                                 });
@@ -839,17 +921,24 @@ class _SendtoLGState extends State<SendtoLG> {
                               onPressed: () async {
                                 savekml_Task(projectname[3]);
                                 await _read(3);
-                                await LGConnection().openBalloon(
-                                    projectname[3],
-                                    translate('Track.aff').trim(),
-                                    translate("info.aff.date"),
-                                    240,
-                                    translate("info.description") +
-                                        " " +
-                                        translate("info.aff.description"),
-                                    "COPERNICUS",
-                                    translate('title.name'),
-                                    "affectedareas_infographic.jpg");
+                                await LGConnection()
+                                    .openBalloon(
+                                        projectname[3],
+                                        translate('Track.aff').trim(),
+                                        translate("info.aff.date"),
+                                        240,
+                                        translate("info.description") +
+                                            " " +
+                                            translate("info.aff.description"),
+                                        "COPERNICUS",
+                                        translate('title.name'),
+                                        "affectedareas_infographic.jpg")
+                                    .catchError((onError) {
+                                  print('oh no $onError');
+                                  setState(() {
+                                    loading = false;
+                                  });
+                                });
                                 setState(() {
                                   _duration = 56040;
                                 });
@@ -906,17 +995,25 @@ class _SendtoLGState extends State<SendtoLG> {
                                 onPressed: () async {
                                   savekml_Task(projectname[4]);
                                   await _read(4);
-                                  await LGConnection().openBalloon(
-                                      projectname[4],
-                                      translate('Track.land').trim(),
-                                      translate("info.land.date"),
-                                      240,
-                                      translate("info.description") +
-                                          " " +
-                                          translate("info.land.description"),
-                                      "NASA Earth Observatory , Sentinel Playground, COPERNICUS",
-                                      translate('title.name'),
-                                      "landscape_infographic.jpg");
+                                  await LGConnection()
+                                      .openBalloon(
+                                          projectname[4],
+                                          translate('Track.land').trim(),
+                                          translate("info.land.date"),
+                                          240,
+                                          translate("info.description") +
+                                              " " +
+                                              translate(
+                                                  "info.land.description"),
+                                          "NASA Earth Observatory , Sentinel Playground, COPERNICUS",
+                                          translate('title.name'),
+                                          "landscape_infographic.jpg")
+                                      .catchError((onError) {
+                                    print('oh no $onError');
+                                    setState(() {
+                                      loading = false;
+                                    });
+                                  });
                                   setState(() {
                                     _duration = 4000;
                                   });
@@ -968,17 +1065,24 @@ class _SendtoLGState extends State<SendtoLG> {
                                 onPressed: () async {
                                   savekml_Task(projectname[5]);
                                   await _read(5);
-                                  await LGConnection().openBalloon(
-                                      projectname[5],
-                                      translate('Track.So2').trim(),
-                                      translate("info.So2.date"),
-                                      240,
-                                      translate("info.description") +
-                                          " " +
-                                          translate("info.So2.description"),
-                                      "Sentinel EO Browser, GDACS, Twitter | Platform ADAM",
-                                      translate('title.name'),
-                                      "so2_infographic.gif");
+                                  await LGConnection()
+                                      .openBalloon(
+                                          projectname[5],
+                                          translate('Track.So2').trim(),
+                                          translate("info.So2.date"),
+                                          240,
+                                          translate("info.description") +
+                                              " " +
+                                              translate("info.So2.description"),
+                                          "Sentinel EO Browser, GDACS, Twitter | Platform ADAM",
+                                          translate('title.name'),
+                                          "so2_infographic.gif")
+                                      .catchError((onError) {
+                                    print('oh no $onError');
+                                    setState(() {
+                                      loading = false;
+                                    });
+                                  });
                                   setState(() {
                                     _duration = 3710;
                                   });
@@ -1034,17 +1138,25 @@ class _SendtoLGState extends State<SendtoLG> {
                               onPressed: () async {
                                 savekml_Task(projectname[6]);
                                 await _read(6);
-                                await LGConnection().openBalloon(
-                                    projectname[6],
-                                    translate('Track.situation').trim(),
-                                    translate("info.situation.date"),
-                                    270,
-                                    translate("info.description") +
-                                        " " +
-                                        translate("info.situation.description"),
-                                    "Instituto Geográfico Nacional, GDACS, ERCC Portal",
-                                    translate('title.name'),
-                                    "situation_infographic.png");
+                                await LGConnection()
+                                    .openBalloon(
+                                        projectname[6],
+                                        translate('Track.situation').trim(),
+                                        translate("info.situation.date"),
+                                        270,
+                                        translate("info.description") +
+                                            " " +
+                                            translate(
+                                                "info.situation.description"),
+                                        "Instituto Geográfico Nacional, GDACS, ERCC Portal",
+                                        translate('title.name'),
+                                        "situation_infographic.png")
+                                    .catchError((onError) {
+                                  print('oh no $onError');
+                                  setState(() {
+                                    loading = false;
+                                  });
+                                });
                                 setState(() {
                                   _duration = 5250;
                                 });
@@ -1094,17 +1206,25 @@ class _SendtoLGState extends State<SendtoLG> {
                               onPressed: () async {
                                 savekml_Task(projectname[7]);
                                 await _read(7);
-                                await LGConnection().openBalloon(
-                                    projectname[7],
-                                    translate('Track.located').trim(),
-                                    translate("info.located.date"),
-                                    230,
-                                    translate("info.description") +
-                                        " " +
-                                        translate("info.located.description"),
-                                    "Instituto Geográfico Nacional",
-                                    translate('title.name'),
-                                    "locatedevents_infographic.jpg");
+                                await LGConnection()
+                                    .openBalloon(
+                                        projectname[7],
+                                        translate('Track.located').trim(),
+                                        translate("info.located.date"),
+                                        230,
+                                        translate("info.description") +
+                                            " " +
+                                            translate(
+                                                "info.located.description"),
+                                        "Instituto Geográfico Nacional",
+                                        translate('title.name'),
+                                        "locatedevents_infographic.jpg")
+                                    .catchError((onError) {
+                                  print('oh no $onError');
+                                  setState(() {
+                                    loading = false;
+                                  });
+                                });
                                 setState(() {
                                   _duration = 8710;
                                 });

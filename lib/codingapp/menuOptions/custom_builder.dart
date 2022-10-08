@@ -148,15 +148,22 @@ class _CustomBuilderState extends State<CustomBuilder>
               )
             ]));
 
-    setState(() async {
+    setState(() {
       dateRange = newDateRange ?? dateRange;
       resetchecks();
-      await LGConnection().openBalloon(
-          translate("drawer.custom"),
-          '${newDateRange!.start.year}/${newDateRange.start.month}/${newDateRange.start.day} - ${newDateRange.end.year}/${newDateRange.end.month}/${newDateRange.end.day}',
-          translate("info.description") + " " + translate("tour.custom"),
-          "COPERNICUS, Instituto Geográfico Nacional, Global Volcanism Program",
-          translate('title.name'));
+      LGConnection()
+          .openBalloon(
+              translate("drawer.custom"),
+              '${newDateRange?.start.year}/${newDateRange?.start.month}/${newDateRange?.start.day} - ${newDateRange?.end.year}/${newDateRange?.end.month}/${newDateRange?.end.day}',
+              translate("info.description") + " " + translate("tour.custom"),
+              "COPERNICUS, Instituto Geográfico Nacional, Global Volcanism Program",
+              translate('title.name'))
+          .catchError((onError) {
+        print('oh no $onError');
+        setState(() {
+          isloading = false;
+        });
+      });
     });
   }
 

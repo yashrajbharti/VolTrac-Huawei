@@ -13,9 +13,9 @@ import 'package:path_provider/path_provider.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:huawei_map/map.dart';
 import 'package:ssh2/ssh2.dart';
+import 'package:voltrac/codingapp/theme-storage.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-// import 'package:path_provider/path_provider.dart';
-// import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:voltrac/codingapp/kml/LookAt.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:voltrac/codingapp/kml/orbit.dart';
@@ -31,7 +31,7 @@ class MyMap extends StatefulWidget {
 class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   static LatLng _center = const LatLng(28.61785656297236, -17.895854520583153);
   // late AnimationController _rotationiconcontroller;
-
+  bool isloading = false;
   Uint8List? marketimages;
 
   final Set<Marker> _markers = {};
@@ -62,7 +62,6 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   double tiltvalue = 41.82725143432617;
   double bearingvalue = -61.403038024902344; // 2D angle
 
-  bool blackandwhite = false;
   Set<Polygon> _polygon = HashSet<Polygon>();
 
   // created list of locations to display polygon
@@ -13869,7 +13868,16 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
     // initialize loadData method
     _polygonlava();
     getImages("assets/icons/molten.png", 69).then((value) => _moltenlava());
-    LGConnection().open2021Volcano();
+    LGConnection().open2021Volcano().catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        isloading = false;
+      });
+      if (onError == 'nogeodata') {
+        showAlertDialog(translate('Track.alert'), translate('Track.alert2'));
+      }
+      showAlertDialog(translate('Track.alert3'), translate('Track.alert4'));
+    });
   }
 
   void _polygonlava() {
@@ -13919,7 +13927,12 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
 
   void _ongpsfixedButtonPressed() {
     setState(() {
-      _fixposition();
+      _fixposition().catchError((onError) {
+        print('oh no $onError');
+        setState(() {
+          isloading = false;
+        });
+      });
       zoomvalue = (591657550.500000 / pow(2, 12.65393352508545));
       LatLng newlatlang = _center;
       mapController?.animateCamera(
@@ -13991,7 +14004,7 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
     };
   }
 
-  // void _showToast(String x, bool blackandwhite) {
+  // void _showToast(String x, bool themeNotifier.isDark
   //   ScaffoldMessenger.of(context).showSnackBar(
   //     SnackBar(
   //       content: Text(
@@ -14003,7 +14016,8 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   //             color: Colors.white),
   //       ),
   //       duration: Duration(seconds: 3),
-  //       backgroundColor: blackandwhite
+  //       backgroundColor: themeNotifier.isDark
+
   //           ? Color.fromARGB(255, 22, 22, 22)
   //           : Color.fromARGB(250, 43, 43, 43),
   //       width: 500.0,
@@ -14026,103 +14040,114 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
   //   );
   // }
 
-  showAlertDialog(String title, String msg, bool blackandwhite) {
+  showAlertDialog(String title, String msg) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 3),
-            child: AlertDialog(
-              backgroundColor: blackandwhite
-                  ? Color.fromARGB(255, 16, 16, 16)
-                  : Color.fromARGB(255, 33, 33, 33),
-              title: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Image.asset(
-                        "assets/sad.png",
-                        width: 250,
-                        height: 250,
-                      )),
-                  Text(
-                    '$title',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Color.fromARGB(255, 204, 204, 204),
-                    ),
-                  ),
-                ],
-              ),
-              content: SizedBox(
-                width: 320,
-                height: 180,
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text('$msg',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Color.fromARGB(
-                              255,
-                              204,
-                              204,
-                              204,
+        final double shortestSide = MediaQuery.of(context)
+            .size
+            .shortestSide; // get the shortest side of device
+        final bool useTabletLayout = shortestSide > 600.0; // check for tablet
+        return Consumer<ThemeModel>(
+            builder: (context, ThemeModel themeNotifier, child) =>
+                BackdropFilter(
+                    filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 3),
+                    child: AlertDialog(
+                      backgroundColor: themeNotifier.isDark
+                          ? Color.fromARGB(255, 16, 16, 16)
+                          : Color.fromARGB(255, 33, 33, 33),
+                      title: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.only(left: 10),
+                              child: Image.asset(
+                                "assets/sad.png",
+                                width: useTabletLayout ? 250 : 125,
+                                height: useTabletLayout ? 250 : 125,
+                              )),
+                          Text(
+                            '$title',
+                            style: TextStyle(
+                              fontSize: useTabletLayout ? 25 : 18,
+                              color: Color.fromARGB(255, 204, 204, 204),
                             ),
                           ),
-                          textAlign: TextAlign.center),
-                      SizedBox(
-                          width: 300,
-                          child: Padding(
-                              padding: EdgeInsets.only(top: 10),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 2,
-                                  backgroundColor:
-                                      Color.fromARGB(255, 220, 220, 220),
-                                  shadowColor: Colors.black,
-                                  padding: EdgeInsets.all(15),
-                                  shape: StadiumBorder(),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Wrap(
-                                  children: <Widget>[
-                                    Text(translate('dismiss'),
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.black)),
-                                  ],
-                                ),
-                              ))),
-                    ]),
-              ),
-            ));
+                        ],
+                      ),
+                      content: SizedBox(
+                        width: useTabletLayout ? 320 : 80,
+                        height: useTabletLayout ? 180 : 120,
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text('$msg',
+                                  style: TextStyle(
+                                    fontSize: useTabletLayout ? 18 : 12,
+                                    color: Color.fromARGB(
+                                      255,
+                                      204,
+                                      204,
+                                      204,
+                                    ),
+                                  ),
+                                  textAlign: TextAlign.center),
+                              SizedBox(
+                                  width: useTabletLayout ? 300 : 150,
+                                  child: Padding(
+                                      padding: EdgeInsets.only(top: 10),
+                                      child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          elevation: 2,
+                                          backgroundColor: ui.Color.fromARGB(
+                                              255, 220, 220, 220),
+                                          shadowColor: Colors.black,
+                                          padding: EdgeInsets.all(
+                                              useTabletLayout ? 15 : 5),
+                                          shape: StadiumBorder(),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Wrap(
+                                          children: <Widget>[
+                                            Text(translate('dismiss'),
+                                                style: TextStyle(
+                                                    fontSize: useTabletLayout
+                                                        ? 20
+                                                        : 12,
+                                                    color: Colors.black)),
+                                          ],
+                                        ),
+                                      ))),
+                            ]),
+                      ),
+                    )));
       },
     );
   }
 
   _fixposition() async {
-    dynamic credencials = await _getCredentials();
-
-    SSHClient client = SSHClient(
-      host: '${credencials['ip']}',
-      port: int.parse('${credencials['port']}'),
-      username: '${credencials['username']}',
-      passwordOrKey: '${credencials['pass']}',
-    );
-
-    LookAt flyto = LookAt(
-      -17.895854520583153,
-      28.61785656297236,
-      "${zoomvalue / rigcount}",
-      "41.82725143432617",
-      "61.403038024902344",
-    );
     try {
+      dynamic credencials = await _getCredentials();
+
+      SSHClient client = SSHClient(
+        host: '${credencials['ip']}',
+        port: int.parse('${credencials['port']}'),
+        username: '${credencials['username']}',
+        passwordOrKey: '${credencials['pass']}',
+      );
+
+      LookAt flyto = LookAt(
+        -17.895854520583153,
+        28.61785656297236,
+        "${zoomvalue / rigcount}",
+        "41.82725143432617",
+        "61.403038024902344",
+      );
+
       await client.connect();
       await client.execute(
           'echo "flytoview=${flyto.generateLinearString()}" > /tmp/query.txt');
@@ -14134,18 +14159,19 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
 
   motionControls(double updownflag, double rightleftflag, double zoomflag,
       double tiltflag, double bearingflag) async {
-    dynamic credencials = await _getCredentials();
-
-    SSHClient client = SSHClient(
-      host: '${credencials['ip']}',
-      port: int.parse('${credencials['port']}'),
-      username: '${credencials['username']}',
-      passwordOrKey: '${credencials['pass']}',
-    );
-
-    LookAt flyto = LookAt(rightleftflag, updownflag, zoomflag.toString(),
-        tiltflag.toString(), bearingflag.toString());
     try {
+      dynamic credencials = await _getCredentials();
+
+      SSHClient client = SSHClient(
+        host: '${credencials['ip']}',
+        port: int.parse('${credencials['port']}'),
+        username: '${credencials['username']}',
+        passwordOrKey: '${credencials['pass']}',
+      );
+
+      LookAt flyto = LookAt(rightleftflag, updownflag, zoomflag.toString(),
+          tiltflag.toString(), bearingflag.toString());
+
       await client.connect();
       await client.execute(
           'echo "flytoview=${flyto.generateLinearString()}" > /tmp/query.txt');
@@ -14165,7 +14191,13 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
 
   void _onCameraIdle() {
     motionControls(
-        latvalue, longvalue, zoomvalue / rigcount, tiltvalue, -bearingvalue);
+            latvalue, longvalue, zoomvalue / rigcount, tiltvalue, -bearingvalue)
+        .catchError((onError) {
+      print('oh no $onError');
+      setState(() {
+        isloading = false;
+      });
+    });
   }
 
   @override
@@ -14183,7 +14215,12 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
             ),
           ].toSet(),
           onMapCreated: (controller) {
-            _getCredentials();
+            _getCredentials().catchError((onError) {
+              print('oh no $onError');
+              setState(() {
+                isloading = false;
+              });
+            });
             //method called when map is created
             setState(() {
               mapController = controller;
@@ -14255,11 +14292,25 @@ class _MyMapState extends State<MyMap> with SingleTickerProviderStateMixin {
                       if (isShowing == true) {
                         _polygon.clear();
                         _markers.clear();
-                        LGConnection().cleanVisualization();
+                        LGConnection()
+                            .cleanVisualization()
+                            .catchError((onError) {
+                          print('oh no $onError');
+                          setState(() {
+                            isloading = false;
+                          });
+                        });
+                        ;
                       } else {
                         _polygonlava();
                         _moltenlava();
-                        LGConnection().open2021Volcano();
+                        LGConnection().open2021Volcano().catchError((onError) {
+                          print('oh no $onError');
+                          setState(() {
+                            isloading = false;
+                          });
+                        });
+                        ;
                       }
                     });
                   },
@@ -15100,22 +15151,22 @@ class LGConnection {
 
   _uploadToLG(String localPath, String projectname) async {
     dynamic credencials = await _getCredentials();
-
-    SSHClient client = SSHClient(
-      host: '${credencials['ip']}',
-      port: int.parse('${credencials['port']}'),
-      username: '${credencials['username']}',
-      passwordOrKey: '${credencials['pass']}',
-    );
-
-    LookAt flyto = LookAt(
-      -17.895854520583153,
-      28.61785656297236,
-      "${zoomvalue / int.parse(credencials['numberofrigs'])}",
-      "41.82725143432617",
-      "61.403038024902344",
-    );
     try {
+      SSHClient client = SSHClient(
+        host: '${credencials['ip']}',
+        port: int.parse('${credencials['port']}'),
+        username: '${credencials['username']}',
+        passwordOrKey: '${credencials['pass']}',
+      );
+
+      LookAt flyto = LookAt(
+        -17.895854520583153,
+        28.61785656297236,
+        "${zoomvalue / int.parse(credencials['numberofrigs'])}",
+        "41.82725143432617",
+        "61.403038024902344",
+      );
+
       await client.connect();
       await client.execute('> /var/www/html/kmls.txt');
 
@@ -15140,16 +15191,16 @@ class LGConnection {
   }
 
   Future cleanVisualization() async {
-    dynamic credencials = await _getCredentials();
-
-    SSHClient client = SSHClient(
-      host: '${credencials['ip']}',
-      port: int.parse('${credencials['port']}'),
-      username: '${credencials['username']}',
-      passwordOrKey: '${credencials['pass']}',
-    );
-
     try {
+      dynamic credencials = await _getCredentials();
+
+      SSHClient client = SSHClient(
+        host: '${credencials['ip']}',
+        port: int.parse('${credencials['port']}'),
+        username: '${credencials['username']}',
+        passwordOrKey: '${credencials['pass']}',
+      );
+
       await client.connect();
       stopOrbit();
       return await client.execute('> /var/www/html/kmls.txt');
@@ -15236,16 +15287,16 @@ class LGConnection {
   // }
 
   stopOrbit() async {
-    dynamic credencials = await _getCredentials();
-
-    SSHClient client = SSHClient(
-      host: '${credencials['ip']}',
-      port: int.parse('${credencials['port']}'),
-      username: '${credencials['username']}',
-      passwordOrKey: '${credencials['pass']}',
-    );
-
     try {
+      dynamic credencials = await _getCredentials();
+
+      SSHClient client = SSHClient(
+        host: '${credencials['ip']}',
+        port: int.parse('${credencials['port']}'),
+        username: '${credencials['username']}',
+        passwordOrKey: '${credencials['pass']}',
+      );
+
       await client.connect();
       return await client.execute('echo "exittour=true" > /tmp/query.txt');
     } catch (e) {
