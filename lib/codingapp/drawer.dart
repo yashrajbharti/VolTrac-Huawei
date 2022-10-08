@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:voltrac/codingapp/mainpage.dart';
 import 'package:voltrac/codingapp/menuOptions/help.dart';
@@ -414,11 +414,11 @@ class _DrawersState extends State<Drawers> {
                                           val = themeNotifier.isDark
                                               ? value
                                               : !value;
-                                          // SystemChrome.setEnabledSystemUIMode(
-                                          //     SystemUiMode.manual,
-                                          //     overlays: [
-                                          //       SystemUiOverlay.bottom
-                                          //     ]);
+                                          SystemChrome.setEnabledSystemUIMode(
+                                              SystemUiMode.manual,
+                                              overlays: [
+                                                SystemUiOverlay.bottom
+                                              ]);
                                         });
                                         themeNotifier.isDark
                                             ? themeNotifier.isDark = false
