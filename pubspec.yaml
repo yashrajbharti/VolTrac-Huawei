@@ -64,7 +64,7 @@ dev_dependencies:
   feature_discovery: ^0.14.1
   percent_indicator: 4.0.1
   ssh2: ^2.2.3
-  downloads_path_provider_28: ^0.1.2
+  # downloads_path_provider_28: ^0.1.2
   splash_screen_view: ^3.0.0
   
 flutter_icons:

@@ -278,7 +278,9 @@ class _LGtasksState extends State<LGtasks> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   elevation: 2,
-                                  backgroundColor: Colors.transparent,
+                                  backgroundColor: blackandwhite
+                                      ? Color.fromARGB(255, 16, 16, 16)
+                                      : Color.fromARGB(255, 33, 33, 33),
                                   shadowColor: Colors.black,
                                   side: BorderSide(
                                     width: 3,
