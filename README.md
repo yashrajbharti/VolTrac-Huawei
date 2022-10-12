@@ -60,7 +60,7 @@ Lastly, the app has an info tab that lists helpful information along with the so
 * 10-inch Huawei Android Tablet (Recommended) or Huawei Mobile Phone
 
 #### Steps:
-* Download and install the app using this [App Gallery link](https://play.google.com/store/apps/details?id=com.voltrac.fluttermap). Alternatively, you can scan the QR code showcased at top to download and install the app.
+* Download and install the app using this [App Gallery link](https://appgallery.huawei.com/app/C107168599). Alternatively, you can scan the QR code showcased at top to download and install the app.
 * To connect to the Liquid Galaxy, tap on menu icon and go to Connection Manager; then fill the details similar to below:
 <p align="center">
   <img alt="" src="https://raw.githubusercontent.com/yashrajbharti/kml-images/main/connect.jpeg" width="700px">
